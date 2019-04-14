@@ -7,6 +7,9 @@ module.exports = {
     social: {
       twitter: `JHyeok`,
     },
+    comment: {
+      utterances: `JHyeok/gatsby-blog`,
+    },
   },
   plugins: [
     {

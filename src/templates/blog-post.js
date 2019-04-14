@@ -4,7 +4,9 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { Utterances } from "../components/utterances"
 import { rhythm, scale } from "../utils/typography"
+const utterances = "JHyeok/gatsby-blog"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -61,6 +63,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
+        {!!utterances && <Utterances repo={utterances} />}
       </Layout>
     )
   }
@@ -74,6 +77,9 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        comment {
+          utterances
+        }
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
