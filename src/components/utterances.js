@@ -1,18 +1,16 @@
 import React, { useEffect } from "react"
 
-const src = "https://utteranc.es/client.js"
-const label = "Comment"
-
+// TODO : 블로그 Title 이 issue-term 되도록 수정
 export const Utterances = ({ repo }) => {
   const rootElm = React.createRef()
 
   useEffect(() => {
     const utterances = document.createElement("script")
     const utterancesConfig = {
-      src,
+      src: "https://utteranc.es/client.js",
       repo,
       "issue-term": "pathname",
-      label,
+      label: "comment",
       theme: "github-light",
       crossorigin: "anonymous",
       async: true,
