@@ -5,7 +5,7 @@ module.exports = {
     description: `Backend development blog`,
     siteUrl: `https://jhyeok.netlify.com/`,
     social: {
-      twitter: `JHyeok`,
+      github: `JHyeok`,
     },
     comment: {
       utterances: `JHyeok/gatsby-blog`,
