@@ -1,6 +1,7 @@
 ---
 title: Entity Framework를 이용한 대량 Insert/Update
 date: "2019-05-17T04:44:03.284Z"
+description: ""
 ---
 
 Entity Framework를 사용해서 개발을 하게 된다면 특정 조건을 만족하는 여러 개의 로우에 업데이트를 하거나, 여러 개의 로우를 추가하거나 삭제하는 것이 필요할 때가 있다.
