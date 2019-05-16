@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `JHyeok Blog`,
-    author: `JHyeok`,
+    title: `JHyeok`,
+    author: `김재혁`,
     description: `Backend development blog`,
     siteUrl: `https://jhyeok.netlify.com/`,
     social: {
