@@ -1,7 +1,7 @@
 ---
 title: Entity Framework 6에서 대량 Insert, 대량 Update
 date: "2019-05-17T04:44:03.284Z"
-description: ""
+description: EF6의 비효율적인 Bulk Insert/Update.
 ---
 
 Entity Framework 6을 사용해서 개발을 하게 된다면 특정 조건을 만족하는 대량의 로우에 업데이트를 하거나, 대량의 로우를 추가해야 할 때가 있다.
