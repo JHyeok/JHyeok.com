@@ -1,10 +1,10 @@
 ---
-title: Entity Framework를 이용한 대량 Insert/Update
+title: Entity Framework 6에서 대량 Insert, 대량 Update
 date: "2019-05-17T04:44:03.284Z"
 description: ""
 ---
 
-Entity Framework를 사용해서 개발을 하게 된다면 특정 조건을 만족하는 여러 개의 로우에 업데이트를 하거나, 여러 개의 로우를 추가하거나 삭제하는 것이 필요할 때가 있다.
+Entity Framework 6을 사용해서 개발을 하게 된다면 특정 조건을 만족하는 대량의 로우에 업데이트를 하거나, 대량의 로우를 추가해야 할 때가 있다.
 
 AccountCarState Table
 
@@ -25,7 +25,7 @@ accountId는 AccountTable의 ID이며, state는 BIT컬럼이다.
 
 를 한다면 일괄로 업데이트를 할 수 있다.
 
-하지만 ASP.NET 의 EF를 이용해서 위와 같은 작업을 하고 실제로 쿼리가 날아가는 것을 확인하면 굉장히 비효율적으로 업데이트를 진행한다.
+하지만 ASP.NET MVC의 Entity Framework 6을 이용해서 위와 같은 작업을 하고 실제로 쿼리가 날아가는 것을 확인하면 굉장히 비효율적으로 업데이트를 진행한다.
 
 ```
 public void CarUpdateByAccount(int accountId)
@@ -40,17 +40,13 @@ public void CarUpdateByAccount(int accountId)
 
 ```
 
-위의 코드에서 _db는 DI를 통해 주입된 context라고 가정한다.
-
-예제를 테스트하기 위한 메모장으로 작성한 코드이다. EF 에서는 이처럼 foreach 를 이용해서 코드를 작성해야 하는데
+위의 코드에서 _db는 DI를 통해 주입된 context라고 가정한다. Entity Framework 6에서는 이처럼 foreach 를 이용해서 코드를 작성해야 하는데
 
 ```_db.Database.Log = x => System.Diagnostics.Debug.WriteLine(x);```
 
-를 이용해서 외부 툴을 이용하지 않고 실제로 쿼리가 날아가는 것을 확인할 수 있다.
+를 이용해서 외부 툴을 이용하지 않고 실제로 쿼리가 날아가는 것을 확인할 수 있다. 위의 코드를 추적해보면 업데이트 쿼리를 로우 당 하나씩 날리게 된다.
 
-본론으로 돌아와서 그러면 업데이트 쿼리를 로우 당 하나씩 쿼리를 날리게 된다.
-
-AccountCarState 에서 Where에 해당하는 조건을 가진 시퀸스를 n번 날린다고 생각하면 된다. 원시쿼리를 이용하면 한 줄에 끝나는 부분이 EF를 이용하면 비효율적인 방법을 사용하게 된다. 이 부분은 EF 깃허브의 이슈에 올라와있는 내용이며, 해결하기 위해서는 EF에서 원시쿼리를 지원하는데 그 기능을 이용하거나, EntityFramework.Extended 라는 외부 라이브러리를 이용하면 된다.
+AccountCarState 에서 Where에 해당하는 조건을 가진 시퀸스를 n번 날린다고 생각하면 된다. 원시쿼리를 이용하면 한 줄에 끝나는 부분이 Entity Framework 6를 이용하면 비효율적인 방법을 사용하게 된다. 이 부분은 Entity Framework 깃허브의 이슈에 올라와있는 내용이며, 해결하기 위해서는 Entity Framework 6에서 원시쿼리를 지원하는데 그 기능을 이용하거나, EntityFramework.Extended 라는 외부 라이브러리를 이용하면 된다.
 
 처음 이 문제를 겪었을 때 구글링을 해서 Extended라는 외부 라이브러리를 이용하면 된다고 하였는데, BulkUpdate는 오픈소스로 지원을 해주지만 BulkInsert같은 경우 돈을 내고 사용하거나 시험판을 무료로 이용해야 하는 것 같다.
 
