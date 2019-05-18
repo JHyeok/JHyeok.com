@@ -28,14 +28,14 @@ accountId는 AccountTable의 ID이며, state는 BIT컬럼이다.
 하지만 ASP.NET MVC의 Entity Framework 6을 이용해서 위와 같은 작업을 하고 실제로 쿼리가 날아가는 것을 확인하면 굉장히 비효율적으로 업데이트를 진행한다.
 
 ```
-public void CarUpdateByAccount(int accountId)
+public async Task CarUpdateByAccount(int accountId)
 {
     var accountCarStateEntity = _db.AccountCarState.Where(x => x.accountId == accountId);
     foreach (var accountCarState in accountCarStateEntity)
     {
       accountCarState.carId = 1;
     }
-    _db.SaveChanges();
+    await _db.SaveChangesAsync();
 }
 
 ```
@@ -46,9 +46,18 @@ public void CarUpdateByAccount(int accountId)
 
 를 이용해서 외부 툴을 이용하지 않고 실제로 쿼리가 날아가는 것을 확인할 수 있다. 위의 코드를 추적해보면 업데이트 쿼리를 로우 당 하나씩 날리게 된다.
 
-AccountCarState 에서 Where에 해당하는 조건을 가진 시퀸스를 n번 날린다고 생각하면 된다. 원시쿼리를 이용하면 한 줄에 끝나는 부분이 Entity Framework 6를 이용하면 비효율적인 방법을 사용하게 된다. 이 부분은 Entity Framework 깃허브의 이슈에 올라와있는 내용이며, 해결하기 위해서는 Entity Framework 6에서 원시쿼리를 지원하는데 그 기능을 이용하거나, EntityFramework.Extended 라는 외부 라이브러리를 이용하면 된다.
+AccountCarState 에서 Where에 해당하는 조건을 가진 시퀸스를 n번 날린다고 생각하면 된다. 원시쿼리를 이용하면 한 줄에 끝나는 부분이 Entity Framework 6를 이용하면 비효율적인 방법을 사용하게 된다.
 
-처음 이 문제를 겪었을 때 구글링을 해서 Extended라는 외부 라이브러리를 이용하면 된다고 하였는데, BulkUpdate는 오픈소스로 지원을 해주지만 BulkInsert같은 경우 돈을 내고 사용하거나 시험판을 무료로 이용해야 하는 것 같다.
+```
+_db.AccountCarState.AddRange(carList);
+await _db.SaveChangesAsync();
+```
+
+대량 Insert에서도 위처럼 AddRange를 사용해도 되지만 비효율적인 쿼리이며 성능에 문제가 있을 수 있다. (정말 많은 데이터를 넣으려고 할 때 체감할 수 있다.)
+
+[EntityFramework.Extended](https://github.com/zzzprojects/EntityFramework.Extended)를 이용하면 성능 문제에서 벗어날 수 있지만, BulkUpdate는 오픈소스로 지원을 해주지만 BulkInsert는 더 좋은 성능을 내고 싶으면 돈을 내고 사용하거나 시험판을 무료로 이용해야 하는 것 같다.
+
+개인적으로 성능이 중요한 부분이라면 원시쿼리를 이용하는 것이 좋은 것 같다.
 
 ---
 #### 참고
