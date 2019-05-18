@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Utterances } from "../components/utterances"
 import { rhythm, scale } from "../utils/typography"
-const utterances = "JHyeok/gatsby-blog"
+const utterances = "JHyeok/JHyeok.com"
 
 class BlogPostTemplate extends React.Component {
   render() {

@@ -8,7 +8,7 @@ module.exports = {
       github: `JHyeok`,
     },
     comment: {
-      utterances: `JHyeok/gatsby-blog`,
+      utterances: `JHyeok/JHyeok.com`,
     },
   },
   plugins: [
