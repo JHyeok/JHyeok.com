@@ -3,7 +3,7 @@ module.exports = {
     title: `JHyeok`,
     author: `Kim JaeHyeok`,
     description: `Personal blog by Kim JaeHyeok`,
-    siteUrl: `https://jhyeok.com/`,
+    siteUrl: `https://jhyeok.com`,
     social: {
       github: `JHyeok`,
     },
@@ -60,8 +60,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `JHyeok`,
+        short_name: `JHyeok`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
