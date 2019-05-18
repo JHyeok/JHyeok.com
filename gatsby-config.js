@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `JHyeok`,
-    author: `Kim JaeHyeok`,
-    description: `Personal blog by Kim JaeHyeok`,
+    author: `JaeHyeok Kim`,
+    description: `Personal blog by JHyeok`,
     siteUrl: `https://jhyeok.com`,
     social: {
       github: `JHyeok`,
