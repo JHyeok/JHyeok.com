@@ -1,6 +1,6 @@
 ---
 title: Entity Framework 6에서 대량 Insert, 대량 Update
-date: "2019-05-17T04:44:03.284Z"
+date: "2019-05-19T16:40:03.284Z"
 description: EF6의 비효율적인 Bulk Insert/Update.
 ---
 
@@ -42,7 +42,9 @@ public async Task CarUpdateByAccount(int accountId)
 
 위의 코드에서 _db는 DI를 통해 주입된 context라고 가정한다. Entity Framework 6에서는 이처럼 foreach 를 이용해서 코드를 작성해야 하는데
 
-```_db.Database.Log = x => System.Diagnostics.Debug.WriteLine(x);```
+```
+_db.Database.Log = x => System.Diagnostics.Debug.WriteLine(x);
+```
 
 를 이용해서 외부 툴을 이용하지 않고 실제로 쿼리가 날아가는 것을 확인할 수 있다. 위의 코드를 추적해보면 업데이트 쿼리를 로우 당 하나씩 날리게 된다.
 
@@ -60,6 +62,6 @@ await _db.SaveChangesAsync();
 개인적으로 성능이 중요한 부분이라면 원시쿼리를 이용하는 것이 좋은 것 같다.
 
 ---
-#### 참고
+#### Reference
 
 [Performing Bulk Updates in Entity Framework 6.1+ Part 1](https://www.seguetech.com/performing-bulk-updatesentity-framework-6-1/)
