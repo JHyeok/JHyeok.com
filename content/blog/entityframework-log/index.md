@@ -8,7 +8,9 @@ ASP.NET MVC에서 Entity Framework 6을 사용해서 개발을 진행 중에 실
 
 DB.Context에서 Database.Log를 이용한 방법이다.
 
-```_db.Database.Log = x => System.Diagnostics.Debug.WriteLine(x);```
+```csharp
+_db.Database.Log = x => System.Diagnostics.Debug.WriteLine(x);
+```
 
 ![dbcontext-log](./dbcontext-log.png)
 

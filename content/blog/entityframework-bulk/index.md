@@ -21,13 +21,15 @@ accountId는 AccountTable의 ID이며, state는 BIT컬럼이다.
 
 예를 들어 위와 같은 다대다의 관계를 나타내는 테이블이 있을 때, AccountID컬럼이 145인 컬럼들의 carId값을 0로 업데이트 하겠다는 로직이 있다면, 쿼리를 사용하면
 
-```UPDATE AccountCarState SET carId=0 WHERE accountId=145 ```
+```sql
+UPDATE AccountCarState SET carId=0 WHERE accountId=145
+```
 
 를 한다면 일괄로 업데이트를 할 수 있다.
 
 하지만 ASP.NET MVC의 Entity Framework 6을 이용해서 위와 같은 작업을 하고 실제로 쿼리가 날아가는 것을 확인하면 굉장히 비효율적으로 업데이트를 진행한다.
 
-```
+```csharp
 public async Task CarUpdateByAccount(int accountId)
 {
     var accountCarStateEntity = _db.AccountCarState.Where(x => x.accountId == accountId);
@@ -42,7 +44,7 @@ public async Task CarUpdateByAccount(int accountId)
 
 위의 코드에서 _db는 DI를 통해 주입된 context라고 가정한다. Entity Framework 6에서는 이처럼 foreach 를 이용해서 코드를 작성해야 하는데
 
-```
+```csharp
 _db.Database.Log = x => System.Diagnostics.Debug.WriteLine(x);
 ```
 
@@ -50,7 +52,7 @@ _db.Database.Log = x => System.Diagnostics.Debug.WriteLine(x);
 
 AccountCarState 에서 Where에 해당하는 조건을 가진 시퀸스를 n번 날린다고 생각하면 된다. 원시쿼리를 이용하면 한 줄에 끝나는 부분이 Entity Framework 6를 이용하면 비효율적인 방법을 사용하게 된다.
 
-```
+```csharp
 _db.AccountCarState.AddRange(carList);
 await _db.SaveChangesAsync();
 ```
