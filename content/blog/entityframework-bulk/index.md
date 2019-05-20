@@ -15,9 +15,9 @@ AccountCarState Table
 | `3` | `142` | `3` | `1` |
 | `4` | `31` | `6` | `0` |
 | `5` | `31` | `4` | `0` |
-| `6` | `22` | `6` | `1` |
+| `6` | `145` | `6` | `1` |
 
-accountId는 AccountTable의 ID이며, state는 BIT컬럼이다.
+accountId는 AccountTable의 ID이며, state는 BIT컬럼이다. (생략을 했지만 데이터가 많은 테이블이라고 가정한다)
 
 예를 들어 위와 같은 다대다의 관계를 나타내는 테이블이 있을 때, AccountID컬럼이 145인 컬럼들의 carId값을 0로 업데이트 하겠다는 로직이 있다면, 쿼리를 사용하면
 
@@ -35,7 +35,7 @@ public async Task CarUpdateByAccount(int accountId)
     var accountCarStateEntity = _db.AccountCarState.Where(x => x.accountId == accountId);
     foreach (var accountCarState in accountCarStateEntity)
     {
-      accountCarState.carId = 1;
+      accountCarState.carId = 0;
     }
     await _db.SaveChangesAsync();
 }
