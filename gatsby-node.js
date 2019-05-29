@@ -2,7 +2,13 @@ const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
+
+  createRedirect({
+    fromPath: "https://jhyeok.netlify.com/*",
+    toPath: "https://jhyeok.com/:splat",
+    statusCode: 301,
+  })
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   return graphql(
