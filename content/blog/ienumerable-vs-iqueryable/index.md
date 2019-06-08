@@ -1,15 +1,15 @@
 ---
 title: IEnumerable vs IQueryable
 date: "2019-06-08T11:11:03.284Z"
-description: IEnumerable와 IQueryable의 차이를 설명합니다.
+description: IEnumerable과 IQueryable의 차이를 설명합니다.
 ---
 
-이 글은 처음에 IEnumerable vs IQueryable 관련된 여러 글들을 읽었는데 가장 이해가 잘 되었던 stackoverflow의 글을 참고해서 적은 글입니다.
+이 글은 처음에 IEnumerable vs IQueryable 관련된 여러 글을 읽었는데 가장 이해가 잘 되었던 stackoverflow의 글을 참고해서 적은 글입니다.
 
 IEnumerable vs IQueryable
 
 가장 큰 차이점은 IQueryable는 LINQ-to-SQL(LINQ.-to-anything)이 작동하도록하는 인터페이스입니다. 따라서 쿼리를 더 세분화 IQueryable하면 가능한 경우 해당 쿼리가 데이터베이스에서 실행됩니다.
-IEnumerable는 LINQ-to-object가 됩니다. 즉 원래 쿼리와 일치하는 모든 개체가 데이터베이스의 메모리에 로드되어야합니다.
+IEnumerable는 LINQ-to-object가 됩니다. 즉 원래 쿼리와 일치하는 모든 개체가 데이터베이스의 메모리에 로드되어야 합니다.
 
 코드를 보면서 살펴보겠습니다.
 
@@ -23,7 +23,7 @@ IQueryable<Article> articles = ArticlesService.getArticlesWithQueryable();
 var notcieArticles = articles.Where(a => a.IsNotice);
 ```
 
-IQueryable 코드는 공지사항을 선택하기 위해 SQL을 실행합니다. IEnumerable 코드는 데이터베이스에서 원래 쿼리를 실행 한 다음 메모리에 공지사항을 필터링합니다.
+IQueryable 코드는 공지사항을 선택하기 위해 SQL을 실행합니다. IEnumerable 코드는 데이터베이스에서 원래 쿼리를 실행한 다음 메모리에 공지사항을 필터링합니다.
 
 이것은 매우 중요한 차이점이며 IQueryable이 많은 경우 데이터베이스에서 너무 많은 행을 반환하지 않도록 할 수 있습니다.
 또 다른 좋은 예는 페이징을하고있다면 Take및 Skip에 IQueryable, 필요한 행의 수를 얻을 것입니다.
