@@ -6,7 +6,7 @@ description: ASP.NET MVC에서 Jenkins를 이용해서 CI/CD를 구축합니다.
 
 #### CI/CD
 
-CI(Continuous Integration)는 지속적인 통합입니다. 여러 개발자들이 수정한 내용을 지속해서 통합해서 하나의 레포지토리에 Build 및 Test를 지속해서 하는 것을 말합니다.
+CI(Continuous Integration)는 지속적인 통합입니다. 여러 개발자가 수정한 내용을 지속해서 통합해서 하나의 레포지토리에 Build 및 Test를 지속해서 하는 것을 말합니다.
 
 CD(Continuous Delivery)는 지속적인 배포입니다. CI가 끝난 결과물을 서버에 지속해서 배포하는 것을 말합니다.
 
@@ -16,10 +16,12 @@ CD(Continuous Delivery)는 지속적인 배포입니다. CI가 끝난 결과물�
 
 ![jenkins-git](./jenkins-git.png)
 
+소스코드 관리에서 Git의 레포지토리와 연결 정보를 입력한다.
+
 ![cause-jenkins-build](./cause-jenkins-build.png)
 
-젠킨스에서 빌드유발 탭에서 Build when a change is pushed to GitLab 를 체크해서
-push event 를 캐치할 수 있다.
+젠킨스에서 빌드유발 탭에서 Build when a change is pushed to GitLab를 체크해서
+push event를 캐치할 수 있다.
 
 체크해서 받은 CI Service URL을 gitlab의 Webhook에 등록해주면 젠킨스의 소스 코드 관리 탭에서 설정해놓은 git repository에 push가 발생하면 젠킨스가 자동으로 빌드가 실행된다.
 
@@ -124,7 +126,7 @@ BaseURL만 넣어주고 Token만 넣어주면 끝이다.
 
 ![after-build-slack](./after-build-slack.png)
 
-나는 Build Start와 Build Success보다는 오류가 생겼을 때, 알람이 효율적인 것 같아서 해당 유형들만 체크하였다.
+Build Start와 Build Success보다는 오류가 생겼을 때, 알람이 효율적인 것 같아서 해당 유형들만 체크하였다.
 
 
 ---
