@@ -58,30 +58,30 @@ git pull하면서 전부 가져오기 때문이다.
 Mask passwords and regexes (and enable global passwords)
 플러그인을 이용해서 PASSWORD_1 라는 변수에 비밀번호를 집어넣을 수 있다.
 
-#### 게시 프로파일 설정 - 특정 프로파일 제외
+#### 게시 프로파일 설정 - 특정 파일/폴더 제외
 
-```
+```xml
 <ExcludeFilesFromDeployment>
 Web.config;NLog.config
 </ExcludeFilesFromDeployment>
 ```
 
-로 특정 파일을 제외할 수 있다.
+위 설정은 특정 파일을 제외할 수 있다.
 
-```
+```xml
 <ExcludeFoldersFromDeployment>
   lib
 </ExcludeFoldersFromDeployment>
 ```
 
-로 특정 폴더도 제외할 수 있다.
+위 설정은 특정 폴더를 제외할 수 있다.
 
 #### 게시 프로파일 설정 - 기존에 게시된 파일 지우기
 
 기존에 게시된 파일들을 전부 지우고 새롭게 게시할 수 있다. 그리고 기존에 게시된 파일들을 지울 때, Web.Config과 NLog.Config을 제외시킬 수 있다.
 기존에 게시된 파일을 지우는 이유는 기존에는 Sample.dll이 배포되어 있었는데 이후에 배포할 때는 Sample.dll을 사용하지 않을 수도 있기 때문이다. 아래는 관련 설정이다.
 
-```
+```xml
 <SkipExtraFilesOnServer>False</SkipExtraFilesOnServer>
   <ItemGroup>
     <MsDeploySkipRules Include="CustomSkipFolder">
@@ -127,7 +127,6 @@ BaseURL만 넣어주고 Token만 넣어주면 끝이다.
 ![after-build-slack](./after-build-slack.png)
 
 Build Start와 Build Success보다는 오류가 생겼을 때, 알람이 효율적인 것 같아서 해당 유형들만 체크하였다.
-
 
 ---
 ### Reference
