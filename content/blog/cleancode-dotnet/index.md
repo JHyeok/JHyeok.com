@@ -106,7 +106,7 @@ private async Task UpdateArticleMailStateAsync(bool sendState, int ArticleId)
 }
 ```
 
-이 부분도 함수로 분리하였습니다.
+이 부분도 함수로 분리하였습니다. 그리고 변수명과 함수명들도 의미있는 이름들로 변경하였습니다.
 
 ```csharp
 [HttpPost]
@@ -114,12 +114,12 @@ private async Task UpdateArticleMailStateAsync(bool sendState, int ArticleId)
 [ValidateAntiForgeryToken]
 public async Task<JsonResult> SendArticleMail(int articleId)
 {
-    var ArticleMail = await _articleService.GetArticleMailAsync(ArticleId);
-    var attachmentList = await GetMailAttachmentListAsync(ArticleMail.MailContentsDto.ArticleFiles);
-    var ArticleMailContents = await MailContents.GetArticleEmailContentsAsync(ArticleMail.MailContentsDto);
+    var articleMail = await _articleService.GetArticleMailAsync(articleId);
+    var attachmentList = await GetMailAttachmentListAsync(articleMail.MailContentsDto.ArticleFiles);
+    var articleMailContents = await MailContents.GetArticleEmailContentsAsync(articleMail.MailContentsDto);
 
-    var isSended = await _emailService.SendMailAsync(ArticleMail.Title, ArticleMailContents, ArticleMail.ReceiverList, attachmentList, "smtp_2");
-    await UpdateArticleMailStateAsync(isSended, ArticleId);
+    var mailSendResult = await _emailService.SendMailAsync(articleMail.Title, articleMailContents, articleMail.ReceiverList, attachmentList, "smtp_2");
+    await UpdateArticleMailStateAsync(mailSendResult, articleId);
 
     return Json(new { status = 1 });
 }
