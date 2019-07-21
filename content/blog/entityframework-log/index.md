@@ -14,7 +14,7 @@ _db.Database.Log = x => System.Diagnostics.Debug.WriteLine(x);
 
 ![dbcontext-log](./dbcontext-log.png)
 
-현재 컨텍스트에서 생성된 모든 SQL이 출력되게 됩니다.
+현재 콘텍스트에서 생성된 모든 SQL이 출력되게 됩니다.
 
-VisualStudio의 디버그 모드에서 출력 탭에서 날아가는 쿼리 및 로그를 확인할 수 있습니다. 비동기로 실행되는지 여부와 컨텍스트가 열리고 닫히는 부분도 모두 확인이 가능합니다.
+VisualStudio의 디버그 모드에서 출력 탭에서 날아가는 쿼리 및 로그를 확인할 수 있습니다. 비동기로 실행되는지 여부와 콘텍스트가 열리고 닫히는 부분도 모두 확인이 가능합니다.
 
