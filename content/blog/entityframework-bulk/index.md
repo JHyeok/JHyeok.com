@@ -19,7 +19,7 @@ AccountCarState Table
 
 accountId는 AccountTable의 ID이며, state는 BIT컬럼이다. (생략을 했지만 데이터가 많은 테이블이라고 가정한다)
 
-예를 들어 위와 같은 다대다의 관계를 나타내는 테이블이 있을 때, AccountID컬럼이 145인 컬럼들의 carId값을 0로 업데이트 하겠다는 로직이 있다면, 쿼리를 사용하면
+예를 들어 위와 같은 다대다의 관계를 나타내는 테이블이 있을 때, AccountID컬럼이 145인 컬럼들의 carId값을 0으로 업데이트하겠다는 로직이 있다면, 쿼리를 사용하면
 
 ```sql
 UPDATE AccountCarState SET carId=0 WHERE accountId=145
@@ -42,7 +42,7 @@ public async Task CarUpdateByAccount(int accountId)
 
 ```
 
-위의 코드에서 _db는 DI를 통해 주입된 context라고 가정한다. Entity Framework 6에서는 이처럼 foreach 를 이용해서 코드를 작성해야 하는데
+위의 코드에서 _db는 DI를 통해 주입된 context라고 가정한다. Entity Framework 6에서는 이처럼 foreach를 이용해서 코드를 작성해야 하는데
 
 ```csharp
 _db.Database.Log = x => System.Diagnostics.Debug.WriteLine(x);
@@ -50,7 +50,7 @@ _db.Database.Log = x => System.Diagnostics.Debug.WriteLine(x);
 
 를 이용해서 외부 툴을 이용하지 않고 실제로 쿼리가 날아가는 것을 확인할 수 있다. 위의 코드를 추적해보면 업데이트 쿼리를 로우 당 하나씩 날리게 된다.
 
-AccountCarState 에서 Where에 해당하는 조건을 가진 시퀸스를 n번 날린다고 생각하면 된다. 원시쿼리를 이용하면 한 줄에 끝나는 부분이 Entity Framework 6를 이용하면 비효율적인 방법을 사용하게 된다.
+AccountCarState 에서 Where에 해당하는 조건을 가진 시퀸스를 n번 날린다고 생각하면 된다. 원시 쿼리를 이용하면 한 줄에 끝나는 부분이 Entity Framework 6을 이용하면 비효율적인 방법을 사용하게 된다.
 
 ```csharp
 _db.AccountCarState.AddRange(carList);
@@ -61,7 +61,7 @@ await _db.SaveChangesAsync();
 
 [EntityFramework.Extended](https://github.com/zzzprojects/EntityFramework.Extended)를 이용하면 성능 문제에서 벗어날 수 있지만, BulkUpdate는 오픈소스로 지원을 해주지만 BulkInsert는 더 좋은 성능을 내고 싶으면 돈을 내고 사용하거나 시험판을 무료로 이용해야 하는 것 같다.
 
-개인적으로 성능이 중요한 부분이라면 원시쿼리를 이용하는 것이 좋은 것 같다.
+개인적으로 성능이 중요한 부분이라면 원시 쿼리를 이용하는 것이 좋은 것 같다.
 
 ---
 ### Reference
