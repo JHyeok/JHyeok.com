@@ -1,12 +1,12 @@
 ---
-title: ASP.NET Core 로그 라이브러리 NLog 적용하기
+title: ASP.NET Core에서 로그 라이브러리 NLog 적용하기
 date: "2019-08-11T10:02:10.284Z"
 description: ASP.NET Core MVC 시리즈
 ---
 
 #### ASP.NET Core에서 로그 라이브러리 NLog 적용하기
 
-NLog는 닷넷 플랫폼 로그 라이브러리이다. 옵션들을 이용해서 다양한 레벨에서 로그를 남길 수 있다. 이번 ASP.NET Core MVC 시리즈 포스트에서는 NLog를 적용하는 방법을 알아본다.
+NLog는 닷넷 플랫폼 로그 라이브러리이다. 옵션들을 이용해서 다양한 레벨에서 로그를 남길 수 있다. 이번 ASP.NET Core MVC 시리즈에서는 NLog를 적용하는 방법을 알아본다.
 
 ASP.NET MVC 5에서 NLog를 적용하는 방법과는 다르게 ASP.NET Core 2.2에서는 정말 간단하게 적용할 수 있다.
 
