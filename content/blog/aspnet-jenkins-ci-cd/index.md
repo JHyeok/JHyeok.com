@@ -6,11 +6,9 @@ description: ASP.NET MVC에서 Jenkins를 이용해서 CI/CD를 구축합니다.
 
 #### CI/CD
 
-CI(Continuous Integration)는 지속적인 통합입니다. 여러 개발자가 수정한 내용을 지속해서 통합해서 하나의 레포지토리에 Build 및 Test를 지속해서 하는 것을 말합니다.
+CI(Continuous Integration)는 지속적인 통합이다. 여러 개발자가 수정한 내용을 지속적으로 통합해서 하나의 레포지토리에 Build 및 Test를 지속해서 하는 것을 말한다.
 
-CD(Continuous Delivery)는 지속적인 배포입니다. CI가 끝난 결과물을 서버에 지속해서 배포하는 것을 말합니다.
-
-저는 QA 서버에 CI와 CD를 구축했으며, 운영 서버에서는 CI까지 만을 구축했습니다. 아래는 직접 경험하면서 정리한 점들을 적어놓았습니다.
+CD(Continuous Delivery)는 지속적인 배포이다. CI가 끝난 결과물을 서버에 지속해서 배포하는 것을 말한다.
 
 #### Git 연결
 
@@ -127,6 +125,12 @@ BaseURL만 넣어주고 Token만 넣어주면 끝이다.
 ![after-build-slack](./after-build-slack.png)
 
 Build Start와 Build Success보다는 오류가 생겼을 때, 알람이 효율적인 것 같아서 해당 유형들만 체크하였다.
+
+#### 느낀점
+
+위 방법으로 QA 서버에 CI와 CD를 구축했으며, 운영 서버에서는 CI까지 만을 구축하였는데 비개발자분들이 개발자들이 만들어놓은 결과물들을 QA서버에서 확인하는데 정말로 좋았다.
+
+여러 명의 개발자들이 Push를 해놓은 내용들을 지속적으로 업데이트해서 결과물을 보여주는데 그 과정에서 수동으로 빌드를 안 한다는 게 정말 큰 장점으로 다가왔다.
 
 ---
 ### Reference
