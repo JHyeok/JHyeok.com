@@ -22,6 +22,9 @@ exports.createPages = ({ graphql, actions }) => {
             node {
               fields {
                 slug
+                readingTime {
+                  text
+                }
               }
               frontmatter {
                 title
