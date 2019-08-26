@@ -37,12 +37,9 @@ class BlogIndex extends React.Component {
               </small>
               <small style={{
                   marginLeft: rhythm(1 / 4),
-                }}>
-              </small>
-              •
-              <small style={{
                   marginRight: rhythm(1 / 4),
                 }}>
+                  •
               </small>
               <small>
               {node.fields.readingTime.text}

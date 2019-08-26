@@ -32,12 +32,9 @@ class BlogPostTemplate extends React.Component {
           {post.frontmatter.date}
           <small style={{
             marginLeft: rhythm(1 / 4),
-            }}>
-          </small>
-          •
-          <small style={{
             marginRight: rhythm(1 / 4),
             }}>
+              •
           </small>
           {post.fields.readingTime.text}
         </p>
