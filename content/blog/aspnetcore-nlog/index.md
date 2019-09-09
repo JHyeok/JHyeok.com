@@ -35,7 +35,7 @@ public static void Main(string[] args)
 }
 ```
 
-그리고 nlog.config을 만들어준다.
+그리고 NLog.config을 만들어준다.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -55,6 +55,7 @@ public static void Main(string[] args)
 ```
 
 로깅할 최소 레벨을 설정이 가능한데, Trace로 하면 모든 오류를 다 쌓고, Error로 설정하면 Error위의 레벨만 쌓는다.
+
 자세한 로그 레벨 정보는 [여기서](https://github.com/NLog/NLog/wiki/Configuration-file#log-levels) 확인이 가능하다.
 
 ```csharp
@@ -68,6 +69,11 @@ CreateWebHostBuilder에다가 UseNLog를 해서 주입을 시킨다.
 이러면 NLog설정이 끝난다. 오류가 발생한다면 NLog.config에 정의해놓은 target과 rule에 맞추어서 파일이 만들어진다.
 
 짧은 시간 안에 ASP.NET Core에서 오류 라이브러리인 NLog를 적용하였다.
+
+![nlog2](./nlog2.png)
+![nlog1](./nlog1.png)
+
+NLog.config에 설정해놓은 fileName, layout에 맞게 파일이 생성된 것을 확인 할 수 있다.
 
 ---
 ### Reference
