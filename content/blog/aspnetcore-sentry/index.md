@@ -35,13 +35,19 @@ CreateWebHostBuilder에 UseSentry()를 호출한다. UseSentry에서 람다식�
 
 두 가지 중에서 선택해서 Dsn을 옵션으로 넘겨주기만 한다면, Sentry에 오류보고가 완료된다.
 
-![log2](./log4.png)
+![sentry1](./sentry1.png)
 
-![log1](./log1.png)
+Issuse목록에서 오류들을 확인할 수 있다.
 
-![log2](./log2.png)
+![sentry2](./sentry2.png)
 
-![log2](./log3.png)
+오류 목록에서 선택해서 들어가면 오류에 대한 자세한 내용을 위의 사진처럼 보여준다.
+
+![sentry3](./sentry3.png)
+
+![sentry4](./sentry4.png)
+
+그 외 사용하는 패키지의 버전 및 Exception위치를 Sentry에서 확인할 수 있다.
 
 초창기 닷넷 코어 버전에서 적용하는 방법을 생각하면 개발자는 큰 힘 들이지 않고 Sentry를 적용 할 수 있는 것 같다. .NET Core가 오픈소스화 되면서 좋은 방향으로 발전하고 있다.
 
