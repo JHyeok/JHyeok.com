@@ -35,6 +35,14 @@ CreateWebHostBuilder에 UseSentry()를 호출한다. UseSentry에서 람다식�
 
 두 가지 중에서 선택해서 Dsn을 옵션으로 넘겨주기만 한다면, Sentry에 오류보고가 완료된다.
 
+![log2](./log4.png)
+
+![log1](./log1.png)
+
+![log2](./log2.png)
+
+![log2](./log3.png)
+
 초창기 닷넷 코어 버전에서 적용하는 방법을 생각하면 개발자는 큰 힘 들이지 않고 Sentry를 적용 할 수 있는 것 같다. .NET Core가 오픈소스화 되면서 좋은 방향으로 발전하고 있다.
 
 ---
