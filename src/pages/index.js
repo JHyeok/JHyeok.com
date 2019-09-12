@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import { formatReadingTime } from "../utils/helper"
 
 class BlogIndex extends React.Component {
   render() {
@@ -42,7 +43,7 @@ class BlogIndex extends React.Component {
                   •
               </small>
               <small>
-              {node.fields.readingTime.text}
+              {formatReadingTime(node.timeToRead)}
               </small>
               <p
                 dangerouslySetInnerHTML={{
@@ -69,12 +70,10 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
+          timeToRead
           excerpt
           fields {
             slug
-            readingTime {
-              text
-            }
           }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
