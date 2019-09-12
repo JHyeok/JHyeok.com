@@ -4,7 +4,7 @@ date: "2019-07-22T22:11:10.284Z"
 description: ASP.NET Core MVC 시리즈
 ---
 
-#### ASP.NET Core 클레임 기반 로그인 구현
+### ASP.NET Core 클레임 기반 로그인 구현
 
 Claims을 이용한 구현 방법이다. Role이나 policy를 이용해서 세부적인 권한까지도 다룰 수 있으며, 특정 시간동안 사용자가 반응이 없다면 로그아웃까지 간단하게 구현할 수 있다.
 
@@ -154,7 +154,7 @@ public async Task<IActionResult> LogIn(LoginViewModel model, string returnUrl)
 
 사용자가 A라는 페이지(로그인을 해야만 접근 가능한 페이지라고 가정)에 접속했을 때, 권한이 없기 때문에 로그인 페이지로 돌아갔을 때, 사용자는 로그인하고 다시 A페이지를 찾아서 들어가는 수고를 들일 필요 없이 로그인을 성공하면 A라는 페이지로 리다이렉트 된다.
 
-#### .NET과 .NET Core의 Authentication 차이
+### .NET과 .NET Core의 Authentication 차이
 
 ```csharp
 IAuthenticationManager Authentication

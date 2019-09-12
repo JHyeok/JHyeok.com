@@ -23,11 +23,11 @@ dotnet publish --output:bin/framework_dependent
 .NET Core로 만들어진 웹의 경우 F12의 개발자 도구에서 NetWork=의 Response Headers를 확인해서 Server에서 IIS 인지 Kestrel인지 확인을 통해 InProcess와 OutOfProcess를 구별할 수 있다.
 
 ```
-<aspNetCore processPath = "dotnet"arguments = ". \ InProcApp.dll"stdoutLogEnabled = "false"stdoutLogFile = ". \ logs \ stdout"hostingModel = "InProcess"/>
+<aspNetCore hostingModel = "InProcess"/>
 ```
 
 ```
-<aspNetCore processPath = "dotnet"arguments = ". \ InProcApp.dll"stdoutLogEnabled = "false"stdoutLogFile = ". \ logs \ stdout"hostingModel = "OutOfProcess"/>
+<aspNetCore hostingModel = "OutOfProcess"/>
 ```
 
 hostingModel을 변경함으로써 InProcess와 OutOfProcess방식으로 배포할 수 있으며, 또는 csproj에서 설정이 가능하다. 그리고 디버그에서도 디버그 속성으로 설정이 가능하며 Kestrel을 Edge Server로도 디버그가 가능하다.

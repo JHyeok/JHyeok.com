@@ -4,7 +4,7 @@ date: "2019-08-11T10:21:20.284Z"
 description: ASP.NET Core MVC 시리즈
 ---
 
-#### ASP.NET Core에서 Sentry 적용하기
+### ASP.NET Core에서 Sentry 적용하기
 
 Sentry는 오류를 실시간으로 모니터링할 수 있고, 알림 또는 메일 시스템과 연동해서 받아 볼 수 있다. 이번 ASP.NET Core MVC 시리즈에서는 Sentry를 적용하는 방법을 알아본다.
 
