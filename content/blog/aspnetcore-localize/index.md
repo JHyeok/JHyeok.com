@@ -6,7 +6,7 @@ description: ASP.NET Core MVC에서 다국어를 지원하는 사이트를 만�
 
 이번 포스팅에서는 ASP.NET Core MVC에서 다국어를 지원하는 사이트를 만들어보는 방법에 대해서 설명해 보려고 한다.
 
-ASP.NET Core는 번역이 포함된 XML 파일 형식인 리소스 파일들을 기반으로 하는데 문화권을 전달하면 해당 문화권에 정의된 이름을 기반으로 리소스 파일을 찾아서 리소스 파일에 정의된 값이 표시된다.
+ASP.NET Core는 번역이 포함된 XML 파일 형식의 리소스 파일들을 기반으로 하는데 문화권을 전달하면 해당 문화권에 정의된 이름을 기반으로 리소스 파일을 찾아서 리소스 파일에 정의된 값이 표시된다.
 
 아래처럼 커스텀된 IHtmlLocalizer와 IStringLocalizer를 이용하면 하나의 리소스 파일에서 번역 리소스들을 관리할 수 있다. 부수적으로 해당 값이 번역되어있는 값인지도 확인이 가능하다.
 
@@ -18,12 +18,12 @@ Sample.Language
 ├─ SampleHtmlLocalizerFactory.cs
 ├─ SampleStringLocalizer.cs
 ├─ SampleStringLocalizerFactory.cs
-└─ Resource.en.resx
-└─ Resource.ko.resx
+├─ Resource.en.resx
+├─ Resource.ko.resx
 └─ Resource.resx
 ```
 
-결과물이 될 다국어 모듈은 위의 구조로 만들어진다. 이름에서 알 수 있듯이 Resource.ko.resx는 한국어가 있는 리소스 파일이며, Resource.en.resx는 영어로 번역된 리소스이다.
+결과물이 될 다국어 모듈은 위의 구조로 만들어질 것이다. 이름에서 알 수 있듯이 Resource.ko.resx는 한국어가 있는 리소스 파일이며, Resource.en.resx는 영어로 번역된 리소스이다.
 
 SampleHtmlLocalizer, SampleHtmlLocalizerFactory를 어떻게 구현했는지 아래 코드를 보면서 살펴보자.
 
@@ -91,6 +91,7 @@ namespace Sample.Language
                 isReady = false;
             }
 
+            // Live 환경이 아니면 번역 유무 출력
             if (!_environment.IsProduction())
                 value = $"{value}{(isReady ? "(O)" : "(X)")}";
 
@@ -181,6 +182,7 @@ namespace Sample.Language
                 isReady = false;
             }
 
+            // Live 환경이 아니면 번역 유무 출력
             if (!_environment.IsProduction())
                 value = $"{value}{(isReady ? "(O)" : "(X)")}";
 
@@ -221,7 +223,7 @@ IStringLocalizerFactory는 View 이외에서 지역화를 할 때 필요한데, 
 
 위 코드들에서 자주보이는 LocalizedString의 경우 ASP.NET Core에서 지원하는 클래스입니다. 리소스에서 원하는 문자열을 찾아서 문자열을 반환하는 역활을 한다.
 
-#### 지역화 구성
+### 지역화 구성
 
 ```csharp
 services.AddMvc()
@@ -235,11 +237,13 @@ services.AddSingleton<IHtmlLocalizerFactory, SampleHtmlLocalizerFactory>();
 services.AddTransient<IHtmlLocalizer, SampleHtmlLocalizer>();
 ```
 
+AddViewLocalization는 View파일에 대한 지역화를 제공한다.
+
 AddDataAnnotationsLocalization는 IStringLocalizer 추상화를 통해 지역화된 유효성 검사 메시지에 대한 지원을 추가한다.
 
 Startup.cs의 ConfigureServices에서 서비스를 위처럼 추가한다.
 
-#### 지역화 미들웨어
+### 지역화 미들웨어
 
 ```csharp
 var supportedCultures = new[]
@@ -258,7 +262,7 @@ app.UseRequestLocalization(new RequestLocalizationOptions
 
 Startup.cs의 Configure에서 요청 파이프라인 구성은 위처럼 추가한다.
 
-#### DataAnnotations 지역화
+### DataAnnotations 지역화
 
 DataAnnotations 지역화를 사용하기 위해서는
 Model이나 ViewModel에서 사용하는 방법이다.
@@ -276,13 +280,13 @@ private readonly IStringLocalizer _localizer;
 
 public AccountController(IStringLocalizer localizer)
 {
-	_localizer = localizer;
+    _localizer = localizer;
 }
 	
 ModelState.AddModelError(string.Empty, _localizer["사용자 ID 혹은 비밀번호가 올바르지 않습니다."]);
 ```
 
-#### View에서의 지역화
+### View에서의 지역화
 
 View에서는 아래처럼 사용하도록 한다.
 
@@ -291,7 +295,7 @@ View에서는 아래처럼 사용하도록 한다.
 <p>@htmlLocalizer["안녕"]</p>
 ```
 
-#### 사용자가 언어권을 선택할 수 있도록 구현하기
+### 사용자가 언어권을 선택할 수 있도록 구현하기
 
 이제 언어를 변경하는 리스트를 만들 때에는 아래와 같이 만들면 된다.
 
@@ -300,7 +304,7 @@ View에서는 아래처럼 사용하도록 한다.
 
 @inject Microsoft.AspNetCore.Mvc.Localization.IHtmlLocalizer htmlLocalizer;
 
-@model IList<QPlexBrand.Data.CommonDatabase.Models.AccountLoginLog>
+@model IList<Sample.Data.CommonDatabase.Models.AccountLoginLog>
 
 @{
     ViewData["Title"] = "Home";
@@ -308,7 +312,8 @@ View에서는 아래처럼 사용하도록 한다.
     var requestCulture = Context.Features.Get<IRequestCultureFeature>();
 }
 
-@using (Html.BeginForm("SetLanguage", "Home", new { area = "" }, FormMethod.Post, true, new { id = "language" }))
+@using (Html.BeginForm("SetLanguage", "Home", new { area = "" },
+        FormMethod.Post, true, new { id = "language" }))
 {
     <input type="hidden" name="returnUrl" value="/Home/Index" />
     <select name="culture" onchange="$('#language').submit();">
@@ -349,6 +354,8 @@ public IActionResult SetLanguage(string culture, string returnUrl)
     return LocalRedirect(returnUrl);
 }
 ```
+
+### 마치며
 
 간단한 예제 코드를 이용해서 ASP.NET Core의 다국어 번역에 대해서 알아보았다. ASP.NET MVC에서보다 더 쉽게 다국어를 적용할 수 있고, 그 외에 유효성 검사에 대한 다국어도 쉽게 적용할 수 있어서 좋았던 것 같다.
 
