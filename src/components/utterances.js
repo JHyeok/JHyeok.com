@@ -1,6 +1,5 @@
 import React, { useEffect } from "react"
 
-// TODO : 블로그 Title 이 issue-term 되도록 수정
 export const Utterances = ({ repo }) => {
   const rootElm = React.createRef()
 
@@ -20,6 +19,7 @@ export const Utterances = ({ repo }) => {
       utterances.setAttribute(configKey, utterancesConfig[configKey])
     })
     rootElm.current.appendChild(utterances)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return <div className="utterences" ref={rootElm} />
