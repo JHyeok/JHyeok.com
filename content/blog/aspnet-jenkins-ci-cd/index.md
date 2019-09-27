@@ -74,6 +74,10 @@ Web.config;NLog.config
 
 위 설정은 특정 폴더를 제외할 수 있다.
 
+.config 파일들의 경우 제외하고 배포하기 때문에 처음에 배포할 때는 수동으로 배포해주는 것이 좋다. 보통 Web.Config과 NLog.config은 Development, QA, Live 서버의 설정이 다를 수 있기 때문에 제외하는 것이 좋은 것 같다.
+
+필자도 겪은 오류인데 Web.config을 제외하게 되면 MVC의 경우 Views폴더의 Web.config도 제외되기 때문에 수동으로 한 번 배포해주어야 한다.
+
 ### 게시 프로파일 설정 - 기존에 게시된 파일 지우기
 
 기존에 게시된 파일들을 전부 지우고 새롭게 게시할 수 있다. 그리고 기존에 게시된 파일들을 지울 때, Web.Config과 NLog.Config을 제외시킬 수 있다.
