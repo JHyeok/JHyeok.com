@@ -75,6 +75,40 @@ CreateWebHostBuilder에다가 UseNLog를 해서 주입을 시킨다.
 
 NLog.config에 설정해놓은 fileName, layout에 맞게 파일이 생성된 것을 확인 할 수 있다.
 
+### NLog와 Slack 연동
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+  
+  <extensions>
+    <add assembly="NLog.Slack" />
+  </extensions>
+  
+  <targets>
+    <target name="Slack" xsi:type="Slack" layout="${message}" webHookUrl="" channel="#ft_batch_error" username="ft_batch_bot" compact="false" icon=":ghost:" />
+  </targets>
+  
+  <rules>
+    <logger name="*" minlevel="Error" writeTo="Slack" />
+  </rules>
+</nlog>
+```
+
+extensions에 NLog.Slack을 추가해주어야 한다. Nuget에서 설치를 하면 되며, targets에 Slack설정을 추가해주며 rules에도 추가해주면 오류가 발생하면 아래 사진처럼 봇이 Slack 메시지로 오류가 났음을 알려준다.
+
+![log-slack](./log-slack.png)
+
+### 주의할 점
+
+NLog.Config이 잘못되면 NLog가 쌓이지 않을 수 있다.\
+필자는 운영서버에서는 Slack을 적용하고, QA서버에서 Slack을 제거해야 해서, Config을 수정해야 할 일이 생겼다. QA서버에서 targets에서 Slack을 제거했는데, 파일 탐색기에 NLog가 쌓이지 않게 되었다.\
+그런데 NLog를 다시 수정 전으로 돌리면 파일이 쌓이는 아이러니한 상황이 생겨서 잘 살펴보았더니, targets에는 제거가 되어있는데, rules에서는 남아있어서 생긴 문제였다.
+
+target name="Slack"을 지워줬으면 rules에서도 Slack에 해당되는 rules을 지워주어야 한다.
+그 이후 잘 쌓이게 되었다.
+
 ---
 ### Reference
 
