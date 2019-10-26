@@ -170,7 +170,7 @@ if (process.env.NODE_ENV === 'test') {
 }
 ```
 
-`express`를 `import`할 수 있게 되었으면 테스트 코드를 작성해본다. Jest에서는 `__test__` 파일 안의 .js, `.spec.js`, `.test.js`의 테스트 코드를 작성하면 테스트 코드로 인지하고 테스트 시작 시 해당 파일들을 실행한다.
+`express`를 `import`할 수 있게 되었으면 테스트 코드를 작성해본다. `Jest`에서는 `__test__` 파일 안의 `.js`, `.spec.js`, `.test.js`의 테스트 코드를 작성하면 테스트 코드로 인지하고 테스트 시작 시 해당 파일들을 실행한다.
 
 `/test/memo.test.js 작성`
 
