@@ -6,13 +6,13 @@ description: ASP.NET Core MVC 시리즈
 
 ### ASP.NET Core에서 로그 라이브러리 NLog 적용하기
 
-NLog는 닷넷 플랫폼 로그 라이브러리이다. 옵션들을 이용해서 다양한 레벨에서 로그를 남길 수 있다. 이번 ASP.NET Core MVC 시리즈에서는 NLog를 적용하는 방법을 알아본다.
+**NLog**는 닷넷 플랫폼 로그 라이브러리이다. 옵션들을 이용해서 다양한 레벨에서 로그를 남길 수 있다. 이번 ASP.NET Core MVC 시리즈에서는 **NLog**를 적용하는 방법을 알아본다.
 
 ASP.NET MVC 5에서 NLog를 적용하는 방법과는 다르게 ASP.NET Core 2.2에서는 정말 간단하게 적용할 수 있다.
 
 Nuget에서 [NLog.Web.AspNetCore](https://www.nuget.org/packages/NLog.Web.AspNetCore/4.8.3)를 다운로드한다.
 
-프로그램 진입점인 Program 클래스의 Main에다가 아래처럼 코드를 작성한다.
+프로그램 진입점인 Program 클래스의 `Main`에다가 아래처럼 코드를 작성한다.
 
 ```csharp
 public static void Main(string[] args)
@@ -35,7 +35,7 @@ public static void Main(string[] args)
 }
 ```
 
-그리고 NLog.config을 만들어준다.
+그리고 `NLog.config`을 만들어준다.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -54,7 +54,7 @@ public static void Main(string[] args)
 </nlog>
 ```
 
-로깅할 최소 레벨을 설정이 가능한데, Trace로 하면 모든 오류를 다 쌓고, Error로 설정하면 Error위의 레벨만 쌓는다.
+로깅할 최소 레벨을 설정이 가능한데, `Trace`로 하면 모든 오류를 다 쌓고, `Error`로 설정하면 Error위의 레벨만 쌓는다.
 
 자세한 로그 레벨 정보는 [여기서](https://github.com/NLog/NLog/wiki/Configuration-file#log-levels) 확인이 가능하다.
 
@@ -65,15 +65,15 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
     .UseNLog();
 ```
 
-CreateWebHostBuilder에다가 UseNLog를 해서 주입을 시킨다.
-이러면 NLog설정이 끝난다. 오류가 발생한다면 NLog.config에 정의해놓은 target과 rule에 맞추어서 파일이 만들어진다.
+`CreateWebHostBuilder`에다가 `UseNLog()`로 주입을 시킨다.
+이러면 NLog설정이 끝난다. 오류가 발생한다면 `NLog.config`에 정의해놓은 `target`과 `rule`에 맞추어서 파일이 만들어진다.
 
 짧은 시간 안에 ASP.NET Core에서 오류 라이브러리인 NLog를 적용하였다.
 
 ![nlog2](./nlog2.png)
 ![nlog1](./nlog1.png)
 
-NLog.config에 설정해놓은 fileName, layout에 맞게 파일이 생성된 것을 확인 할 수 있다.
+`NLog.config`에 설정해놓은 `fileName`, `layout`에 맞게 파일이 생성된 것을 확인 할 수 있다.
 
 ### NLog와 Slack 연동
 
@@ -96,17 +96,17 @@ NLog.config에 설정해놓은 fileName, layout에 맞게 파일이 생성된 �
 </nlog>
 ```
 
-extensions에 NLog.Slack을 추가해주어야 한다. Nuget에서 설치를 하면 되며, targets에 Slack설정을 추가해주며 rules에도 추가해주면 오류가 발생하면 아래 사진처럼 봇이 Slack 메시지로 오류가 났음을 알려준다.
+extensions에 NLog.Slack을 추가해주어야 한다. Nuget에서 설치를 하면 되며, `targets`에 Slack설정을 추가해주며 `rules`에도 추가해주면 오류가 발생하면 아래 사진처럼 봇이 Slack 메시지로 오류가 났음을 알려준다.
 
 ![log-slack](./log-slack.png)
 
 ### 주의할 점
 
 NLog.Config이 잘못되면 NLog가 쌓이지 않을 수 있다.\
-필자는 운영서버에서는 Slack을 적용하고, QA서버에서 Slack을 제거해야 해서, Config을 수정해야 할 일이 생겼다. QA서버에서 targets에서 Slack을 제거했는데, 파일 탐색기에 NLog가 쌓이지 않게 되었다.\
-그런데 NLog를 다시 수정 전으로 돌리면 파일이 쌓이는 아이러니한 상황이 생겨서 잘 살펴보았더니, targets에는 제거가 되어있는데, rules에서는 남아있어서 생긴 문제였다.
+필자는 운영서버에서는 Slack을 적용하고, QA서버에서 Slack을 제거해야 해서, Config을 수정해야 할 일이 생겼다. QA서버에서 `targets`에서 Slack을 제거했는데, 파일 탐색기에 NLog가 쌓이지 않게 되었다.\
+그런데 NLog를 다시 수정 전으로 돌리면 파일이 쌓이는 아이러니한 상황이 생겨서 잘 살펴보았더니, `targets`에는 제거가 되어있는데, `rules`에서는 남아있어서 생긴 문제였다.
 
-target name="Slack"을 지워줬으면 rules에서도 Slack에 해당되는 rules을 지워주어야 한다.
+`target name="Slack"`을 지워줬으면 `rules`에서도 Slack에 해당되는 `rules`을 지워주어야 한다.
 그 이후 잘 쌓이게 되었다.
 
 ---
