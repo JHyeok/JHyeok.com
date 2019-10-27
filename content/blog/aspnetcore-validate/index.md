@@ -27,15 +27,15 @@ ASP.NET Core의 유효성 검사에 대해 설명하기 이전에 프론트엔�
 
 ASP.NET MVC5와 ASP.NET Core에서의 유효성 검사는 비슷하지만, ASP.NET Core는 개발자의 불필요한 작업을 덜어준다.
 
-Views폴더의 Shared에서 _ValidationScriptsPartial가 있어서 유효성 검사가 필요한 페이지가 있으면 RenderPartialAsync로 사용할 수 있다.
+Views폴더의 Shared에서 `_ValidationScriptsPartial`가 있어서 유효성 검사가 필요한 페이지가 있으면 `RenderPartialAsync`로 사용할 수 있다.
 
-```
+```js
 jquery.validate.js
 jquery.validate.unobtrusive.js
 ```
-_ValidationScriptsPartial가 렌더링 하는 javascript 라이브러리들이다. ASP.NET MVC5에서는 저 부분을 개발자가 따로 만들거나 따로따로 불러왔어야 하는데, ASP.NET Core는 친절하게 미리 만들어져 있다.
+`_ValidationScriptsPartial`가 렌더링 하는 Javascript 라이브러리들이다. ASP.NET MVC5에서는 저 부분을 개발자가 따로 만들거나 따로따로 불러왔어야 하는데, ASP.NET Core는 친절하게 미리 만들어져 있다.
 
-View페이지의 @model에 사용되는 Viewmodel 또는 model에 유효성 검사 규칙을 지정할 수 있다.
+View페이지의 `@model`에 사용되는 Viewmodel 또는 model에 유효성 검사 규칙을 지정할 수 있다.
 
 ```csharp
 public class RegisterViewModel
@@ -64,7 +64,7 @@ public class RegisterViewModel
 }
 ```
 
-프론트엔드에서는 폼 요소를 가져와서 .Vaild()를 사용하면 유효성 검사가 프론트엔드단에서 실행된다. 서버로 넘어가기 전에 유효성 검사를 할 수 있다.
+프론트엔드에서는 폼 요소를 가져와서 `.Vaild()`를 사용하면 유효성 검사가 프론트엔드단에서 실행된다. 서버로 넘어가기 전에 유효성 검사를 할 수 있다.
 
 ```csharp
 if (!ModelState.IsValid)
@@ -72,9 +72,9 @@ if (!ModelState.IsValid)
     return View(viewModel);
 }
 ```
-백엔드에서는 컨트롤러에서 위의 코드를 이용해서 유효성 검사를 할 수 있다. 이메일 형식이 올바르지 않으면, 저 If문에 걸려 오류 메시지가 포함된 viewModel을 View에 반환한다.
+백엔드에서는 컨트롤러에서 위의 코드를 이용해서 유효성 검사를 할 수 있다. 이메일 형식이 올바르지 않으면, 저 `if`문에 걸려 오류 메시지가 포함된 viewModel을 View에 반환한다.
 
-아래는 View페이지 소스 전체이다. @model은 위에서 유효성 검사를 지정한 RegisterViewModel을 사용하고 있다. Javascript에서 .valid()를 사용해서 프론트엔드에서 유효성 검사를 먼저 할 수 있다.
+아래는 View페이지 소스 전체이다. `@model`은 위에서 유효성 검사를 지정한 `RegisterViewModel`을 사용하고 있다. Javascript에서 `.valid()`를 사용해서 프론트엔드에서 유효성 검사를 먼저 할 수 있다.
 
 ```csharp
 @model SampleWeb.Data.ViewModels.RegisterViewModel
@@ -167,13 +167,13 @@ if (!ModelState.IsValid)
 
 부트스트랩 모달에서 모델에 선언한 어노테이션이 되지 않아서 프론트엔드에서 유효성 검사가 되지 않을 때가 있는데 그럴 땐 아래의 Javascript를 사용하면 된다.
 
-```javascript
+```js
 var initValidate = function () {
     $('form#articleSubmitForm').removeData('validator').removeData('unobtrusiveValidation');
     $.validator.unobtrusive.parse('form#articleSubmitForm');
 };
 ```
 
-articleSubmitForm은 해당 폼의 ID이다. 모델에 유효성 검사 규칙을 지정해준 이후 간단한 코드만으로 프론트엔드와 백엔드에서 유효성 검사를 알아보았다.
+`articleSubmitForm`은 해당 폼의 ID이다. 모델에 유효성 검사 규칙을 지정해준 이후 간단한 코드만으로 프론트엔드와 백엔드에서 유효성 검사를 알아보았다.
 
 ASP.NET Core MVC 또는 ASP.NET MVC5의 환경에서 개발하는 개발자분들이 유효성 검사 코드를 어디에 둘 지 필자처럼 고민하지 않았으면 좋겠다.
