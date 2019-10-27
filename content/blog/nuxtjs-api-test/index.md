@@ -1,18 +1,22 @@
 ---
 title: 주니어 개발자의 Nuxt.js에서 테스트 코드 짜기
 date: "2019-10-25T21:23:20.384Z"
-description: Nuxt.js에서 Jest와 supertest를 이용한 API를 테스트하는 목적의 테스트코드를 작성합니다.
+description: Nuxt.js에서 Jest와 SuperTest를 이용한 API를 테스트하는 목적의 테스트코드를 작성합니다.
 ---
 
-최근 사내에서 내부 직원들이 사용할 웹 애플리케이션을 만들게 되면서 테스트 케이스를 추가했다. `GDG DevFest Seoul 2019`에서 `이승민(뱅크샐러드)`님의 `테스트 관점으로 아키텍처 완성하기` 세션을 듣게 되었고, 간단한 테스트라도 시작을 하는 것이 중요하다는 내용을 듣고 실천에 옮겼다.
+최근 사내에서 내부 직원들이 사용할 웹 애플리케이션을 만들게 되면서 테스트 케이스를 추가했다. **GDG DevFest Seoul 2019**에서 **이승민(뱅크샐러드)**님의 ***테스트 관점으로 아키텍처 완성하기*** 세션을 듣게 되었고, 간단한 테스트라도 시작을 하는 것이 중요하다는 내용을 듣고 실천에 옮겼다.
 
-프로젝트는 `Nuxt.js` 프레임워크를 이용해서 혼자 개발을 하고 있었고, 테스트 케이스를 추가하는데 동의가 필요하지 않았다. 내가 프로젝트의 주인인 만큼, 기간에 대한 책임은 당연히 있었지만 최대한 기능들을 빠르게 구현하고 테스트를 넣자고 다짐했다.
+> 이상을 쫓는 것보다 당장의 할 수 있는 것부터 해야 한다. TDD는 너무 멀고, 일단은 테스트 케이스를 추가해서 개발을 해야 한다.
+
+> 성공 케이스부터 테스트 케이스 개발을 하다 보면 실패 케이스도 자연스럽게 짜는 본인을 보실 수 있을 것이다.
+
+프로젝트는 **Nuxt.js** 프레임워크를 이용해서 혼자 개발을 하고 있었고, 테스트 케이스를 추가하는데 동의가 필요하지 않았다. 내가 프로젝트의 주인인 만큼, 기간에 대한 책임은 당연히 있었지만 최대한 기능들을 빠르게 구현하고 테스트를 넣자고 다짐했다.
 
 ### 테스트 프레임워크 Jest
 
 ![select-jest](./select-jest.png)
 
-처음 프로젝트를 시작할 때, 혹시 몰라서 `Jest`라는 이름의 테스트 프레임워크를 선택했었다.
+처음 프로젝트를 시작할 때, 혹시 몰라서 **Jest**라는 이름의 테스트 프레임워크를 선택했었다. **Jest**는 **Facebook**에서 개발 한 JavaScript 테스트 프레임 워크이다. 최소한의 구성으로 즉시 사용할 수 있다.
 
 ```javascript
 import { mount } from '@vue/test-utils'
@@ -24,7 +28,6 @@ describe('Logo', () => {
     expect(wrapper.isVueInstance()).toBeTruthy()
   })
 })
-
 ```
 
 `create-nuxt-app`에서 자동으로 생성해주는 `@/components/Logo.vue`에 대한 테스트 케이스이다.
@@ -40,17 +43,21 @@ describe('Logo', () => {
 `Nuxt.js`를 사용한 개발을 하면서 서버를 따로 분리하지 않았고 `Nuxt.js`에서 서버 프레임워크를 `Express`로 선택하였는데 `Express`로 구현한 API가 테스트가 필요할 때, 겪었던 경험들을 공유하려고 한다.
 
 Express API에 대한 테스트를 하기 위해 필요한 것
+- Jest 설치
+- SuperTest 설치
 - 테스트 데이터베이스
-- `supertest` 설치
-- NPM 스크립트 및 테스트 케이스 작성
+- NPM 스크립트 작성
+- 테스트 코드 작성
 
 데이터를 조회하고 삭제하는데 개발 중이거나 운영 중인 데이터베이스를 쓰면 좋지 않기 때문에 테스트 데이터 베이스가 필요하고, `node`실행 시 테스트 데이터베이스를 사용하도록 하는 NPM 스크립트가 필요하다. 데이터베이스를 먼저 설계한 이후에, `sequelize auto cli`를 이용해서 모델을 만들었기 때문에 테스트 데이터베이스의 경우 `SQLyog`라는 툴을 이용해서 쉽게 구조와 데이터를 복사해왔다.
 
-1. 먼저 `npm`에서 `supertest`를 설치한다.
+1. 먼저 `npm`에서 `SuperTest`를 설치한다.
 
 ```
 npm install supertest --save-dev
 ```
+
+SuperTest는 **Node.js HTTP 서버**를 테스트하기 위한 라이브러리이다. SuperTest는 프로그래밍 방식으로 GET, POST, PATCH, PUT, DELETE와 같은 HTTP 요청을 HTTP 서버로 보내고 결과를 얻을 수 있도록 해준다.
 
 2. `package.json`에 `Jest` 구성 추가
 
@@ -71,7 +78,7 @@ npm install supertest --save-dev
 
 3. 테스트 데이터베이스 설정
 
-```
+```javascript
 {
   "production": {
     // ...
@@ -240,7 +247,7 @@ describe('GET /api/content/count', () => {
 
 1. 수신 대기 하지않는다
 
-테스트 환경에서는 `supertest`를 통해 서버를 실행할 때 앱이 네트워크 포트에서 수신 대기하지 않아도 된다. 그 결과 `app.listen(port, host)` 또는 `testApp.listen(port, host)` 코드를 지우고 테스트를 진행했는데 잘 되었다.
+테스트 환경에서는 `SuperTest`를 통해 서버를 실행할 때 앱이 네트워크 포트에서 수신 대기하지 않아도 된다. 그 결과 `app.listen(port, host)` 또는 `testApp.listen(port, host)` 코드를 지우고 테스트를 진행했는데 잘 되었다.
 
 2. 병렬로 실행되는 Jest
 
