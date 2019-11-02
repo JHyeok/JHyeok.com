@@ -1,0 +1,15 @@
+.pill {
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem;
+  height: 1.2rem;
+  margin: 0.2rem;
+  border-radius: 1.2rem;
+  background-color: lavender;
+  color: rgba(0, 0, 0, 0.84);
+}
+
+.pill:not(:first-child) {
+  margin-left: 0;
+}
