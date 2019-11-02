@@ -1,5 +1,6 @@
 ---
 title: Nuxt.js에서 무한 스크롤링 구현하기
+tags: ["dev", "nuxt.js"]
 date: "2019-10-15T21:09:10.284Z"
 description: Nuxt.js에서 vue-infinite-loading 패키지를 이용해서 무한 스크롤링을 구현해봅니다.
 ---
