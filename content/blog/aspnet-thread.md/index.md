@@ -1,5 +1,6 @@
 ---
 title: IIS에서 ASP.NET MVC의 쓰레드 및 동기, 비동기와 병렬처리
+tags: ["dev", ".Net", "IIS"]
 date: "2019-07-28T10:29:10.284Z"
 description: IIS에서 ASP.NET MVC의 쓰레드 및 동기, 비동기와 병렬처리
 ---

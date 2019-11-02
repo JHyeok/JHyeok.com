@@ -1,5 +1,6 @@
 ---
 title: Entity Framework Core를 기존 데이터베이스에서 시작하면서 만난 오류
+tags: ["dev", ".Net Core", "Entity Framework Core"]
 date: "2019-05-23T22:12:10.284Z"
 description: EF Core에서 기존 데이터베이스로 시작하면서 만난 오류들과 해결법.
 ---

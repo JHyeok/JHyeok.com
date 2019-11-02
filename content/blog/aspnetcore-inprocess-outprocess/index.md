@@ -1,5 +1,6 @@
 ---
 title: .NET Core의 InProcess와 OutOfProcess
+tags: ["dev", ".Net Core"]
 date: "2019-08-10T06:43:15.284Z"
 description: .NET Core를 빌드할 때 오류를 해결해보고, InProcess와 OutOfProcess에 대해서 간단하게 알아본다.
 ---

@@ -1,5 +1,6 @@
 ---
 title: Entity Framework 6에서 대량 Insert, 대량 Update
+tags: ["dev", ".Net", "Entity Framework"]
 date: "2019-05-19T16:40:03.284Z"
 description: EF6의 비효율적인 Bulk Insert/Update.
 ---

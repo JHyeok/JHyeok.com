@@ -1,5 +1,6 @@
 ---
 title: ASP.NET Core에서 로그 라이브러리 NLog 적용하기
+tags: ["dev", ".Net Core"]
 date: "2019-08-11T10:02:10.284Z"
 description: ASP.NET Core MVC 시리즈
 ---

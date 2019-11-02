@@ -1,5 +1,6 @@
 ---
 title: ASP.NET MVC에서 Entity Framework의 콜드쿼리와 미리컴파일
+tags: ["dev", ".Net", "Entity Framework"]
 date: "2019-07-28T10:39:12.284Z"
 description: ASP.NET MVC EF의 콜드쿼리와 미리컴파일에 대해 알아봅니다.
 ---

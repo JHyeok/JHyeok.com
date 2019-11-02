@@ -1,5 +1,6 @@
 ---
 title: ASP.NET Core 유효성 검사 - 2
+tags: ["dev", ".Net Core"]
 date: "2019-09-21T18:55:39.284Z"
 description: ASP.NET Core MVC와 ASP.NET MVC5에서 Ajax를 사용할 때 유효성 검사를 알아봅니다.
 ---

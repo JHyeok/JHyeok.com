@@ -1,5 +1,6 @@
 ---
 title: ASP.NET Core 유효성 검사 - 1
+tags: ["dev", ".Net Core"]
 date: "2019-09-19T21:23:20.284Z"
 description: ASP.NET Core MVC와 ASP.NET MVC5에서 사용하는 간단한 유효성 검사를 알아봅니다.
 ---
