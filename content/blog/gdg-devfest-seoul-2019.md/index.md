@@ -5,7 +5,9 @@ date: "2019-11-04T21:37:10.284Z"
 description: GDG DevFest Seoul 2019에 참석한 후기입니다.
 ---
 
-10월 20일에 세종대학교 광개토관 지하 2층 컨벤션홀에서 열리는 GDG DevFest Seoul 2019를 다녀왔다. 많이 늦었지만 후기를 작성해보려 한다. 각 트랙에 대한 짤막한 정리와 아래에는 GDG DevFest Seoul 2019의 후기를 적었다.
+10월 20일에 세종대학교 광개토관 지하 2층 컨벤션홀에서 열리는 GDG DevFest Seoul 2019를 다녀왔다. 많이 늦었지만 후기를 작성해보려 한다. 각 트랙에 대한 짤막한 정리와 마지막에는 GDG DevFest Seoul 2019의 후기를 적었다.
+
+![devfest1](./devfest1.jpg)
 
 - [쉽게 따라할 수 있는 임베딩 활용 (이기창, NAVER)](#devfest1)
 - [React Native와 Flutter를 고민하는 개발자분들에게 (이상훈, Loplat)](#devfest2)
@@ -17,6 +19,8 @@ description: GDG DevFest Seoul 2019에 참석한 후기입니다.
 <div id='devfest1'/>
 
 ### 쉽게 따라할 수 있는 임베딩 활용 (이기창, NAVER)
+
+![devfest2](./devfest2.jpg)
 
 임베딩: 단어나 문장을 벡터로 바꾼 것 혹은 그 과정\
 자연어처리에서 임베딩은 벡터 내지 벡터화\
@@ -65,6 +69,8 @@ BERT-Korean-Model.git 공개 되어 있음.
 <div id='devfest2'/>
 
 ### React Native와 Flutter를 고민하는 개발자분들에게 (이상훈, Loplat)
+
+![devfest3](./devfest3.jpg)
 
 같은 서비스를 Android, IOS 멀티 플랫폼을 지원하기 위함.
 
@@ -255,3 +261,5 @@ DB 테스트의 경우 테스트 데이터 베이스를 만들어서 한다.
 방명록을 작성하는 Commit 이벤트는 아이디어가 참신해서 재밌었다. [GDG DevFest Seoul 2019 방명록 보러가기](https://github.com/GDG-Seoul/DevFest-Seoul-2019-guestbook)
 
 개인적으로 도움이 많이 되는 개발자 행사였다. 실제로 하는 프로젝트에 테스트 코드를 작성해보았으니 좋은 경험이 된 것 같다.
+
+![devfest4](./devfest4.jpg)
