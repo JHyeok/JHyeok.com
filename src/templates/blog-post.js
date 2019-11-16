@@ -34,12 +34,17 @@ class BlogPostTemplate extends React.Component {
           <small style={{
             marginLeft: rhythm(1 / 4),
             marginRight: rhythm(1 / 4),
-            }}>
-              •
+          }}>
+            •
           </small>
           {formatReadingTime(post.timeToRead)}
-          <Tags items={post.frontmatter.tags} />
         </p>
+        <div style={{
+          marginBottom: rhythm(1),
+          marginTop: rhythm(-1),
+        }} >
+          <Tags items={post.frontmatter.tags} />
+        </div>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
