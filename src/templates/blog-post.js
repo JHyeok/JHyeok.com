@@ -27,7 +27,7 @@ class BlogPostTemplate extends React.Component {
             ...scale(-1 / 5),
             display: `block`,
             marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
+            marginTop: rhythm(-0.8),
           }}
         >
           {post.frontmatter.date}
@@ -41,7 +41,7 @@ class BlogPostTemplate extends React.Component {
         </p>
         <div style={{
           marginBottom: rhythm(1),
-          marginTop: rhythm(-1),
+          marginTop: rhythm(-0.8),
         }} >
           <Tags items={post.frontmatter.tags} />
         </div>
