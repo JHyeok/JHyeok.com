@@ -1,8 +1,8 @@
 ---
-title: Visual Studio Code에서 Python venv, black, pylint 적용하기
+title: Visual Studio Code에서 Python 가상환경 설정 및 Lint 사용
 tags: ["dev", "python"]
 date: "2019-11-15T00:33:20.384Z"
-description: Visual Studio Code에서 Python 가상 환경을 구축하며 Style Checker Pylint, Python Code Formatter Black을 적용해봅니다.
+description: Visual Studio Code에서 Python 가상 환경을 설정하며 Style Checker Pylint, Python Code Formatter Black을 적용해봅니다.
 ---
 
 Python을 시작하는데 대부분의 사람들이 Pycharm을 사용하는 것 같다. 필자는 Visual Studio Code에서 Python을 이용해서 개발을 하는데 파이썬 가상 환경 venv, Python 스타일 가이드 Pylint, Black이라는 Python 코드포매터를 Visual Studio Code에서 어떻게 세팅을 하고 사용하는지 공유하려고 한다.
