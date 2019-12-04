@@ -1,8 +1,8 @@
 ---
-title: Nuxt.js Components props
+title: Nuxt.js에서 컴포넌트의 props
 tags: ["dev", "Nuxt.js"]
 date: "2019-12-03T21:36:20.184Z"
-description: Nuxt.js에서 Components를 사용하는 방법에 대해서 설명합니다.
+description: Nuxt.js에서 Components의 props를 사용하는 방법에 대해서 설명합니다.
 ---
 
 `props`를 사용할 때, `HTML`에서는 `kebab-case(article-data)`를 사용하는 것을 권장한다.
@@ -13,7 +13,7 @@ description: Nuxt.js에서 Components를 사용하는 방법에 대해서 설명
 <article-card article-data="article"></article-card>
 ```
 
-Nuxt.js 최신버전(2.10)에서는 props을 아래와 같이 쓰는 것을 권장한다. 기존 방식 `props: ['articleData']`를 사용하면 `eslint(vue/require-prop-types)`에 위반되서 경고가 표시된다.
+Nuxt.js 최신 버전(2.10)에서는 props을 아래와 같이 쓰는 것을 권장한다. 기존 방식 `props: ['articleData']`를 사용하면 `eslint(vue/require-prop-types)`에 위반돼서 경고가 표시된다.
 
 ```javascript
 export default {
@@ -49,7 +49,7 @@ props: {
 }
 ```
 
-아래 처럼 하면 된다.
+위의 코드처럼 default값이 헷갈리기 쉬운 `Function`과 `Object`의 default 예시이다.
 
 ```javascript
 props: {
