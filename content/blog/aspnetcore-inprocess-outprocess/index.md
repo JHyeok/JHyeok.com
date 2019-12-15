@@ -2,7 +2,7 @@
 title: .NET Core의 InProcess와 OutOfProcess
 tags: ["dev", ".Net Core"]
 date: "2019-08-10T06:43:15.284Z"
-description: .NET Core를 빌드할 때 오류를 해결해보고, InProcess와 OutOfProcess에 대해서 간단하게 알아본다.
+description: .NET Core를 빌드할 때 오류를 해결해보고, InProcess와 OutOfProcess에 대해서 간단하게 알아봅니다.
 ---
 
 컴퓨터에 이전 버전의 SDK가 다운되어 있다가 최근의 SDK를 다운받은 이후에 `.NET Core`를 배포하려고 하니 오류가 생겼었다. `.NET Core` 버전의 종속성 때문에 생긴오류이기 때문에 빌드하려는 프레임워크의 버전과 로컬에 다운되어 있는 프레임워크 버전의 충돌이라고 생각한다.
