@@ -13,3 +13,16 @@
 .pill:not(:first-child) {
   margin-left: 0;
 }
+
+.pills a {
+  color: rgba(0, 0, 0, 0.84);
+  box-shadow: none;
+}
+
+.pill:focus,
+.pill:hover,
+.pill:active {
+  background-color: #b6b6f9;
+  border-radius: 1em;
+  cursor: pointer;
+}
