@@ -1,6 +1,6 @@
 ---
 title: ASP.NET Core 다국어(세계화 및 지역화)
-tags: ["dev", ".Net Core"]
+tags: ["Dev", ".Net Core"]
 date: "2019-09-11T20:03:20.284Z"
 description: ASP.NET Core MVC에서 다국어를 지원하는 사이트를 만드는 방법
 ---

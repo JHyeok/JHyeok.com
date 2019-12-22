@@ -1,6 +1,6 @@
 ---
 title: 주니어 개발자의 Nuxt.js에서 테스트 코드 짜기
-tags: ["dev", "nuxt.js"]
+tags: ["Dev", "Nuxt.js"]
 date: "2019-10-25T21:23:20.384Z"
 description: Nuxt.js에서 Jest와 SuperTest를 이용한 API를 테스트하는 목적의 테스트코드를 작성합니다.
 ---

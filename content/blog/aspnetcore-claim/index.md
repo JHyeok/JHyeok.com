@@ -1,6 +1,6 @@
 ---
 title: ASP.NET Core 로그인 기능 구현하기
-tags: ["dev", ".Net Core"]
+tags: ["Dev", ".Net Core"]
 date: "2019-07-22T22:11:10.284Z"
 description: ASP.NET Core MVC 시리즈
 ---

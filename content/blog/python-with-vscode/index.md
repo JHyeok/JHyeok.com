@@ -1,6 +1,6 @@
 ---
 title: Visual Studio Code에서 Python 가상환경 설정 및 Lint 사용
-tags: ["dev", "python"]
+tags: ["Dev", "Python"]
 date: "2019-11-15T00:33:20.384Z"
 description: Visual Studio Code에서 Python 가상 환경을 설정하며 Style Checker Pylint, Python Code Formatter Black을 적용해봅니다.
 ---

@@ -1,6 +1,6 @@
 ---
 title: Entity Framework 6 로깅
-tags: ["dev", ".Net", "Entity Framework"]
+tags: ["Dev", ".Net", "Entity Framework"]
 date: "2019-05-17T03:44:03.284Z"
 description: EF6에서 쿼리를 추적합니다.
 ---

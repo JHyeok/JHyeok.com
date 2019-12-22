@@ -1,6 +1,6 @@
 ---
 title: Nuxt.js에서 웹폰트 적용하기
-tags: ["dev", "nuxt.js"]
+tags: ["Dev", "Nuxt.js"]
 date: "2019-11-25T21:17:34.284Z"
 description: Nuxt.js에서 웹폰트를 적용하면서 겪은 문제와 해결방법을 공유합니다.
 ---

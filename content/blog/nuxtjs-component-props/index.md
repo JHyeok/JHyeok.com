@@ -1,6 +1,6 @@
 ---
 title: Nuxt.js에서 컴포넌트의 props
-tags: ["dev", "Nuxt.js"]
+tags: ["Dev", "Nuxt.js"]
 date: "2019-12-03T21:36:20.184Z"
 description: Nuxt.js에서 Components의 props를 사용하는 방법에 대해서 설명합니다.
 ---
