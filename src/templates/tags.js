@@ -17,7 +17,7 @@ class TagsIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title="Blog"
-          keywords={[`blog`, `backend`, `javascript`, `dotnet`, `dotnetcore`, `entityframework`, `development`]}
+          keywords={[`blog`, `backend`, `javascript`, `dotnet`, `dotnetcore`, `entityframework`, `development`, `c#`, `python`, `nodejs`]}
         />
         <Bio />
         <Link to="/">전체 글 보기</Link>
