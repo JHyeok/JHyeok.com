@@ -1,66 +1,74 @@
 import React from "react"
-import PropTypes from "prop-types"
-
-// Components
 import { Link, graphql } from "gatsby"
+import Bio from "../components/bio"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import Tags from "../components/tags"
+import { rhythm } from "../utils/typography"
+import { formatReadingTime } from "../utils/helper"
 
-const Tags = ({ pageContext, data }) => {
-  const { tag } = pageContext
-  const { edges, totalCount } = data.allMarkdownRemark
-  const tagHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
-  } tagged with "${tag}"`
+class TagsIndex extends React.Component {
+  render() {
+    const { data } = this.props
+    const siteTitle = data.site.siteMetadata.title
+    const posts = data.allMarkdownRemark.edges
 
-  return (
-    <div>
-      <h1>{tagHeader}</h1>
-      <ul>
-        {edges.map(({ node }) => {
-          const { slug } = node.fields
-          const { title } = node.frontmatter
+    return (
+      <Layout location={this.props.location} title={siteTitle}>
+        <SEO
+          title="Blog"
+          keywords={[`blog`, `backend`, `javascript`, `dotnet`, `dotnetcore`, `entityframework`, `development`]}
+        />
+        <Bio />
+        <Link to="/">전체 글 보기</Link>
+        {posts.map(({ node }) => {
+          const title = node.frontmatter.title || node.fields.slug
           return (
-            <li key={slug}>
-              <Link to={slug}>{title}</Link>
-            </li>
+            <div key={node.fields.slug}>
+              <h2
+                style={{
+                  marginBottom: rhythm(1 / 4),
+                }}
+              >
+                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                  {title}
+                </Link>
+              </h2>
+              <small>
+                {node.frontmatter.date}
+              </small>
+              <small style={{
+                marginLeft: rhythm(1 / 4),
+                marginRight: rhythm(1 / 4),
+              }}>
+                •
+              </small>
+              <small>
+                {formatReadingTime(node.timeToRead)}
+              </small>
+              <Tags items={node.frontmatter.tags} />
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: node.frontmatter.description || node.excerpt,
+                }}
+              />
+            </div>
           )
         })}
-      </ul>
-      {/*
-              This links to a page that does not yet exist.
-              You'll come back to it!
-            */}
-      <Link to="/tags">All tags</Link>
-    </div>
-  )
+      </Layout>
+    )
+  }
 }
 
-Tags.propTypes = {
-  pageContext: PropTypes.shape({
-    tag: PropTypes.string.isRequired,
-  }),
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      totalCount: PropTypes.number.isRequired,
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            frontmatter: PropTypes.shape({
-              title: PropTypes.string.isRequired,
-            }),
-            fields: PropTypes.shape({
-              slug: PropTypes.string.isRequired,
-            }),
-          }),
-        }).isRequired
-      ),
-    }),
-  }),
-}
-
-export default Tags
+export default TagsIndex
 
 export const pageQuery = graphql`
   query($tag: String) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
@@ -69,11 +77,16 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
+          timeToRead
+          excerpt
           fields {
             slug
           }
           frontmatter {
+            date(formatString: "MMMM DD, YYYY")
             title
+            description
+            tags
           }
         }
       }
