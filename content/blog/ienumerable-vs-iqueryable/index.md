@@ -44,7 +44,7 @@ var notcieArticles = articles.Where(a => a.IsNotice);
 |How does it work|데이터베이스에서 데이터를 쿼리하는 동안 서버 측에서 쿼리를 IEnumerable실행 select하고 클라이언트 측에서 메모리에 데이터를로드 한 다음 데이터를 필터링합니다. 따라서 더 많은 작업을 수행하고 느려집니다.|데이터베이스에서 데이터를 쿼리하는 동안 모든 필터를 사용하여 서버 측에서 쿼리를 IQueryable실행 select합니다. 따라서 작업이 줄어들고 빨라집니다.|
 |적합|LINQ to Object 및 LINQ to XML 쿼리|LINQ to SQL 쿼리|
 |Custom Query|지원|지원|
-|Extension method parameter|지원되는 확장 메소드 IEnumerable는 기능적 오브젝트를 사용합니다.|지원되는 확장 메소드 IEnumerable는 표현식 오브젝트 (예 : 표현식 트리)를 사용합니다.|
+|Extension method parameter|지원되는 확장 메서드 IEnumerable는 기능적 오브젝트를 사용합니다.|지원되는 확장 메서드 IEnumerable는 표현식 오브젝트 (예 : 표현식 트리)를 사용합니다.|
 |When to use|메모리 등으로부터 수집 된 데이터를 조회하면 List, Array 등|원격 메모리, 서비스와 같은 메모리 부족 컬렉션에서 데이터를 쿼리 할 때|
 |Best Uses|인 메모리 순회|페이징|
 
