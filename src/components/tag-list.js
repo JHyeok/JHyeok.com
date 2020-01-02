@@ -2,15 +2,19 @@ import React from "react"
 import { Link } from "gatsby"
 import kebabCase from "lodash/kebabCase"
 
+import "./tag-list.css"
+
 const TagList = ({ items }) => {
   return (
-    <div>
-      <Link to="/">ALL</Link>
-      {items.map(tag => ( 
-        <Link style={{ marginLeft: `20px` }} to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-          {tag.fieldValue} ({tag.totalCount})
-        </Link>
-      ))}
+    <div className="tag-wrap">
+      <div className="tag-item">
+        <Link to="/">ALL</Link>
+        {items.map(tag => (
+          <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+            {tag.fieldValue} ({tag.totalCount})
+          </Link>
+        ))}
+      </div>
     </div>
   )
 }

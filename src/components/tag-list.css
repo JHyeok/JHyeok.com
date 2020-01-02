@@ -1,0 +1,24 @@
+.tag-wrap {
+  margin-top: -70px;
+  margin-bottom: -40px;
+}
+
+.tag-item a {
+  display: inline-flex;
+  margin: .375rem;
+  background: #b6b6f9;
+  border: 1px solid #dee2e6;
+  color: #f1f3f5;
+  padding: .5rem;
+  font-size: .75rem;
+  font-weight: 400;
+  line-height: .75rem;
+  border-radius: 0.2rem;
+}
+
+.tag-item a:focus,
+.tag-item a:hover,
+.tag-item a:active {
+  background-color: #6969f3;
+  cursor: pointer;
+}
