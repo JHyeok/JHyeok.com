@@ -3,5 +3,5 @@
 Gatsby's blog starter를 기반으로 만들었습니다.
 
 ### 참고한 블로그
- - [Dan Abramov님의 블로그](https://overreacted.io/)
- - [medium-to-own-blog](https://github.com/mathieudutour/medium-to-own-blog)
+ - [overreacted.io](https://overreacted.io/)
+ - [medium-to-own-blog](https://mathieudutour-blog.netlify.com/)
