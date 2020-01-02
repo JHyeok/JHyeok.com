@@ -4,6 +4,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Tags from "../components/tags"
+import TagList from "../components/tag-list"
 import { rhythm } from "../utils/typography"
 import { formatReadingTime } from "../utils/helper"
 
@@ -11,7 +12,8 @@ class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
+    const allTags = data.alltags.group
+    const posts = data.allposts.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -20,6 +22,7 @@ class BlogIndex extends React.Component {
           keywords={[`blog`, `backend`, `javascript`, `dotnet`, `dotnetcore`, `entityframework`, `development`, `c#`, `python`, `nodejs`]}
         />
         <Bio />
+        <TagList items={allTags} />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -34,16 +37,16 @@ class BlogIndex extends React.Component {
                 </Link>
               </h2>
               <small>
-              {node.frontmatter.date}
+                {node.frontmatter.date}
               </small>
               <small style={{
-                  marginLeft: rhythm(1 / 4),
-                  marginRight: rhythm(1 / 4),
-                }}>
-                  •
+                marginLeft: rhythm(1 / 4),
+                marginRight: rhythm(1 / 4),
+              }}>
+                •
               </small>
               <small>
-              {formatReadingTime(node.timeToRead)}
+                {formatReadingTime(node.timeToRead)}
               </small>
               <Tags items={node.frontmatter.tags} />
               <p
@@ -68,7 +71,13 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    alltags: allMarkdownRemark(limit: 2000) {
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
+      }
+    }
+    allposts: allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           timeToRead
