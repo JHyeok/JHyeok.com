@@ -8,7 +8,7 @@
     "url": "https://github.com/JHyeok/JHyeok.com/issues"
   },
   "dependencies": {
-    "gatsby": "^2.18.16",
+    "gatsby": "^2.18.17",
     "gatsby-image": "^2.2.37",
     "gatsby-plugin-feed": "^2.3.25",
     "gatsby-plugin-google-analytics": "^2.1.31",
@@ -53,6 +53,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
