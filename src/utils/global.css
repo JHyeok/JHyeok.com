@@ -5,6 +5,13 @@ html, body {
   font-size: 18px;
 }
 
+body {
+  -webkit-text-size-adjust: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+}
+
 /**
  * Based on copypasta from Remy Bach and Sarah Drasner
  */
