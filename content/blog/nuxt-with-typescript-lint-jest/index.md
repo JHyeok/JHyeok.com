@@ -1,15 +1,15 @@
 ---
-title: Typescript로 Nuxt 개발하기 - 2
+title: TypeScript로 Nuxt 개발하기 - 2
 tags: ["Dev", "Nuxt.js"]
 date: "2020-01-16T00:11:44.352Z"
 description: Nuxt에서 코드 스타일을 검사하는 Lint와 테스트 라이브러리인 Jest를 TypeScript 환경에서 사용해봅니다.
 ---
 
-- Typescript로 Nuxt 개발하기 시리즈
+- TypeScript로 Nuxt 개발하기 시리즈
   - [TypeScript 환경으로 Nuxt 개발](https://jhyeok.com/nuxt-with-typescript/)
   - [TypeScript Lint, Jest 환경 구성](https://jhyeok.com/nuxt-with-typescript-lint-jest/)
 
-Typescript로 Nuxt 개발하기 시리즈에 사용된 소스코드는 [여기](https://github.com/JHyeok/nuxt-typescript-sample)에서 확인할 수 있다.
+TypeScript로 Nuxt 개발하기 시리즈에 사용된 소스코드는 [여기](https://github.com/JHyeok/nuxt-typescript-sample)에서 확인할 수 있다.
 
 이전 시리즈에서는 TypeScript 환경에서 Nuxt를 개발하는 환경을 구성해보았다. 이번에는 코드 스타일을 검사하는 Lint와 테스트 라이브러리인 Jest를 TypeScript 환경에서 사용하는 방법에 대해 설명한다.
 
@@ -124,7 +124,7 @@ Done in 4.60s.
 
 ### 마치며
 
-Nuxt.js 2.9 버전 이후로 TypeScript를 적용하는 방법이 기존과는 조금 달라졌다. 기존 한국어 자료를 바탕으로 진행을 하다가 진행이 막혀서 직접 공식 가이드를 보고 적용을 하면서 방법이 많이 달라진 것을 느끼고 Typescript로 Nuxt 개발하기를 작성했다.
+Nuxt.js 2.9 버전 이후로 TypeScript를 적용하는 방법이 기존과는 조금 달라졌다. 기존 한국어 자료를 바탕으로 진행을 하다가 진행이 막혀서 직접 공식 가이드를 보고 적용을 하면서 방법이 많이 달라진 것을 느끼고 TypeScript로 Nuxt 개발하기를 작성했다.
 
 ---
 ### Reference
