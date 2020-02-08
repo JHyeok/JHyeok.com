@@ -40,11 +40,23 @@ Ensure your startup project is correct, install the package, and try again.
 ```
 
 해결법
+
 ```
 Microsoft.EntityFrameworkCore.Design
 Microsoft.EntityFrameworkCore.Tools
 ```
+
 위의 패키지들을 설치해주시면 된다.
+
+혹시 위의 패키지들을 설치하였는데도 해결이 되지 않는다면 `.csproj`를 수정하면 된다.
+
+```
+<PropertyGroup>
+  <GenerateRuntimeConfigurationFiles>True</GenerateRuntimeConfigurationFiles>
+</PropertyGroup>
+```
+
+`GenerateRuntimeConfigurationFiles`를 True로 설정해주면 된다.
 
 > 오류3.
 
