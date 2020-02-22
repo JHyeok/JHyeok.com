@@ -19,4 +19,18 @@ _db.Database.Log = x => System.Diagnostics.Debug.WriteLine(x);
 
 VisualStudio의 디버그 모드에서 출력 탭에서 날아가는 쿼리 및 로그를 확인할 수 있다. 비동기로 실행되는지 여부와 콘텍스트가 열리고 닫히는 부분도 모두 확인이 가능하다.
 
-> TIP: `Entity Framework Core`는 별다른 설정 없이도 디버그 환경에서는 쿼리가 출력 창에 보인다. 운영환경에서는 보이지 않는다.
+### 부록. Entity Framework Core 쿼리 추적
+
+`Entity Framework Core`는 별다른 설정 없이도 디버그 환경에서는 쿼리가 출력 창에 보인다. 운영환경에서는 보이지 않는다.
+
+혹시 `Entity Framework Core`에서 쿼리가 출력 창에 보이지 않는다면 `appsetting.json`에서 `Logging`에서 `LogLevel`을 수정하면 된다.
+
+```json
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information"
+    }
+  },
+```
+
+`Information` 또는 `Debug`를 하면 쿼리를 확인할 수 있다. Production 환경에서는 `Warn`을 추천한다.
