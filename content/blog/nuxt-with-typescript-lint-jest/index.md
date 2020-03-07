@@ -34,6 +34,28 @@ module.exports = {
 }
 ```
 
+혹시 `.js` 파일이어서 `javascript`를 사용하는 것에 거부감이 있다면 `.json` 파일로 생성해도 된다. 필자는 100% TypeScript를 사용하고 싶어서 아래처럼 `.json` 파일로 만들었다.
+
+`.eslintrc.json`
+
+```json
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+  },
+  "extends": [
+    "@nuxtjs/eslint-config-typescript"
+  ],
+  "rules": {
+  }
+}
+```
+
+
 마지막으로 `lint` 스크립트를 사용할 수 있도록`package.json`을 수정한다.
 
 ```json
@@ -79,9 +101,11 @@ yarn add -D ts-jest @types/jest
 }
 ```
 
-`jest.config.js`가 ts확장자를 읽을 수 있도록 수정한다.
+`jest.config.js`가 ts확장자를 읽을 수 있도록 수정한다. `jest.config.js`를 사용하지 않고 `package.json`에 `jest` 옵션을 추가해서 사용해도 된다.
 
-```
+`jest.config.js`
+
+```javascript
 module.exports = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
@@ -93,6 +117,30 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'js', 'vue', 'json']
 };
+```
+
+또는
+
+`package.json`
+
+```json
+  "jest": {
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/$1",
+      "^~/(.*)$": "<rootDir>/$1",
+      "^vue$": "vue/dist/vue.common.js"
+    },
+    "moduleFileExtensions": ["ts", "js", "vue", "json"],
+    "transform": {
+      "^.+\\.ts$": "ts-jest",
+      ".*\\.(vue)$": "vue-jest"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "<rootDir>/components/**/*.vue",
+      "<rootDir>/pages/**/*.vue"
+    ]
+  },
 ```
 
 `vue-shim.d.ts`를 추가하여 `.vue`파일에 대한 유형을 제공해야 한다. `.vue`파일에 대해서 이제 TypeScript가 인식할 수 있다.
