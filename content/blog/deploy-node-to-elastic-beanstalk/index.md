@@ -5,13 +5,11 @@ date: "2020-03-31T21:00:14.304Z"
 description: TypeScript 환경에서 개발된 Nuxt 애플리케이션을 Yarn을 사용해서 빌드하고 AWS Elastic Beanstalk에 배포해봅니다.
 ---
 
-사용된 소스코드는 [여기](https://github.com/JHyeok/jaebook-client)에서 확인할 수 있으며 TypeScript를 사용하는 Nuxt 애플리케이션을 AWS Elastic Beanstalk에 배포했다.
+사용된 소스코드는 [여기](https://github.com/JHyeok/jaebook-client)에서 확인할 수 있으며 TypeScript를 사용하는 Nuxt 애플리케이션을 AWS Elastic Beanstalk에 배포하면서 겪은 문제들과 해결하는 과정을 정리하였습니다.
 
 ### AWS Elastic Beanstalk에서 Yarn 사용하기
 
-AWS Elastic Beanstalk에 Node 환경으로 만들어진 애플리케이션을 배포할 때 마주한 문제들과 해결방법들이다.
-
-AWS Elastic Beanstalk는 기본적으로 NPM을 사용하도록 되어있는데 내가 만든 프로젝트는 Yarn을 사용하고 있었다.
+AWS Elastic Beanstalk는 기본적으로 NPM을 사용하도록 되어있는데 내가 만든 사이드 프로젝트에서는 Yarn을 사용하고 있었다.
 
 그래서 그 부분을 고쳐줄 필요가 있었다. 열심히 검색을 해본 결과 AWS Elastic Beanstalk에서 NPM을 사용하고 Yarn을 사용하도록 하는 config들이 공유가 되고 있었다.
 
