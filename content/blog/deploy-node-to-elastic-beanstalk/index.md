@@ -7,6 +7,16 @@ description: TypeScript 환경에서 개발된 Nuxt 애플리케이션을 Yarn�
 
 사용된 소스코드는 [여기](https://github.com/JHyeok/jaebook-client)에서 확인할 수 있으며 TypeScript를 사용하는 Nuxt 애플리케이션을 AWS Elastic Beanstalk에 배포하면서 겪은 문제들과 해결하는 과정을 정리하였습니다.
 
+### AWS Elastic Beanstalk 시작하기
+
+AWS에 로그인한 다음에 Elastic Beanstalk에 들어가서 웹 앱을 생성하면 된다.
+
+![eb-upload](./eb-upload.png)
+
+원하는 플랫폼을 선택한 다음에 코드 업로드를 클릭해서 소스 코드를 올리면 웹 앱이 만들어진다.
+
+다른 사람들에게 지금까지 만들어진 결과물을 보여줄 때, 서버를 세팅하고 올리는 데까지 시간이 오래 걸린다면 AWS Elastic Beanstalk를 추천한다. 시간을 절약하고 빠르게 결과물을 보여줄 수 있다.
+
 ### AWS Elastic Beanstalk에서 Yarn 사용하기
 
 AWS Elastic Beanstalk는 기본적으로 NPM을 사용하도록 되어있는데 내가 만든 사이드 프로젝트에서는 Yarn을 사용하고 있었다.
@@ -97,7 +107,7 @@ $ git archive -v -o myapp.zip --format=zip HEAD
 
 ![eb-setting-2](./eb-setting-2.png)
 
-AWS Elastic Beanstalk 환경에서 환경 변수를 생성할 수 있는데 `NODE_ENV`를 `production`으로 설정하고 소스 번들을 업로드했다. 하지만 역시나 한 번에 되는 경우가 없다.
+AWS Elastic Beanstalk 환경에서 환경 변수를 생성할 수 있는데 `NODE_ENV`를 `production`으로 설정하고 소스 번들을 업로드했다. 하지만 실패하였는데 해결해보도록 하자.
 
 ### 로그 확인 및 오류 해결하기
 
