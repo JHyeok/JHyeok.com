@@ -1,12 +1,12 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Tags from "../components/tags"
-import TagList from "../components/tag-list"
-import { rhythm } from "../utils/typography"
-import { formatReadingTime } from "../utils/helper"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import Bio from '../components/bio'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import Tags from '../components/tags'
+import TagList from '../components/tag-list'
+import { rhythm } from '../utils/typography'
+import { formatReadingTime } from '../utils/helper'
 
 class BlogIndex extends React.Component {
   render() {
@@ -19,7 +19,19 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title="Blog"
-          keywords={[`blog`, `development`, `backend`, `nodejs`, `typescript`, `javascript`, `dotnet`, `dotnetcore`, `entityframework`, `c#`, `python`]}
+          keywords={[
+            `blog`,
+            `development`,
+            `backend`,
+            `nodejs`,
+            `typescript`,
+            `javascript`,
+            `dotnet`,
+            `dotnetcore`,
+            `entityframework`,
+            `c#`,
+            `python`,
+          ]}
         />
         <Bio />
         <TagList items={allTags} />
@@ -36,18 +48,16 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h2>
-              <small>
-                {node.frontmatter.date}
-              </small>
-              <small style={{
-                marginLeft: rhythm(1 / 4),
-                marginRight: rhythm(1 / 4),
-              }}>
+              <small>{node.frontmatter.date}</small>
+              <small
+                style={{
+                  marginLeft: rhythm(1 / 4),
+                  marginRight: rhythm(1 / 4),
+                }}
+              >
                 •
               </small>
-              <small>
-                {formatReadingTime(node.timeToRead)}
-              </small>
+              <small>{formatReadingTime(node.timeToRead)}</small>
               <Tags items={node.frontmatter.tags} />
               <p
                 dangerouslySetInnerHTML={{
@@ -77,7 +87,9 @@ export const pageQuery = graphql`
         totalCount
       }
     }
-    allposts: allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allposts: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           timeToRead

@@ -1,17 +1,17 @@
-import React, { useEffect } from "react"
+import React, { useEffect } from 'react'
 
 export const Utterances = ({ repo }) => {
   const rootElm = React.createRef()
 
   useEffect(() => {
-    const utterances = document.createElement("script")
+    const utterances = document.createElement('script')
     const utterancesConfig = {
-      src: "https://utteranc.es/client.js",
+      src: 'https://utteranc.es/client.js',
       repo,
-      "issue-term": "pathname",
-      label: "comment",
-      theme: "github-light",
-      crossorigin: "anonymous",
+      'issue-term': 'pathname',
+      label: 'comment',
+      theme: 'github-light',
+      crossorigin: 'anonymous',
       async: true,
     }
 

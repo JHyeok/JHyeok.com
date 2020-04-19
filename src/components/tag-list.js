@@ -1,8 +1,8 @@
-import React from "react"
-import { Link } from "gatsby"
-import kebabCase from "lodash/kebabCase"
+import React from 'react'
+import { Link } from 'gatsby'
+import kebabCase from 'lodash/kebabCase'
 
-import "./tag-list.css"
+import './tag-list.css'
 
 const TagList = ({ items }) => {
   return (

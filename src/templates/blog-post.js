@@ -1,13 +1,13 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { Utterances } from "../components/utterances"
-import Tags from "../components/tags"
-import { rhythm, scale } from "../utils/typography"
-import { formatReadingTime } from "../utils/helper"
-const utterances = "JHyeok/JHyeok.com"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import Bio from '../components/bio'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import { Utterances } from '../components/utterances'
+import Tags from '../components/tags'
+import { rhythm, scale } from '../utils/typography'
+import { formatReadingTime } from '../utils/helper'
+const utterances = 'JHyeok/JHyeok.com'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -31,18 +31,22 @@ class BlogPostTemplate extends React.Component {
           }}
         >
           {post.frontmatter.date}
-          <small style={{
-            marginLeft: rhythm(1 / 4),
-            marginRight: rhythm(1 / 4),
-          }}>
+          <small
+            style={{
+              marginLeft: rhythm(1 / 4),
+              marginRight: rhythm(1 / 4),
+            }}
+          >
             •
           </small>
           {formatReadingTime(post.timeToRead)}
         </p>
-        <div style={{
-          marginBottom: rhythm(1),
-          marginTop: rhythm(-0.8),
-        }} >
+        <div
+          style={{
+            marginBottom: rhythm(1),
+            marginTop: rhythm(-0.8),
+          }}
+        >
           <Tags items={post.frontmatter.tags} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />

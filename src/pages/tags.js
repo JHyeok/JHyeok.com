@@ -1,8 +1,8 @@
-import React from "react"
-import PropTypes from "prop-types"
-import kebabCase from "lodash/kebabCase"
-import { Helmet } from "react-helmet"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import kebabCase from 'lodash/kebabCase'
+import { Helmet } from 'react-helmet'
+import { Link, graphql } from 'gatsby'
 
 const TagsPage = ({
   data: {

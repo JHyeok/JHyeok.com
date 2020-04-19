@@ -5,11 +5,11 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import Image from 'gatsby-image'
 
-import { rhythm } from "../utils/typography"
+import { rhythm } from '../utils/typography'
 
 function Bio() {
   return (
@@ -37,13 +37,11 @@ function Bio() {
                 borderRadius: `50%`,
               }}
             />
-              <p>
-                Written by <strong>{author}</strong>
-                <br></br>
-                <a href={`https://github.com/${social.github}`}>
-                  Github
-                </a>
-              </p>
+            <p>
+              Written by <strong>{author}</strong>
+              <br></br>
+              <a href={`https://github.com/${social.github}`}>Github</a>
+            </p>
           </div>
         )
       }}

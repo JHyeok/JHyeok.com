@@ -1,12 +1,12 @@
-import React from "react"
-import { capitalize } from "../utils/string"
-import { Link } from "gatsby"
-import kebabCase from "lodash/kebabCase"
+import React from 'react'
+import { capitalize } from '../utils/string'
+import { Link } from 'gatsby'
+import kebabCase from 'lodash/kebabCase'
 
-import "./tags.css"
+import './tags.css'
 
 function cssSafe(str) {
-  return encodeURIComponent(str.toLowerCase()).replace(/%[0-9A-F]{2}/gi, "")
+  return encodeURIComponent(str.toLowerCase()).replace(/%[0-9A-F]{2}/gi, '')
 }
 
 const Tags = ({ items }) => {
@@ -18,9 +18,7 @@ const Tags = ({ items }) => {
           key={item}
           style={{ marginRight: 10 }}
         >
-          <Link to={`/tags/${kebabCase(item)}`}>
-            {capitalize(item)}
-          </Link>
+          <Link to={`/tags/${kebabCase(item)}`}>{capitalize(item)}</Link>
         </span>
       ))}
     </div>
