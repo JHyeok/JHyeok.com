@@ -2,7 +2,7 @@
 title: TypeScript로 Nuxt 개발하기 - 2
 tags: ["Dev", "Nuxt.js"]
 date: "2020-01-16T00:11:44.352Z"
-description: Nuxt에서 코드 스타일을 검사하는 Lint와 테스트 라이브러리인 Jest를 TypeScript 환경에서 사용해봅니다.
+description: Nuxt에서 코드 스타일을 검사하는 ESLint와 코드를 예쁘게 해주는 Prettier, 테스트 라이브러리인 Jest를 TypeScript 환경에서 사용해봅니다.
 ---
 
 - TypeScript로 Nuxt 개발하기 시리즈
@@ -11,7 +11,7 @@ description: Nuxt에서 코드 스타일을 검사하는 Lint와 테스트 라�
 
 TypeScript로 Nuxt 개발하기 시리즈에 사용된 소스코드는 [여기](https://github.com/JHyeok/nuxt-typescript-sample)에서 확인할 수 있다.
 
-이전 시리즈에서는 TypeScript 환경에서 Nuxt를 개발하는 환경을 구성해보았다. 이번에는 코드 스타일을 검사하는 Lint와 테스트 라이브러리인 Jest를 TypeScript 환경에서 사용하는 방법에 대해 설명한다.
+이전 시리즈에서는 TypeScript 환경에서 Nuxt를 개발하는 환경을 구성해보았다. 이번에는 코드 스타일을 검사하는 ESLint와 코드를 예쁘게 해주는 Prettier, 테스트 라이브러리인 Jest를 TypeScript 환경에서 사용하는 방법에 대해 설명한다.
 
 ### ESLint 적용
 
@@ -82,6 +82,53 @@ module.exports = {
 ```
 
 위에서 설치한 `nuxtjs/eslint-config-typescript`를 확인해보면 내부적으로 `@typescript-eslint/parser`를 parser로 사용하기 때문이다.
+
+### Prettier 적용
+
+prettier와 prettier를 ESLint에서 실행할 수 있는 패키지를 설치한다.
+
+```
+yarn add -D prettier eslint-config-prettier eslint-plugin-prettier
+```
+
+패키지 설치가 끝났다면 `.eslintrc.json`을 수정한다. `extends`에 prettier 관련 옵션들을 설정하고 `plugins`에 prttier를 설정한다. 
+
+```json
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+  },
+  "extends": [
+    "@nuxtjs/eslint-config-typescript",
+    "plugin:nuxt/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+    "prettier/vue"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+  }
+}
+```
+
+prettierr의 옵션을 설정할 수 있는 `.prettierrc`를 생성한다.
+
+```
+{
+  "semi": false,
+  "arrowParens": "always",
+  "singleQuote": true,
+  "endOfLine": "auto"
+}
+```
+
+이제 ESLint를 사용할 때, 코드 스타일을 예쁘게 바꿔주는 Prettier도 같이 동작하게 된다.
 
 ### Jest
 
