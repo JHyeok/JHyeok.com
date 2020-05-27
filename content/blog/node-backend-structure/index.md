@@ -5,7 +5,7 @@ date: "2020-05-27T11:02:44.214Z"
 description: Node.js에서 프로젝트를 진행하는데 routing-controllers, TypeDI, TypeORM을 사용한 명확한 계층 구조를 만들고 env 파일들을 활용해서 환경 변수들을 관리하고 사용해봅니다.
 ---
 
-이 글은 TypeScript와 Node.js기반의 REST API서버를 개발하면서 유용하게 사용한 기술들을 소개하고 정리하는 글입니다.
+이 글은 TypeScript와 Node.js기반의 REST API 서버를 개발하면서 유용하게 사용한 기술들을 소개하고 정리하는 글입니다.
 
 TypeScript 기반의 Node.js 코드는 [여기](https://github.com/JHyeok/jaebook-server)에서 확인할 수 있다.
 
@@ -13,7 +13,7 @@ TypeScript 기반의 Node.js 코드는 [여기](https://github.com/JHyeok/jaeboo
 
 Node.js 프로젝트들은 보통 라우터와 컨트롤러를 구분하여서 코드를 나누어서 구조를 만드는 모습을 볼 수 있는데 이 방법 이외에도 routing-controllers를 사용하면 클래스 기반의 컨트롤러를 만들 수 있게 도와준다.
 
-ORM으로는 TypeScript와 JavaScript(ES5, ES6,ES7)를 함께 사용할 수 있는 TypeORM을 사용했고 의존성 주입을 위해서 TypeDI를 사용했다. TypeORM, TypeDI와 routing-controllers를 활용해서 아래와 같은 구조를 만들 수 있다.
+ORM으로는 TypeScript와 JavaScript(ES5, ES6, ES7)를 함께 사용할 수 있는 TypeORM을 사용했고 의존성 주입을 위해서 TypeDI를 사용했다. TypeORM, TypeDI와 routing-controllers를 활용해서 아래와 같은 구조를 만들 수 있다.
 
 ```
 controllers
