@@ -62,7 +62,7 @@ import { CreatePostDto, UpdatePostDto, PageablePostDto } from "../dtos/PostDto";
 
 @JsonController("/posts")
 export class PostController {
-  // 생성자 주입을 사용할 수 있다.
+  // 생성자 주입을 사용해서 의존성 주입을 한다.
   constructor(private postService: PostService) {}
 
   @HttpCode(201)
@@ -88,6 +88,8 @@ export class PostController {
   }
 }
 ```
+
+생성자를 통해서 의존성 주입을 사용한다.
 
 `PostService.ts`
 
