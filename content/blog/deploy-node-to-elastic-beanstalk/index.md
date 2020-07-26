@@ -141,7 +141,7 @@ TypeScript 기반이기 때문에 종속성을 설치할 때, Production으로 `
 connect() failed (111: Connection refused) while connecting to upstream, client: xx.xx.xx.xx, server: , request: "GET / HTTP/1.0", upstream: "http://127.0.0.1:8081/"
 ```
 
-오류의 일부분인데 AWS Elastic Beanstalk은 프록시 서버로 Nginx를 사용하고 있는데 기본적으로 트래픽을 8081로 리디렉션 하려고 시도하기 때문이다. 그래서 Nuxt.js의 포트를 8081로 수신하도록 변경하였더니 배포가 정상적으로 진행되었다.
+오류의 일부분인데 AWS Elastic Beanstalk은 웹서버로 Nginx를 사용하고 있는데 기본적으로 Nginx가 트래픽을 8081로 리디렉션 하려고 시도하기 때문이다. 그래서 Nuxt.js의 포트를 8081로 수신하도록 변경하였더니 배포가 정상적으로 진행되었다.
 
 ![eb-deploy](./eb-deploy.png)
 
