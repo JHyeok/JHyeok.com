@@ -2,7 +2,7 @@
 title: PM2, Nginx 사용해서 Nuxt.js 애플리케이션 배포
 tags: ["Dev", "Nuxt.js", "Deploy"]
 date: "2019-12-07T22:13:20.384Z"
-description: CentOS7에서 PM2로 노드 애플리케이션을 관리하고 Nginx를 리버스 프록시로 사용해서 프로덕션 환경에서 노드 애플리케이션을 운영해봅니다.
+description: CentOS7에서 PM2로 노드 애플리케이션을 관리하고 Nginx를 사용해서 프로덕션 환경에서 노드 애플리케이션을 운영해봅니다.
 ---
 
 ### PM2란?
@@ -133,7 +133,7 @@ WARN No .env file found in
 
 ### Nginx 사용하기
 
-이제 CentOS7 환경에서 Nginx를 리버스 프록시로 사용하여 Node.js 애플리케이션을 운용하는 방법에 대해서 설명하려 한다.
+이제 CentOS7 환경에서 Nginx를 웹서버로 사용하여 Node.js 애플리케이션을 운용하는 방법에 대해서 설명하려 한다.
 
 ```
 yum install nginx
@@ -169,7 +169,7 @@ server_names_hash_bucket_size 64;
 vi /etc/nginx/sites-enabled/labeling-app
 ```
 
-그리고 이제 리버스 프록시 역할을 하도록 지시하는 파일을 만들 것이다.
+그리고 이제 Nginx가 Nuxt.js 애플리케이션으로 리디렉션 하도록 지시하는 파일을 만들 것이다.
 
 ```
 upstream sample-app {
@@ -202,7 +202,7 @@ systemctl enable nginx
 systemctl start nginx
 ```
 
-이제 Nginx를 리버스 프록시로 사용해서 Node.js로 만든 애플리케이션을 운영할 수 있다. 여기서 `Helmet`을 사용해서 웹 취약성으로부터 앱을 보호할 수도 있다. 이 포스트에서는 PM2와 Nginx를 중점으로 설명하는 글이기 때문에 Helmet은 다음에 기회가 되면 설명하도록 하겠다.
+이제 Nginx를 웹서버로 사용해서 Node.js로 만든 애플리케이션을 운영할 수 있다. 여기서 `Helmet`을 사용해서 웹 취약성으로부터 앱을 보호할 수도 있다. 이 포스트에서는 PM2와 Nginx를 중점으로 설명하는 글이기 때문에 Helmet은 다음에 기회가 되면 설명하도록 하겠다.
 
 ![nuxtjs-deploy](./nuxtjs-deploy.png)
 
