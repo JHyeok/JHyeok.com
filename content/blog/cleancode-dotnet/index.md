@@ -1,6 +1,6 @@
 ---
 title: 클린 코드를 읽고 코드 리팩토링(refactoring) 하기
-tags: ["Dev", ".Net Core", "후기"]
+tags: ["Dev", "후기"]
 date: "2019-07-17T22:00:10.284Z"
 description: 클린 코드를 읽고 리팩토링(refactoring)한 경험을 적어보았습니다.
 ---
