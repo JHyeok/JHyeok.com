@@ -1,6 +1,6 @@
 ---
 title: PM2, Nginx 사용해서 Nuxt.js 애플리케이션 배포
-tags: ["Dev", "Nuxt.js", "Deploy"]
+tags: ["Dev", "Node.js", "Nuxt.js", "Deploy"]
 date: "2019-12-07T22:13:20.384Z"
 description: CentOS7에서 PM2로 노드 애플리케이션을 관리하고 Nginx를 사용해서 프로덕션 환경에서 노드 애플리케이션을 운영해봅니다.
 ---

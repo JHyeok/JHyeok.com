@@ -1,6 +1,6 @@
 ---
 title: Node.js 애플리케이션을 AWS Elastic Beanstalk에 배포하기
-tags: ["Dev", "Nuxt.js", "Deploy"]
+tags: ["Dev", "Node.js", "Nuxt.js", "Deploy"]
 date: "2020-03-31T21:00:14.304Z"
 description: TypeScript 환경에서 개발된 Nuxt 애플리케이션을 Yarn을 사용해서 빌드하고 AWS Elastic Beanstalk에 배포해봅니다.
 ---
