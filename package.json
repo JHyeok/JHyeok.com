@@ -28,6 +28,7 @@
     "gatsby-source-filesystem": "^2.3.34",
     "gatsby-transformer-remark": "^2.8.38",
     "gatsby-transformer-sharp": "^2.5.17",
+    "husky": "^4.3.0",
     "prismjs": "^1.21.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -63,5 +64,10 @@
     "start": "yarn develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint --fix && yarn format"
+    }
+ }
 }
