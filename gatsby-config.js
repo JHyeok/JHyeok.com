@@ -34,6 +34,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        stripMetadata: true,
+        defaultQuality: 85
+      },
+    },
+    'gatsby-transformer-sharp',
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -61,8 +69,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
