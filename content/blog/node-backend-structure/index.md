@@ -241,7 +241,7 @@ export async function createDatabaseConnection() {
 
 `config/.env.환경`의 파일들만 관리하면 여러 환경에 따른 환경 변수들을 관리할 수 있고 직접 환경 변수들을 수정하다가 잘못 적용되는 실수를 줄일 수 있다.
 
-#### 마치며
+### 마치며
 
 Routing-Controller와 TypeDI를 사용하거나, 환경 변수를 관리하는 방법 이외에도 사이드 프로젝트를 진행하면서 Docker를 사용하기도 했고 단위 테스트와 E2E 테스트를 작성하기도 하였고 Github Action과 Github Template들 그리고 codecov와 같은 third party를 사용해보았다. 이와 관련된 내용들은 조금 더 공부하고 정리해서 블로그에 작성하려고 한다.
 
