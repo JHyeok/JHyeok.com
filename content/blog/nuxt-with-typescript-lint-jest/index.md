@@ -5,9 +5,9 @@ date: "2020-01-16T00:11:44.352Z"
 description: Nuxt에서 코드 스타일을 검사하는 ESLint와 코드를 예쁘게 해주는 Prettier, 테스트 라이브러리인 Jest를 TypeScript 환경에서 사용해봅니다.
 ---
 
-- TypeScript로 Nuxt 개발하기 시리즈
-  - [TypeScript 환경으로 Nuxt 개발](https://jhyeok.com/nuxt-with-typescript/)
-  - [TypeScript Lint, Jest 환경 구성](https://jhyeok.com/nuxt-with-typescript-lint-jest/)
+**TypeScript로 Nuxt 개발하기 시리즈**\
+[TypeScript 환경으로 Nuxt 개발](https://jhyeok.com/nuxt-with-typescript/)\
+[TypeScript Lint, Jest 환경 구성](https://jhyeok.com/nuxt-with-typescript-lint-jest/)
 
 TypeScript로 Nuxt 개발하기 시리즈에 사용된 소스코드는 [여기](https://github.com/JHyeok/nuxt-typescript-sample)에서 확인할 수 있다.
 
