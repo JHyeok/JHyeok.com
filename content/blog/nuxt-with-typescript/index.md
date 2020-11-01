@@ -5,9 +5,9 @@ date: "2020-01-15T21:22:14.304Z"
 description: TypeScript 환경에서 Nuxt.js를 개발해봅니다. 
 ---
 
-- TypeScript로 Nuxt 개발하기 시리즈
-  - [TypeScript 환경으로 Nuxt 개발](https://jhyeok.com/nuxt-with-typescript/)
-  - [TypeScript Lint, Jest 환경 구성](https://jhyeok.com/nuxt-with-typescript-lint-jest/)
+**TypeScript로 Nuxt 개발하기 시리즈**\
+[TypeScript 환경으로 Nuxt 개발](https://jhyeok.com/nuxt-with-typescript/)\
+[TypeScript Lint, Jest 환경 구성](https://jhyeok.com/nuxt-with-typescript-lint-jest/)
 
 TypeScript로 Nuxt 개발하기 시리즈에 사용된 소스코드는 [여기](https://github.com/JHyeok/nuxt-typescript-sample)에서 확인할 수 있다.
 
