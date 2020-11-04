@@ -31,7 +31,7 @@ describe('UserService', () => {
 }
 ```
 
-Express에서는 [sinon](https://www.npmjs.com/package/sinon)과 같은 패키지를 사용해서 테스트하려는 `Service`를 `Stub` 해서 사용하였으며 테스트 프레임워크를 직접 설치해서 사용하였지만 NestJS에서는 특정 도구를 강제하지는 않지만 [Jest](https://www.npmjs.com/package/jest)를 기본 테스트 프레임워크로 제공해주며 테스팅 패키지도 제공하기 때문에 개발자가 다른 도구를 찾는데 소모하는 리소스를 줄일 수 있다.
+기존에 Express에서는 [sinon](https://www.npmjs.com/package/sinon)과 같은 패키지를 사용해서 테스트하려는 `Service`를 모킹(mocking)해서 사용하였으며 테스트 프레임워크를 직접 설치해서 사용하였지만 NestJS에서는 특정 도구를 강제하지는 않지만 [Jest](https://www.npmjs.com/package/jest)를 기본 테스트 프레임워크로 제공해주며 테스팅 패키지도 제공하기 때문에 개발자가 다른 도구를 찾는데 소모하는 리소스를 줄일 수 있다.
 
 NestJS에서 제공하는 `@nestjs/testing` 패키지를 사용하면 테스트에 사용되는 종속성만 선언해서 모듈을 만들고 해당 모듈로 `UserService`, `UserRepository`를 가져올 수 있다. 따로 단위 테스트를 작성하기 위해 추가로 설치한 패키지는 [faker](https://www.npmjs.com/package/Faker)라는 가짜 데이터를 만들어주는 것밖에 없다. 이 가짜 데이터도 직접 개발자가 임의로 만들어서 넣는다면 추가로 설치할 수고로움 없이 NestJS에서 단위 테스트를 작성할 수 있다.
 
@@ -113,7 +113,7 @@ describe('UserService', () => {
 })
 ```
 
-위의 단위 테스트 코드에서는 존재하지 않는 유저의 정보를 수정할 때는 `findOne` 메서드가 `null`의 결괏값을 반환할 거라고 모킹 해준다. `updateUser` 메서드는 가짜로 `null`의 값이 반환되는 줄 알고 `null` 일 때 `BadRequestError`가 발생하는 로직을 실행하게 되고 해당 로직을 검증할 수 있게 된다.
+위의 단위 테스트 코드에서는 존재하지 않는 유저의 정보를 수정할 때는 `findOne` 메서드가 `null`의 결괏값을 반환할 거라고 모킹 해준다. `updateUser` 메서드는 가짜로 `null`의 값이 반환되는 줄 알고 `null` 일 때 `BadRequestError`가 발생하는 로직을 실행하게 된다. `expect(e).toBeInstanceOf(BadRequestException)`는 이 오류 메시지 객체가 `BadRequestException` 클래스의 인스턴스인지 확인하는 작업이며, `.toBe`로 값을 비교해서 올바르게 오류 메시지가 나왔는지 검증할 수 있다.
 
 ```typescript
 describe('UserService', () => {
@@ -161,7 +161,7 @@ describe('UserService', () => {
 })
 ```
 
-`updateUser` 메서드에서 유저 정보를 찾아서 유저 정보를 정상적으로 수정했다는 로직의 테스트이다. 미리 정의해놓은 `existingUser`를 반환할 거라고 모킹 해주고 이 반환된 값을 수정해서 저장하면 `savedUser`를 반환할 것이라고 모킹 한다. 그리고 오류가 없이 정상적으로 처리된 내용을 `result` 변수의 값에 담고 Jest의 `expect`로 검증한다.
+`updateUser` 메서드에서 유저 정보를 찾아서 유저 정보를 정상적으로 수정했다는 로직의 테스트이다. 미리 정의해놓은 `existingUser`를 반환할 거라고 모킹 해주고 이 반환된 값을 수정해서 저장하면 `savedUser`를 반환할 것이라고 모킹 한다. 그리고 오류가 없이 정상적으로 처리된 내용을 `result` 변수의 값에 담고 Jest의 `expect`로 검증한다. 먼저, `.toHaveBeenCalledWith`는 모의 함수가 특정 인수로 호출되었는지 확인하는 데 사용할 수 있고, `.toEqual`로 개체의 모든 속성을 재귀적으로 비교한다.
 
 `UserService`의 `User` 정보를 수정하는 코드의 일부분을 살펴보았다. 전체 코드를 확인하려면 [여기](https://github.com/JHyeok/nestjs-api-example/blob/master/src/modules/user/user.service.spec.ts)에서 확인할 수 있다.
 
@@ -181,3 +181,5 @@ https://docs.nestjs.com/fundamentals/testing
 https://softwareengineering.stackexchange.com/questions/358491/testing-in-memory-db-vs-mocking
 
 https://blog.logrocket.com/unit-testing-nestjs-applications-with-jest/
+
+https://jestjs.io/docs/en/expect
