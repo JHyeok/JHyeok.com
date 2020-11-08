@@ -2,7 +2,7 @@
 title: GDG DevFest Seoul 2019 후기
 tags: ["후기"]
 date: "2019-11-04T21:37:10.284Z"
-description: GDG DevFest Seoul 2019에 참석한 후기입니다.
+description: GDG DevFest Seoul 2019에 참여해서 발표자분들의 발표를 듣고 정리한 내용입니다.
 ---
 
 10월 20일에 세종대학교 광개토관 지하 2층 컨벤션홀에서 열리는 GDG DevFest Seoul 2019를 다녀왔다. 많이 늦었지만 후기를 작성해보려 한다. 각 세션에 대한 짤막한 정리와 마지막에는 GDG DevFest Seoul 2019의 후기를 적었다.
