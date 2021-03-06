@@ -83,7 +83,7 @@ Jest와 faker를 이용해서 위의 `User` 정보를 수정하는 서비스의 
 ```typescript
 describe('UserService', () => {
   describe('유저 정보 수정', () => {
-    it('존재하지 않는 유저 정보를 수정할 경우 BadRequestError 발생한다.', async () => {
+    it('존재하지 않는 유저 정보를 수정할 경우 NotFoundError 발생한다.', async () => {
       const userId = faker.random.uuid();
 
       const updateUserDto: UpdateUserDto = {
@@ -94,13 +94,13 @@ describe('UserService', () => {
 
       const userRepositoryFindOneSpy = jest
         .spyOn(userRepository, 'findOne')
-        .mockResolvedValue(null);
+        .mockResolvedValue(undefined);
 
       try {
         await userService.updateUser(userId, updateUserDto);
       } catch (e) {
-        expect(e).toBeInstanceOf(BadRequestException);
-        expect(e.message).toBe(Message.NOT_FOUND_USER_ITEM);
+        expect(e).toBeInstanceOf(NotFoundException);
+        expect(e.message).toBe(Message.NOT_FOUND_USER);
       }
 
       expect(userRepositoryFindOneSpy).toHaveBeenCalledWith({
@@ -113,7 +113,7 @@ describe('UserService', () => {
 })
 ```
 
-위의 단위 테스트 코드에서는 존재하지 않는 유저의 정보를 수정할 때는 `findOne` 메서드가 `null`의 결괏값을 반환할 거라고 모킹 해준다. `updateUser` 메서드는 가짜로 `null`의 값이 반환되는 줄 알고 `null` 일 때 `BadRequestError`가 발생하는 로직을 실행하게 된다. `expect(e).toBeInstanceOf(BadRequestException)`는 이 오류 메시지 객체가 `BadRequestException` 클래스의 인스턴스인지 확인하는 작업이며, `.toBe`로 값을 비교해서 올바르게 오류 메시지가 나왔는지 검증할 수 있다.
+위의 단위 테스트 코드에서는 존재하지 않는 유저의 정보를 수정할 때는 `findOne` 메서드가 `null`의 결괏값을 반환할 거라고 모킹 해준다. `updateUser` 메서드는 가짜로 `null`의 값이 반환되는 줄 알고 `null` 일 때 `NotFoundError`가 발생하는 로직을 실행하게 된다. `expect(e).toBeInstanceOf(NotFoundException)`는 이 오류 메시지 객체가 `NotFoundException` 클래스의 인스턴스인지 확인하는 작업이며, `.toBe`로 값을 비교해서 올바르게 오류 메시지가 나왔는지 검증할 수 있다.
 
 ```typescript
 describe('UserService', () => {
