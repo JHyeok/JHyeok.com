@@ -7,7 +7,7 @@ description: NestJS에서 단위 테스트를 작성하는 방법에 대해서 �
 
 이 글은 NestJS에서 단위 테스트를 작성하면서 정리한 글입니다.
 
-이 글에서 소개된 테스트 코드는 [여기](https://github.com/JHyeok/nestjs-api-example/blob/master/src/modules/user/user.service.spec.ts)에서 확인할 수 있습니다.
+이 글에서 소개된 테스트 코드는 [여기](https://github.com/JHyeok/nestjs-api-example/blob/master/src/api/user/user.service.spec.ts)에서 확인할 수 있습니다.
 
 ### TestingModule
 
@@ -76,7 +76,7 @@ async updateUser(id: string, updateUserDto: UpdateUserDto): Promise<User> {
 }
 ```
 
-Jest와 faker를 이용해서 위의 `User` 정보를 수정하는 서비스의 단위 테스트를 작성해보자.
+Jest와 faker를 사용해서 위의 `User` 정보를 수정하는 서비스의 단위 테스트를 작성해보자.
 
 `UserService`의 `updateUser` 메서드를 테스트하려고 하는데, 이 메서드에서는 두 가지를 테스트해야 한다. 유저 정보가 존재할 때는 성공적으로 수정하고 유저 정보가 존재하지 않을 경우에는 실패하는 로직에 대해서 검증이 필요하다.
 
@@ -163,15 +163,15 @@ describe('UserService', () => {
 
 `updateUser` 메서드에서 유저 정보를 찾아서 유저 정보를 정상적으로 수정했다는 로직의 테스트이다. 미리 정의해놓은 `existingUser`를 반환할 거라고 모킹 해주고 이 반환된 값을 수정해서 저장하면 `savedUser`를 반환할 것이라고 모킹 한다. 그리고 오류가 없이 정상적으로 처리된 내용을 `result` 변수의 값에 담고 Jest의 `expect`로 검증한다. 먼저, `.toHaveBeenCalledWith`는 모의 함수가 특정 인수로 호출되었는지 확인하는 데 사용할 수 있고, `.toEqual`로 개체의 모든 속성을 재귀적으로 비교한다.
 
-`UserService`의 `User` 정보를 수정하는 코드의 일부분을 살펴보았다. 전체 코드를 확인하려면 [여기](https://github.com/JHyeok/nestjs-api-example/blob/master/src/modules/user/user.service.spec.ts)에서 확인할 수 있다.
+`UserService`의 `User` 정보를 수정하는 코드의 일부분을 살펴보았다. 전체 코드를 확인하려면 [여기](https://github.com/JHyeok/nestjs-api-example/blob/master/src/api/user/user.service.spec.ts)에서 확인할 수 있다.
 
 ![nestjs-unit-test](./nestjs-unit-test.png)
 
 ### 마치며
 
-필자는 단위 테스트에서 인메모리 데이터베이스를 사용해보았고, 모킹을 해서 단위 테스트를 작성해보았는데 장단점이 확실히 있는 것 같다. 인메모리 데이터베이스를 사용하면 테스트 데이터베이스이고 직접적으로 데이터를 넣어본 상태에서 검증을 하기 때문에 테스트의 신뢰성이 높아진다. 하지만 모킹 해서 단위 테스트를 작성하는 것보다 속도가 느린 단점이 있다.
+E2E 테스트는 환경에 의존하는 테스트이지만, 단위 테스트는 실행 중인 환경에 의존하면 안 되고, 빠르게 실행되어야 한다. E2E 테스트에서는 보통 테스트 데이터베이스를 사용하고, 테스트의 신뢰성이 높지만 속도가 느리다는 단점이 있다.
 
-E2E 테스트는 환경에 의존하는 테스트이지만, 단위 테스트는 실행 중인 환경에 의존하면 안 되고, 빠르게 실행되어야 한다. E2E 테스트에서는 보통 테스트 데이터베이스를 이용하고, 테스트의 신뢰성이 높지만 속도가 느리다는 단점이 있고 특정 기능을 분리해서 테스트를 한다는 단위 테스트의 의미에도 맞지 않는 것 같아서 앞으로 일반적인 단위 테스트에서는 모킹을 자주 사용할 것 같다.
+> 이 글을 작성한 이후에 classicist, mockist에 대해서 알게 되었습니다. 진짜 객체를 사용해서 단위 테스트를 작성한 경험이 있고 지금 회사에서는 테스트 대역을 사용해서 단위 테스트를 작성하고 있지만 어떤 방식이 좋은 건지는 잘 모르겠습니다. 저와 비슷한 고민을 하고 있으시다면 이규원님이 작성하신 [정말로 테스트 대역이 필요한가](https://gyuwon.github.io/blog/2020/05/10/do-you-really-need-test-doubles.html)를 한 번 읽어보시기를 추천드립니다.
 
 ---
 ### Reference
