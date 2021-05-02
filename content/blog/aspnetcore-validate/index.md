@@ -166,7 +166,7 @@ if (!ModelState.IsValid)
 }
 ```
 
-부트스트랩 모달에서 모델에 선언한 어노테이션이 되지 않아서 프론트엔드에서 유효성 검사가 되지 않을 때가 있는데 그럴 땐 아래의 Javascript를 사용하면 된다.
+부트스트랩 모달에서 모델에 선언한 어트리뷰트가 작동하지 않는다면 Javascript를 사용해서 해결할 수 있다.
 
 ```js
 var initValidate = function () {
