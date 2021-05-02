@@ -51,7 +51,7 @@ function Bio() {
 
 const bioQuery = graphql`
   query BioQuery {
-    avatar: file(absolutePath: { regex: "/github-jhyeok-profile.png/" }) {
+    avatar: file(absolutePath: { regex: "/github-profile.jpg/" }) {
       childImageSharp {
         fixed(width: 50, height: 50) {
           ...GatsbyImageSharpFixed
