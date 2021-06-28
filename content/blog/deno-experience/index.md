@@ -35,7 +35,7 @@ Promise, ES6 및 TypeScript 기능을 활용하도록 API를 재설계합니다.
 
 Deno는 설치가 간단하다.
 
-```shell
+```sh
 # Using Homebrew (macOS):
 brew install deno
 
@@ -68,7 +68,7 @@ Deno에서 외부 모듈을 가져오는 코드인데 VS Code에서는 경고가
 
 ### 내가 생각한 장점
 
-Node.js에서 의존성을 관리하기 위해 사용한 `package.json`이 없고, 모듈들이 설치되는 `node_modules`이 없는 것은 신세계였다. Node.js 개발 환경에서 프론트엔드 또는 백엔드를 개발 중에 `node_modules`로 인한 문제를 한 번씩은 마주쳤을 것이다. Deno에서는 이러한 문제들을 마주하지 않아도 된다. Deno로 만들어진 프로젝트에서는 `npm install` 또는 `yarn install`을 하지 않아도 된다.
+**Deno는 Node.js에서 의존성을 관리하기 위해 사용한 `package.json`이 없고, 모듈들이 설치되는 `node_modules`이 없다.** Node.js 개발 환경에서 프론트엔드 또는 백엔드를 개발 중에 `node_modules`로 인한 문제를 한 번씩은 마주쳤을 것이다. Deno에서는 이러한 문제들을 마주하지 않아도 된다. Deno로 만들어진 프로젝트에서는 `npm install` 또는 `yarn install`을 하지 않아도 된다.
 
 처음에는 `.ts` 파일마다 필요한 모듈을 `import`해서 사용하였는데, Deno 공식 문서에서는 `deps.ts`를 만들어서 필요한 종속성들을 관리하고 있었다.
 
@@ -145,7 +145,7 @@ Deno에서 이 문제를 해결하기 위한 표준 관행은 deps.ts 파일을 
 
 Deno 공식 문서에서는 `deps.ts` 파일에 대해 위와 같이 설명하고 있다. 모든 종속성을 `deps.ts`에서 관리한다면 관리가 더 쉬워진다. 만약 `deps.ts` 없이 개별 모듈로 가져온다면 해당 모듈을 사용하는 모든 파일들을 확인해서 URL을 변경해야 하는 번거로운 상황이 발생한다.
 
-그리고 Node.js에서는 TypeScript 사용이 복잡했지만 실행환경도 TypeScript를 염두에 두고 설계한 Deno에서는 사용하는데 복잡하지 않았다.
+**Node.js에서는 TypeScript 사용이 복잡했지만 실행환경도 TypeScript를 염두에 두고 설계한 Deno에서는 간단했다.**
 
 ```typescript
 import { opine } from "https://deno.land/x/opine@1.4.0/mod.ts";
@@ -160,6 +160,14 @@ app.listen(3000, () => console.log("server has started on http://localhost:3000 
 ```
 
 TypeScript로 간단하게 웹서버를 만들 수 있다.
+
+**Deno는 TypeScript 및 JavaScript 코드를 정리해주는 코드 포맷팅 기능이 내장되어 있다.**
+
+```sh
+deno fmt
+```
+
+위 명령어를 통해 자동으로 코드가 정리되는 것을 확인할 수 있다. Deno 표준으로 제공되기 때문에 여러 스타일 가이드 중에서 선택을 해야 하는 시간 낭비가 줄어드는 것 같다. 기본으로 제공되기 때문에 이 점이 굉장히 편리하다고 생각했다.
 
 ### 내가 생각한 단점
 
