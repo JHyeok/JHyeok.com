@@ -76,7 +76,7 @@ class TagsIndex extends React.Component {
 export default TagsIndex
 
 export const pageQuery = graphql`
-  query($tag: String) {
+  query ($tag: String) {
     site {
       siteMetadata {
         title

@@ -12,7 +12,7 @@ function cssSafe(str) {
 const Tags = ({ items }) => {
   return (
     <div className="pills">
-      {(items || []).map(item => (
+      {(items || []).map((item) => (
         <span
           className={`pill pill--${cssSafe(item)}`}
           key={item}

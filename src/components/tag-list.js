@@ -9,7 +9,7 @@ const TagList = ({ items }) => {
     <div className="tag-wrap">
       <div className="tag-item">
         <Link to="/">ALL</Link>
-        {items.map(tag => (
+        {items.map((tag) => (
           <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
             {tag.fieldValue} ({tag.totalCount})
           </Link>
