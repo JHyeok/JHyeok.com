@@ -64,10 +64,5 @@
     "start": "yarn develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint --fix && yarn format"
-    }
   }
 }
