@@ -13,13 +13,13 @@ TypeScript로 Nuxt 개발하기 시리즈에 사용된 소스코드는 [여기](
 
 ### Nuxt 2.9 이후 부터 달라진 TypeScript 적용
 
-Nuxt에서 TypeScript 지원은 전용 패키지로 외부화되었으며 Nuxt 2.9부터 코어에서 제거되었다. 이후의 프로젝트에서는 `ts-node`, `@nuxt/typescript`을 설치하지 않아도 된다.
+Nuxt에서 TypeScript 지원은 전용 패키지로 외부화되었으며 Nuxt 2.9부터 코어에서 제거되었다. 이후의 프로젝트에서는 ts-node, @nuxt/typescript를 설치하지 않아도 된다.
 
-`@nuxt/typescript-build`, `@nuxt/typescript-runtime` 이 두 가지 모듈만 있으면 Nuxt를 TypeScript 환경에서 개발할 수 있다.
+@nuxt/typescript-build, @nuxt/typescript-runtime 이 두 가지 모듈만 있으면 Nuxt를 TypeScript 환경에서 개발할 수 있다.
 
 Nuxt Community에서 [typescript-template](https://github.com/nuxt-community/typescript-template)를 사용하면 바로 템플릿을 이용해 만들 수 있지만 여러 기능이 부족하기 때문에 직접 추가해야 할 것들이 많다. [create-nuxt-app](https://github.com/nuxt/create-nuxt-app)을 통해서 만든 Nuxt를 TypeScript 환경에서 개발에 사용해보자.
 
-먼저 `create-nuxt-app`을 통해서 아래와 같이 Nuxt 프로젝트를 만든다.
+먼저 create-nuxt-app을 통해서 아래와 같이 Nuxt 프로젝트를 만든다.
 
 ```
 create-nuxt-app v2.12.0
@@ -96,8 +96,8 @@ export default {
 }
 ```
 
-Decorator(@)를 활용한 타입스크립트 뷰컴포넌트 사용을 위해서 `vue-class-component `, `vue-property-decorator`, `vuex` 라이브러리를 기반으로 하는 `nuxt-property-decorator`를 추가한다.
-`vue-class-component`를 전적으로 의존하는 라이브러리이다.
+Decorator(@)를 활용한 타입스크립트 뷰컴포넌트 사용을 위해서 vue-class-component, vue-property-decorator, vuex 라이브러리를 기반으로 하는 nuxt-property-decorator를 추가한다.
+vue-class-component를 전적으로 의존하는 라이브러리이다.
 
 ```
 yarn add -D nuxt-property-decorator
@@ -132,16 +132,16 @@ export default class extends Vue {
 
 `<script lang="ts">`를 추가함으로써 웹팩으로 빌드할 때 vue-loader가 타입스크립트 코드를 이해하고 해석할 수 있다.
 
-TypeScript가 적용되었는지 확인해야 할 것은 `Logo Component`를 가져오는지와 `authorName`이 출력되는지를 확인하면 된다.
+TypeScript가 적용되었는지 확인해야 할 것은 Logo Component를 가져오는지와 authorName이 출력되는지를 확인하면 된다.
 
 ```
 # TypeScript 런타임에 필요한 라이브러리
 yarn add @nuxt/typescript-runtime
 ```
 
-웹팩으로 컴파일되지 않은 파일(예: nuxt.config 파일, 로컬 모듈 및 serverMiddlewares)에는 TypeScript 런타임이 필요한데 Nuxt.js는 전용 패키지 아래에 TypeScript 런타임 래퍼 `@nuxt/typescript-runtime`를 만들었다.
+웹팩으로 컴파일되지 않은 파일(예: nuxt.config 파일, 로컬 모듈 및 serverMiddlewares)에는 TypeScript 런타임이 필요한데 Nuxt.js는 전용 패키지 아래에 TypeScript 런타임 래퍼 @nuxt/typescript-runtime를 만들었다.
 
-`@nuxt/typescript-runtime`를 설치해준 이후에, `package.json` 파일을 수정하기만 하면 된다.
+@nuxt/typescript-runtime를 설치해준 이후에, `package.json` 파일을 수정하기만 하면 된다.
 
 ```json
 "scripts": {
@@ -160,7 +160,7 @@ yarn add @nuxt/typescript-runtime
 error  Parsing error: Using the export keyword between a decorator and a class is not allowed. Please use `export @dec class` instead.
 ```
 
-`nuxt.config.ts`의 `buildModules`에 `@nuxtjs/eslint-module`이 남아있기 때문이다. `@nuxtjs/eslint-module`을 삭제하면 정상적으로 진행이 될 것이다.
+`nuxt.config.ts`의 `buildModules`에 @nuxtjs/eslint-module이 남아있기 때문이다. @nuxtjs/eslint-module을 삭제하면 정상적으로 진행이 될 것이다.
 
 ```
 $ nuxt-ts
@@ -195,7 +195,7 @@ i Version: typescript 3.7.4
 i Time: 5586ms
 ```
 
-터미널에서 `Type checking in progress`를 진행하고, 사용하고 있는 TypeScript 버전이 보이는 것을 확인할 수 있다.
+터미널에서 Type checking in progress를 진행하고, 사용하고 있는 TypeScript 버전이 보이는 것을 확인할 수 있다.
 
 ![nuxt-typescript](./nuxt-typescript.png)
 
