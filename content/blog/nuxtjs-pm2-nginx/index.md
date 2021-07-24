@@ -9,7 +9,7 @@ description: CentOS7에서 PM2로 노드 애플리케이션을 관리하고 Ngin
 
 PM2는 로드 밸런서가 내장 된 Node.js 애플리케이션의 프로덕션 프로세스 관리자이다. 응용 프로그램을 영구적으로 유지하고 다운 타임 없이 다시 로드하여 일반적인 시스템 관리 작업을 용이하게 한다. Python에서 사용하는 gunicorn과 비슷한 역할을 한다. 다운 타임 없이 애플리케이션을 리로드 할 수 있고, 클러스터 모드로 시작해서 로드 밸런싱도 한다. 터미널 기반 모니터링도 지원하며 Node.js 애플리케이션에서 오류처리로 인해서 애플리케이션이 죽었을 때의 처리도 해주며, 부팅 시에 자동 실행 등 여러 가지 잡다한 것들을 처리하고 관리해준다.
 
-Nuxt.js로 만들어진 애플리케이션을 프로덕션 환경에서 운영하기 위해서 필자는 PM2와 nginx을 사용했다. CentOS7 환경에서 운영했으며 `.env`를 활용한 개발서버, 운영서버 환경 구분과 `ecosystem.config.js`를 사용한 PM2 관리를 공유하려고 한다.
+Nuxt.js로 만들어진 애플리케이션을 프로덕션 환경에서 운영하기 위해서 필자는 PM2와 nginx을 사용했다. CentOS7 환경에서 운영했으며 .env 파일을 사용해서 개발서버, 운영서버 환경 구분과 `ecosystem.config.js`를 사용한 PM2 관리를 공유하려고 한다.
 
 ### PM2 설치 및 간단 사용법
 
@@ -104,7 +104,7 @@ module.exports = {
 
 ### env로 환경변수 사용
 
-먼저 config 디렉토리 안에 `.env.development`, `.env.production`을 만든다.
+먼저 config 폴더 경로에 `.env.development`, `.env.production`을 만든다.
 
 ```
 REST_API=http://localhost:3000/api
@@ -123,13 +123,13 @@ axios: {
 },
 ```
 
-개발, 운영환경에 따라서 axios에서의 baseURL을 다르게 해주었다. 위의 예시처럼 `process.env`로 환경 변수를 사용할 수 있다. config폴더는 예를 든 것이기 때문에 각자 원하는 폴더의 이름으로 해서 사용하면 된다.
+개발, 운영환경에 따라서 axios에서의 `baseURL`을 다르게 해주었다. 위의 예시처럼 `process.env`로 환경 변수를 사용할 수 있다. config폴더는 예를 든 것이기 때문에 각자 원하는 폴더의 이름으로 해서 사용하면 된다.
 
 ```
 WARN No .env file found in
 ```
 
-위의 오류가 혹시라도 뜬다면, 프로젝트 디렉토리에다가 빈 .env 파일을 만들어주면 해결이 된다.
+위의 오류가 혹시라도 뜬다면, 프로젝트 경로에다가 빈 .env 파일을 만들어주면 해결이 된다.
 
 ### Nginx 사용하기
 
@@ -146,7 +146,7 @@ mkdir -p /etc/nginx/sites-enabled
 mkdir -p /etc/nginx/sites-available
 ```
 
-`sites-enabled`, `sites-available` 폴더를 직접 만들어준다. 이제 `sites-enabled`에서 설정할 내용을 Nginx에서 사용할 수 있도록 해야 한다.
+sites-enabled, sites-available 폴더를 직접 만들어준다. 이제 sites-enabled에서 설정할 내용을 Nginx에서 사용할 수 있도록 해야 한다.
 
 ```
 vi /etc/nginx/nginx.conf
@@ -163,7 +163,7 @@ include /etc/nginx/sites-enabled/*;
 server_names_hash_bucket_size 64;
 ```
 
-이 두 라인을 넣는다. 이제 `sites-enabled` 디렉토리에 있는 파일들은 Nginx의 설정에 사용한다.
+이 두 라인을 넣는다. 이제 sites-enabled 경로에 있는 파일들은 Nginx의 설정에 사용한다.
 
 ```
 vi /etc/nginx/sites-enabled/labeling-app
@@ -202,7 +202,7 @@ systemctl enable nginx
 systemctl start nginx
 ```
 
-이제 Nginx를 웹서버로 사용해서 Node.js로 만든 애플리케이션을 운영할 수 있다. 여기서 `Helmet`을 사용해서 웹 취약성으로부터 앱을 보호할 수도 있다. 이 포스트에서는 PM2와 Nginx를 중점으로 설명하는 글이기 때문에 Helmet은 다음에 기회가 되면 설명하도록 하겠다.
+이제 Nginx를 웹서버로 사용해서 Node.js로 만든 애플리케이션을 운영할 수 있다. 여기서 Helmet을 사용해서 웹 취약성으로부터 앱을 보호할 수도 있다. 이 포스트에서는 PM2와 Nginx를 중점으로 설명하는 글이기 때문에 Helmet은 다음에 기회가 되면 설명하도록 하겠다.
 
 ![nuxtjs-deploy](./nuxtjs-deploy.png)
 
