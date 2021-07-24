@@ -17,7 +17,7 @@ TypeScript로 Nuxt 개발하기 시리즈에 사용된 소스코드는 [여기](
 
 아마 현재 프로젝트에는 ESLint가 활성화되어 있을 것인데, 이것을 TypeScript용으로 구성해주면 된다. TSLint를 사용하지 않는 이유는 TSLint가 이제 업데이트를 중단했기 때문이다. 관련 내용은 [여기](https://github.com/palantir/tslint/issues/4534)에서 확인할 수 있다.
 
-먼저 `@nuxtjs/eslint-config`를 지우고 `@nuxtjs/eslint-config-typescript`를 설치한다.
+먼저 @nuxtjs/eslint-config를 지우고 @nuxtjs/eslint-config-typescript를 설치한다.
 
 ```
 yarn remove @nuxtjs/eslint-config
@@ -34,7 +34,7 @@ module.exports = {
 }
 ```
 
-혹시 `.js` 파일이어서 `javascript`를 사용하는 것에 거부감이 있다면 `.json` 파일로 생성해도 된다. 필자는 100% TypeScript를 사용하고 싶어서 아래처럼 `.json` 파일로 만들었다.
+혹시 `.js` 파일이어서 javascript를 사용하는 것에 거부감이 있다면 `.json` 파일로 생성해도 된다. 필자는 100% TypeScript를 사용하고 싶어서 아래처럼 `.json` 파일로 만들었다.
 
 `.eslintrc.json`
 
@@ -56,7 +56,7 @@ module.exports = {
 ```
 
 
-마지막으로 `lint` 스크립트를 사용할 수 있도록`package.json`을 수정한다.
+마지막으로 Lint 스크립트를 사용할 수 있도록 `package.json`을 수정한다.
 
 ```json
 "lint": "eslint --ext .ts,.js,.vue ."
@@ -64,7 +64,7 @@ module.exports = {
 
 주의할 점은 `parserOptions`에 `babel-eslint`가 있다면 제거해주어야 한다. 그리고 Lint에 사용되는 규칙들을 수정하거나 재정의하려면 [여기](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#supported-rules)를 참고하면 된다.
 
-`eslint-config-typescript/index.js`
+*eslint-config-typescript/index.js*
 
 ```javascript
 module.exports = {
@@ -81,7 +81,7 @@ module.exports = {
 }
 ```
 
-위에서 설치한 `nuxtjs/eslint-config-typescript`를 확인해보면 내부적으로 `@typescript-eslint/parser`를 parser로 사용하기 때문이다.
+위에서 설치한 @nuxtjs/eslint-config-typescript를 확인해보면 내부적으로 @typescript-eslint/parser를 parser로 사용하기 때문이다.
 
 ### Prettier 적용
 
@@ -132,7 +132,7 @@ prettierr의 옵션을 설정할 수 있는 `.prettierrc`를 생성한다.
 
 ### Jest
 
-Jest를 TypeScript 환경에서 개발하기 위해서는 `ts-jest`와 `@types/jest`를 설치한다.
+Jest를 TypeScript 환경에서 개발하기 위해서는 ts-jest와 @types/jest를 설치한다.
 
 ```
 yarn add -D ts-jest @types/jest
@@ -148,9 +148,9 @@ yarn add -D ts-jest @types/jest
 }
 ```
 
-`jest.config.js`가 ts확장자를 읽을 수 있도록 수정한다. `jest.config.js`를 사용하지 않고 `package.json`에 `jest` 옵션을 추가해서 사용해도 된다.
+`jest.config.js`가 ts확장자를 읽을 수 있도록 수정한다. `jest.config.js`를 사용하지 않고 `package.json`에 jest 옵션을 추가해서 사용해도 된다.
 
-`jest.config.js`
+*jest.config.js*
 
 ```javascript
 module.exports = {
@@ -168,7 +168,7 @@ module.exports = {
 
 또는
 
-`package.json`
+*package.json*
 
 ```json
   "jest": {
