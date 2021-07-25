@@ -57,7 +57,10 @@ const lastName = faker.lorem.sentence();
 ### NestJS에서 단위 테스트 작성
 
 ```typescript
-async updateUser(id: string, updateUserDto: UpdateUserDto): Promise<User> {
+async updateUser(
+  id: number,
+  requestDto: UserUpdateRequestDto,
+): Promise<User> {
   const userToUpdate = await this.userRepository.findOne({
     where: {
       id: id,
@@ -68,11 +71,11 @@ async updateUser(id: string, updateUserDto: UpdateUserDto): Promise<User> {
     throw new BadRequestException(Message.NOT_FOUND_USER_ITEM);
   }
 
-  userToUpdate.firstName = updateUserDto.firstName;
-  userToUpdate.lastName = updateUserDto.lastName;
-  userToUpdate.isActive = updateUserDto.isActive;
+  const { firstName, lastName, isActive } = requestDto;
 
-  return this.userRepository.save(userToUpdate);
+  user.update(firstName, lastName, isActive);
+
+  return this.userRepository.save(user);
 }
 ```
 
@@ -84,7 +87,7 @@ Jest와 faker를 사용해서 위의 `User` 정보를 수정하는 서비스의 
 describe('UserService', () => {
   describe('유저 정보 수정', () => {
     it('존재하지 않는 유저 정보를 수정할 경우 NotFoundError 발생한다.', async () => {
-      const userId = faker.random.uuid();
+      const userId = faker.datatype.number();
 
       const updateUserDto: UpdateUserDto = {
         firstName: faker.lorem.sentence(),
@@ -119,7 +122,7 @@ describe('UserService', () => {
 describe('UserService', () => {
   describe('유저 정보 수정', () => {
     it('유저 정보를 성공적으로 수정한다.', async () => {
-      const userId = faker.random.uuid();
+      const userId = faker.datatype.number();
 
       const updateUserDto: UpdateUserDto = {
         firstName: faker.lorem.sentence(),
