@@ -39,8 +39,8 @@ npm install --save @nestjs/swagger fastify-swagger
 
 ```typescript
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
-import { setupSwagger } from './util/swagger';
+import { AppModule } from 'src/app.module';
+import { setupSwagger } from 'src/util/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
