@@ -21,13 +21,13 @@ Swagger는 API 문서 자동화 도구이다. 이전의 프로젝트에서 사�
 
 Swagger를 사용하는 방법은 간단하다. NestJS에서 사용할 수 있도록 모듈이 제공되고 있다. 아래의 모듈들을 설치하면 된다.
 
-```bash
-$ npm install --save @nestjs/swagger swagger-ui-express
+```
+npm install --save @nestjs/swagger swagger-ui-express
 ```
 
 NestJS(fastify)를 사용하는 경우 `swagger-ui-express` 대신 `fastify-swagger`를 설치해야 한다.
 
-```bash
+```
 npm install --save @nestjs/swagger fastify-swagger
 ```
 
