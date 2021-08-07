@@ -35,7 +35,7 @@ Promise, ES6 및 TypeScript 기능을 활용하도록 API를 재설계합니다.
 
 Deno는 설치가 간단하다.
 
-```sh
+```
 # Using Homebrew (macOS):
 brew install deno
 
@@ -163,7 +163,7 @@ TypeScript로 간단하게 웹서버를 만들 수 있다.
 
 **Deno는 TypeScript 및 JavaScript 코드를 정리해주는 코드 포맷팅 기능이 내장되어 있다.**
 
-```sh
+```
 deno fmt
 ```
 
