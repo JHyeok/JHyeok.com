@@ -2,10 +2,12 @@
 title: 어서와~ Deno는 처음이지?
 tags: ["Dev"]
 date: "2021-06-27T18:32:11.643Z"
-description: 지극히 주관적인 Deno 경험을 공유합니다.
+description: 지극히 주관적인 Deno 사용 경험을 공유합니다.
 ---
 
-이 글은 Deno를 사용하고 느낀점을 정리한 글입니다.
+Deno를 간단히 사용해보고 느낀 점을 정리한 글입니다.
+
+사용된 코드는 [여기](https://github.com/JHyeok/deno-example)에서 확인할 수 있습니다.
 
 ### Deno란?
 
