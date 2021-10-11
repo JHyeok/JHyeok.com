@@ -40,6 +40,11 @@ body.dark {
   --form-shadow: 0 2px 15px 0 rgba(26, 26, 27, 0.637);
 }
 
+h2 a:hover {
+  color: #fff;
+  background-color: #43853d;
+}
+
 /**
  * Based on copypasta from Remy Bach and Sarah Drasner
  */

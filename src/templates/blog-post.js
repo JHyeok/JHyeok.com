@@ -65,7 +65,7 @@ class BlogPostTemplate extends React.Component {
             style={{
               boxShadow: `none`,
               textDecoration: `none`,
-              color: `#ba89d8`,
+              color: `#43853d`,
             }}
             to={`/`}
           >
