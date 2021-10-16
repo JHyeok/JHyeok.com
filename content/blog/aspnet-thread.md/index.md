@@ -45,7 +45,7 @@ var task2 = await DoMoreWorkAsync();
 `DoWorkAsync()`를 실행하고, 다음에 `DoMoreWorkAsync()`를 실행한다. 하지만 비동기 코드이기 때문에 Thread에서 이점이 있다.
 
 ---
-### Reference
+## Reference
 
 https://msdn.microsoft.com/en-us/magazine/dn802603.aspx
 

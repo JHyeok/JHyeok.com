@@ -5,7 +5,7 @@ date: "2019-08-11T10:02:10.284Z"
 description: ASP.NET Core MVC 시리즈
 ---
 
-### ASP.NET Core에서 로그 라이브러리 NLog 적용하기
+## ASP.NET Core에서 로그 라이브러리 NLog 적용하기
 
 **NLog**는 닷넷 플랫폼 로그 라이브러리이다. 옵션들을 이용해서 다양한 레벨에서 로그를 남길 수 있다. 이번 ASP.NET Core MVC 시리즈에서는 **NLog**를 적용하는 방법을 알아본다.
 
@@ -76,7 +76,7 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 
 `NLog.config`에 설정해놓은 `fileName`, `layout`에 맞게 파일이 생성된 것을 확인 할 수 있다.
 
-### NLog와 Slack 연동
+## NLog와 Slack 연동
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -101,7 +101,7 @@ extensions에 NLog.Slack을 추가해주어야 한다. Nuget에서 설치를 하
 
 ![log-slack](./log-slack.png)
 
-### 주의할 점
+## 주의할 점
 
 NLog.Config이 잘못되면 NLog가 쌓이지 않을 수 있다.\
 필자는 운영서버에서는 Slack을 적용하고, QA서버에서 Slack을 제거해야 해서, Config을 수정해야 할 일이 생겼다. QA서버에서 `targets`에서 Slack을 제거했는데, 파일 탐색기에 NLog가 쌓이지 않게 되었다.\
@@ -111,7 +111,7 @@ NLog.Config이 잘못되면 NLog가 쌓이지 않을 수 있다.\
 그 이후 잘 쌓이게 되었다.
 
 ---
-### Reference
+## Reference
 
 https://github.com/NLog
 

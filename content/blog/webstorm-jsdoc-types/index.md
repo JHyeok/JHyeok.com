@@ -27,6 +27,6 @@ WebStorm에서 `/**` + `Enter` 를 사용하면 아래와 같이 JSDoc이 자동
 ![jsdoc-types-example](./jsdoc-types-example.png)
 
 ---
-### Reference
+## Reference
 
 https://jsdoc.app/about-getting-started.html

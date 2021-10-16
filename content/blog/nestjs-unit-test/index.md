@@ -9,7 +9,7 @@ description: NestJS에서 단위 테스트를 작성하는 방법에 대해서 �
 
 이 글에서 소개된 테스트 코드는 [여기](https://github.com/JHyeok/nestjs-api-example/blob/master/src/api/user/user.service.spec.ts)에서 확인할 수 있습니다.
 
-### TestingModule
+## TestingModule
 
 NestJS는 내장된 종속성 주입을 사용해서 쉽게 테스트 코드를 작성할 수 있도록 도와준다. 종속성 주입은 일반적으로 클래스가 아닌 인터페이스를 기반으로 하지만, TypeScript에서 인터페이스는 런타임이 아닌 컴파일 시간에만 사용할 수 있으므로 나중에 신뢰할 수가 없기 때문에 NestJS에서는 클래스 기반 주입을 사용하는 것이 일반적이다.
 
@@ -35,7 +35,7 @@ describe('UserService', () => {
 
 NestJS에서 제공하는 `@nestjs/testing` 패키지를 사용하면 테스트에 사용되는 종속성만 선언해서 모듈을 만들고 해당 모듈로 `UserService`, `UserRepository`를 가져올 수 있다. 따로 단위 테스트를 작성하기 위해 추가로 설치한 패키지는 [faker](https://www.npmjs.com/package/Faker)라는 가짜 데이터를 만들어주는 것밖에 없다. 이 가짜 데이터도 직접 개발자가 임의로 만들어서 넣는다면 추가로 설치할 수고로움 없이 NestJS에서 단위 테스트를 작성할 수 있다.
 
-### Jest Mocking
+## Jest Mocking
 
 ```typescript
 const userRepositorySaveSpy = jest
@@ -54,7 +54,7 @@ const lastName = faker.lorem.sentence();
 
 [faker](https://www.npmjs.com/package/Faker)를 사용해서 가짜로 테스트에 필요한 데이터들을 만들어 줄 수 있다.
 
-### NestJS에서 단위 테스트 작성
+## NestJS에서 단위 테스트 작성
 
 ```typescript
 async updateUser(
@@ -170,14 +170,14 @@ describe('UserService', () => {
 
 ![nestjs-unit-test](./nestjs-unit-test.png)
 
-### 마치며
+## 마치며
 
 E2E 테스트는 환경에 의존하는 테스트이지만, 단위 테스트는 실행 중인 환경에 의존하면 안 되고, 빠르게 실행되어야 한다. E2E 테스트에서는 보통 테스트 데이터베이스를 사용하고, 테스트의 신뢰성이 높지만 속도가 느리다는 단점이 있다.
 
 > 이 글을 작성한 이후에 classicist, mockist에 대해서 알게 되었습니다. 진짜 객체를 사용해서 단위 테스트를 작성한 경험이 있고 지금 회사에서는 테스트 대역을 사용해서 단위 테스트를 작성하고 있지만 어떤 방식이 좋은 건지는 잘 모르겠습니다. 저와 비슷한 고민을 하고 있으시다면 이규원님이 작성하신 [정말로 테스트 대역이 필요한가](https://gyuwon.github.io/blog/2020/05/10/do-you-really-need-test-doubles.html)를 한 번 읽어보시기를 추천드립니다.
 
 ---
-### Reference
+## Reference
 
 https://docs.nestjs.com/fundamentals/testing
 

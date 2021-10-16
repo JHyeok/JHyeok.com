@@ -9,7 +9,7 @@ Deno를 간단히 사용해보고 느낀 점을 정리한 글입니다.
 
 사용된 코드는 [여기](https://github.com/JHyeok/deno-example)에서 확인할 수 있습니다.
 
-### Deno란?
+## Deno란?
 
 ![deno-character](./deno-character.png)
 
@@ -33,7 +33,7 @@ Promise, ES6 및 TypeScript 기능을 활용하도록 API를 재설계합니다.
 권한 있는 시스템 API를 호출하고 바인딩을 사용하기 위해 메시지 전달 채널을 사용합니다.
 ```
 
-### Deno를 VS Code에서 사용하기
+## Deno를 VS Code에서 사용하기
 
 Deno는 설치가 간단하다.
 
@@ -68,7 +68,7 @@ Deno에서 외부 모듈을 가져오는 코드인데 VS Code에서는 경고가
 
 자동으로 `.vscode` 경로가 만들어지고 VS Code에서의 Deno 관련 옵션들이 추가되었다. VS Code에서 Deno 프로젝트 개발 환경 구성이 완료되었다.
 
-### 내가 생각한 장점
+## 내가 생각한 장점
 
 **Deno는 Node.js에서 의존성을 관리하기 위해 사용한 `package.json`이 없고, 모듈들이 설치되는 `node_modules`이 없다.** Node.js 개발 환경에서 프론트엔드 또는 백엔드를 개발 중에 `node_modules`로 인한 문제를 한 번씩은 마주쳤을 것이다. Deno에서는 이러한 문제들을 마주하지 않아도 된다. Deno로 만들어진 프로젝트에서는 `npm install` 또는 `yarn install`을 하지 않아도 된다.
 
@@ -171,7 +171,7 @@ deno fmt
 
 위 명령어를 통해 자동으로 코드가 정리되는 것을 확인할 수 있다. Deno 표준으로 제공되기 때문에 여러 스타일 가이드 중에서 선택을 해야 하는 시간 낭비가 줄어드는 것 같다. 기본으로 제공되기 때문에 이 점이 굉장히 편리하다고 생각했다.
 
-### 내가 생각한 단점
+## 내가 생각한 단점
 
 처음에는 [Oak 프레임워크](https://github.com/oakserver/oak)를 사용했는데 자잘한 오류가 너무 많아서 [Dero 프레임워크](https://github.com/herudi/dero)로 변경해서 API 서버를 만들었다. 스타수가 많은 Oak 프레임워크에서 발생한 오류들이 깃허브 이슈에 올라와 있었지만 해결이 되지 않는 것 같았다. 프레임워크를 사용하지 않는 것도 괜찮은 것 같다.
 
@@ -185,7 +185,7 @@ deno run --allow-net --allow-write --allow-read --allow-plugin app.ts
 
 권한 목록은 Deno의 [Permissions 문서](https://deno.land/manual/getting_started/permissions)를 참고하면 된다.
 
-### 마치며
+## 마치며
 
 아직까지는 Deno를 사용하는 사람이 적어서 오픈 소스 생태계가 활발하지 않았고, 레퍼런스가 많이 부족한 느낌이었다. 개인적인 생각으로는 지금 Deno를 사용해서 서버를 개발해야 한다면 기존 Node(NPM) 패키지들과의 호환성 때문에 힘들 것 같다고 생각했다. 실제로 이 부분은 Deno 1.0 공식 릴리즈에서도 한계로 안내되었다.
 
@@ -194,7 +194,7 @@ deno run --allow-net --allow-write --allow-read --allow-plugin app.ts
 Deno를 짧게 사용한 것인데도 Node.js와 비교해서 정말로 단순하다고 생각했다.
 
 ---
-### Reference
+## Reference
 
 https://developers.episource.com/blog/intro-to-deno/
 

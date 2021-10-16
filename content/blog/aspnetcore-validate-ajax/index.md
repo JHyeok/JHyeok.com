@@ -109,14 +109,14 @@ select.input-validation-error {
 
 유효성 검사를 통과하지 못하면 ASP.NET MVC에서는 `input-validation-error` 클래스를 추가한다. 포커스가 되었을 때의 CSS를 수정하시면 포커스가 되어서 빨간 테두리가 가려지지 않는다.
 
-### 마치며
+## 마치며
 
 이 방법을 몰랐을 때는 직접 백엔드에서 상황에 따른 오류 메시지를 `if`문으로 처리해서 프론트엔드에서 그 `model`의 이름을 기반으로 해당 `input`폼에 메시지를 직접 넣어주었다. 매우 귀찮은 작업이었다. 하지만 위의 방법을 이용하면 그 부분이 간소화된다.
 
 보통 필자처럼 `ajax`의 경우 직접 가공을 해서 화면에 일일이 뿌려주는 경우가 많은데 위의 방법을 이용하면 우아한(?) 방법으로 유효성 검사를 처리할 수 있을 것이다.
 
 ---
-### Reference
+## Reference
 
 https://stackoverflow.com/questions/7287412/jquery-validate-asp-net-mvc-modelstate-errors-async-post
 

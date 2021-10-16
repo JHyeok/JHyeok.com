@@ -11,7 +11,7 @@ Python을 시작하는데 대부분의 사람들이 Pycharm을 사용하는 것 
 
 ![python-vscode](./python-vscode.png)
 
-### 가상 환경 구성
+## 가상 환경 구성
 
 Python 3.3버전 이후 기본 모듈에 포함된 venv를 이용해서 독립된 가상 환경을 만든다. 가상 환경을 만드는 이유는 파이썬에서는 하나의 라이브러리에 대해서 하나의 버전만 설치가 가능한데, 여러 개의 프로젝트를 진행하다 보면 이는 문제가 되고, 작업을 바꿀 때마다 재설치를 할 수도 있다. 이런 문제를 해결하기 위해서 독립된 가상 환경을 제공한다.
 
@@ -29,7 +29,7 @@ python -m venv test
 
 Visual Studio Code에서 왼쪽 아래에 Python을 클릭하면 test라는 이름의 Python 가상 환경이 설치돼있는 것을 확인할 수 있다. 가상 환경 터미널을 Visual Studio Code에서 사용하려면 단축키 ``` Ctrl + Shift + ` ```를 이용하면 된다.
 
-### Black (or autopep8, yapf)
+## Black (or autopep8, yapf)
 
 코드 컨벤션을 위한 Python의 black이라는 도구와 Pylint를 이용한 환경을 구성해보도록 한다. 필자는 프로젝트를 진행할 때 코드 컨벤션은 여러 명이 협업을 하는데 필수라고 생각하기 때문에 혼자 진행하는 프로젝트더라도 인수인계를 받을 뒷사람을 위해서 정하고 작업을 시작하는 편이다.
 
@@ -102,7 +102,7 @@ def very_important_function(
 
 black이 적용되었다는 것을 확인할 수 있다. [psf/black](https://github.com/psf/black)에서 그 외 자세한 옵션들을 확인하실 수 있다.
 
-### Pylint
+## Pylint
 
 먼저 Python 가상 환경에서 `pip install pylint`로 Pylint 설치한다. 그리고 `Ctrl + Shift + P`로 커맨드 명령 프롬프트을 연 이후에 `Python: Select Linter` 타이핑하거나 선택한다.
 
@@ -126,7 +126,7 @@ Visual Studio Code의 linting setting을 확인하니 `lintOnSave`의 default �
 
 ![lint-warning](./lint-warning.png)
 
-### 마치며
+## 마치며
 
 Visual Studio Code를 이용하지 않는다고 하더라도 방법은 다르지만 Pycharm에서도 적용 가능하다. 이런 도구들은 처음 설치가 귀찮지만 이후에 엄청나게 편하고 도움이 된다는 사실을 알고 있다.
 
@@ -135,7 +135,7 @@ Visual Studio Code를 이용하지 않는다고 하더라도 방법은 다르지
 이 글에서는 가상 환경을 만드는데 venv, black과 Pylint를 사용하였지만 각자 원하는 환경을 이용해서 본인에 맞는 또는 팀에 맞는 개발환경을 구축하면 될 것 같다.
 
 ---
-### Reference
+## Reference
 
 https://suwoni-codelab.com/python%20%EA%B8%B0%EB%B3%B8/2018/03/21/Python-Basic-Virtual-Environment/
 

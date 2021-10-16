@@ -11,7 +11,7 @@ description: TypeScript 환경에서 Nuxt.js를 개발해봅니다.
 
 TypeScript로 Nuxt 개발하기 시리즈에 사용된 소스코드는 [여기](https://github.com/JHyeok/nuxt-typescript-sample)에서 확인할 수 있다.
 
-### Nuxt 2.9 이후 부터 달라진 TypeScript 적용
+## Nuxt 2.9 이후 부터 달라진 TypeScript 적용
 
 Nuxt에서 TypeScript 지원은 전용 패키지로 외부화되었으며 Nuxt 2.9부터 코어에서 제거되었다. 이후의 프로젝트에서는 ts-node, @nuxt/typescript를 설치하지 않아도 된다.
 
@@ -199,12 +199,12 @@ i Time: 5586ms
 
 ![nuxt-typescript](./nuxt-typescript.png)
 
-### 마치며
+## 마치며
 
 TypeScript 환경에서 Nuxt를 개발하는 환경을 구성해보았다. 다음 글에서는 코드 스타일을 검사하는 Lint와 테스트 라이브러리인 Jest를 TypeScript 환경에서 사용하는 방법에 대해 설명할 것이다.
 
 ---
-### Reference
+## Reference
 
 https://typescript.nuxtjs.org/guide/
 

@@ -9,7 +9,7 @@ description: NestJS에서 Swagger를 사용해서 API 문서를 제공하는 방
 
 이 글에서 사용된 코드는 [여기](https://github.com/JHyeok/nestjs-api-example)에서 확인할 수 있습니다.
 
-### Swagger란?
+## Swagger란?
 
 Swagger는 API 문서 자동화 도구이다. 이전의 프로젝트에서 사용한 경험으로는 API 문서를 따로 작성할 필요 없이 코드를 수정하면서 API 문서를 같이 수정할 수 있는 것이 큰 장점이었다.
 
@@ -17,7 +17,7 @@ Swagger는 API 문서 자동화 도구이다. 이전의 프로젝트에서 사�
 
 다른 장점으로는 Swagger는 API를 테스트할 수 있는 화면을 제공한다는 것이다.
 
-### NestJS에서 Swagger 설치
+## NestJS에서 Swagger 설치
 
 Swagger를 사용하는 방법은 간단하다. NestJS에서 사용할 수 있도록 모듈이 제공되고 있다. 아래의 모듈들을 설치하면 된다.
 
@@ -31,7 +31,7 @@ NestJS(fastify)를 사용하는 경우 `swagger-ui-express` 대신 `fastify-swag
 npm install --save @nestjs/swagger fastify-swagger
 ```
 
-### NestJS에서 Swagger 사용하기
+## NestJS에서 Swagger 사용하기
 
 `main.ts`에서 `SwaggerModule`를 사용해서 초기화한다.
 
@@ -204,14 +204,14 @@ export class User {
 
 ![swagger-user-schema](./swagger-user-schema.png)
 
-### 마치며
+## 마치며
 
 Swagger를 사용하지 않고 Wiki와 같이 API 문서를 따로 관리한다면 Swagger보다 더 유연한 API 문서 제공이 가능할 수 있다. 하지만 Wiki를 사용한다면 코드를 수정할 때마다 최신화하는 것을 잊지 말아야 한다. 그리고 Postman처럼 API를 테스트할 수 있는 도구를 제공해야 한다.
 
 더 많은 `@nestjs/swagger`의 데코레이터들은 [여기](https://docs.nestjs.com/openapi/decorators)에서 확인할 수 있다. 공식문서의 `OPENAPI` 단락에서 더 많은 정보를 얻을 수 있다.
 
 ---
-### Reference
+## Reference
 
 https://docs.nestjs.com/openapi/introduction
 

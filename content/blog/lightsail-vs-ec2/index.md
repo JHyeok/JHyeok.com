@@ -21,7 +21,7 @@ A: 게임을 시작할 때 공개 또는 비공개가 될 수있는 자신 만�
 
 발하임은 Dedicated Server를 Steam에서 제공하고 있었는데 다행히 여러 능력자들이 Dedicated Server를 Docker로 운영할 수 있도록 Github에 오픈 소스 활동을 하고 있었는데 README를 읽어 보니 조금의 개발 지식만 있어도 충분히 서버를 오픈할 수 있도록 설명이 친절했다.
 
-### AWS Lightsail
+## AWS Lightsail
 
 MS Azure나 GCP와 같은 선택지가 있었지만 가장 익숙한 AWS를 선택했다. AWS의 서비스를 이용하려고 할 때 가장 먼저 생각이 난 것은 EC2였다. 그런데 플레이하는 사람의 수에 따라 서버의 사양을 어떻게 해야 할지 몰라서 구글링을 하고 있었을 때 Reddit의 어떤 글을 읽었는데 그 글의 Comments에 Lightsail에 대한 언급이 있었다. Lightsail의 요금이 저렴하며 소규모 서버를 운영하기 좋다는 내용이었다.
 
@@ -43,7 +43,7 @@ MS Azure나 GCP와 같은 선택지가 있었지만 가장 익숙한 AWS를 선�
 
 ![lightsail-terminal](./lightsail-terminal.png)
 
-### Lightsail의 장단점과 EC2로 돌아간 이유
+## Lightsail의 장단점과 EC2로 돌아간 이유
 
 ![lightsail-home-after](./lightsail-home-after.png)
 
@@ -62,7 +62,7 @@ Lightsail의 Q&A를 꼼꼼히 살펴보았는데 EC2는 중지하면 EBS 스토�
 
 Lightsail의 인스턴스를 중지한 이후에 스냅샷을 만들어서 종료하고 필요할 때마다 켜는 방법은 서버 내 월드 파일의 안전성과 켜지는데 시간이 오래 걸리는 문제 등이 있어서 불편했다. 심지어 주말에만 사용을 한다면 인스턴스가 실행 중일 때만 요금이 나오는 EC2가 더 저렴할 수도 있다는 계산이 나왔다.
 
-### 마치며
+## 마치며
 
 정리하자면 한 달 내내 운영하는 서버에서는 Lightsail이 더 저렴하지만 한 달 내내 사용하는 게 아니라면 월별 과금 형식인 Lightsail보다는 EC2가 더 저렴한 경우가 있을 수 있다. Lightsail은 EC2 대비 저렴한 가격에 트래픽도 기본적으로 제공하기 때문이다.
 
@@ -71,7 +71,7 @@ Lightsail의 인스턴스를 중지한 이후에 스냅샷을 만들어서 종�
 ![ec2-valheim](./ec2-valheim.png)
 
 ---
-### Reference
+## Reference
 
 https://www.reddit.com/r/valheim/comments/lbl2h0/valheim_faq/
 

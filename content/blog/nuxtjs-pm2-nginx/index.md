@@ -5,13 +5,13 @@ date: "2019-12-07T22:13:20.384Z"
 description: CentOS7에서 PM2로 노드 애플리케이션을 관리하고 Nginx를 사용해서 프로덕션 환경에서 노드 애플리케이션을 운영해봅니다.
 ---
 
-### PM2란?
+## PM2란?
 
 PM2는 로드 밸런서가 내장 된 Node.js 애플리케이션의 프로덕션 프로세스 관리자이다. 응용 프로그램을 영구적으로 유지하고 다운 타임 없이 다시 로드하여 일반적인 시스템 관리 작업을 용이하게 한다. Python에서 사용하는 gunicorn과 비슷한 역할을 한다. 다운 타임 없이 애플리케이션을 리로드 할 수 있고, 클러스터 모드로 시작해서 로드 밸런싱도 한다. 터미널 기반 모니터링도 지원하며 Node.js 애플리케이션에서 오류처리로 인해서 애플리케이션이 죽었을 때의 처리도 해주며, 부팅 시에 자동 실행 등 여러 가지 잡다한 것들을 처리하고 관리해준다.
 
 Nuxt.js로 만들어진 애플리케이션을 프로덕션 환경에서 운영하기 위해서 필자는 PM2와 nginx을 사용했다. CentOS7 환경에서 운영했으며 .env 파일을 사용해서 개발서버, 운영서버 환경 구분과 `ecosystem.config.js`를 사용한 PM2 관리를 공유하려고 한다.
 
-### PM2 설치 및 간단 사용법
+## PM2 설치 및 간단 사용법
 
 ```
 npm install pm2 -g
@@ -44,7 +44,7 @@ pm2 monit
 
 PM2로 관리되는 프로세스들을 실시간으로 확인할 수 있다.
 
-### ecosystem.config.js 사용
+## ecosystem.config.js 사용
 
 PM2에는 여러 옵션들이 있고 이 옵션들을 커맨드 라인에 일일이 적어서 실행을 하기에는 비효율적이다. `ecosystem.config.js`를 만들고 이 config 파일을 이용해서 PM2를 실행할 수 있다.
 
@@ -102,7 +102,7 @@ module.exports = {
 
 필자는 Nuxt.js를 배포하고 있었으니 Nuxt.js에서 예를 들어서 설명하겠다.
 
-### env로 환경변수 사용
+## env로 환경변수 사용
 
 먼저 config 폴더 경로에 `.env.development`, `.env.production`을 만든다.
 
@@ -131,7 +131,7 @@ WARN No .env file found in
 
 위의 오류가 혹시라도 뜬다면, 프로젝트 경로에다가 빈 .env 파일을 만들어주면 해결이 된다.
 
-### Nginx 사용하기
+## Nginx 사용하기
 
 이제 CentOS7 환경에서 Nginx를 웹서버로 사용하여 Node.js 애플리케이션을 운용하는 방법에 대해서 설명하려 한다.
 
@@ -207,7 +207,7 @@ systemctl start nginx
 ![nuxtjs-deploy](./nuxtjs-deploy.png)
 
 ---
-### Reference
+## Reference
 
 https://www.npmjs.com/package/pm2
 

@@ -13,7 +13,7 @@ TypeScript로 Nuxt 개발하기 시리즈에 사용된 소스코드는 [여기](
 
 이전 시리즈에서는 TypeScript 환경에서 Nuxt를 개발하는 환경을 구성해보았다. 이번에는 코드 스타일을 검사하는 ESLint와 코드를 예쁘게 해주는 Prettier, 테스트 라이브러리인 Jest를 TypeScript 환경에서 사용하는 방법에 대해 설명한다.
 
-### ESLint 적용
+## ESLint 적용
 
 아마 현재 프로젝트에는 ESLint가 활성화되어 있을 것인데, 이것을 TypeScript용으로 구성해주면 된다. TSLint를 사용하지 않는 이유는 TSLint가 이제 업데이트를 중단했기 때문이다. 관련 내용은 [여기](https://github.com/palantir/tslint/issues/4534)에서 확인할 수 있다.
 
@@ -83,7 +83,7 @@ module.exports = {
 
 위에서 설치한 @nuxtjs/eslint-config-typescript를 확인해보면 내부적으로 @typescript-eslint/parser를 parser로 사용하기 때문이다.
 
-### Prettier 적용
+## Prettier 적용
 
 prettier와 prettier를 ESLint에서 실행할 수 있는 패키지를 설치한다.
 
@@ -130,7 +130,7 @@ prettierr의 옵션을 설정할 수 있는 `.prettierrc`를 생성한다.
 
 이제 ESLint를 사용할 때, 코드 스타일을 예쁘게 바꿔주는 Prettier도 같이 동작하게 된다.
 
-### Jest
+## Jest
 
 Jest를 TypeScript 환경에서 개발하기 위해서는 ts-jest와 @types/jest를 설치한다.
 
@@ -217,12 +217,12 @@ Ran all test suites.
 Done in 4.60s.
 ```
 
-### 마치며
+## 마치며
 
 Nuxt.js 2.9 버전 이후로 TypeScript를 적용하는 방법이 기존과는 조금 달라졌다. 기존 한국어 자료를 바탕으로 진행을 하다가 진행이 막혀서 직접 공식 가이드를 보고 적용을 하면서 방법이 많이 달라진 것을 느끼고 TypeScript로 Nuxt 개발하기를 작성했다.
 
 ---
-### Reference
+## Reference
 
 https://typescript.nuxtjs.org/guide/
 

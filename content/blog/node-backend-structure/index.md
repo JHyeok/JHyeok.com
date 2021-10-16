@@ -9,7 +9,7 @@ description: Node.js에서 프로젝트를 진행하는데 routing-controllers, 
 
 사이드 프로젝트의 코드는 [여기](https://github.com/JHyeok/jaebook-server)에서 확인할 수 있습니다.
 
-### 명확한 계층 구조
+## 명확한 계층 구조
 
 Node.js 프로젝트들은 보통 라우터와 컨트롤러를 구분하여서 코드를 나누어서 구조를 만드는 모습을 볼 수 있는데 이 방법 이외에도 [routing-controllers](https://github.com/typestack/routing-controllers)를 사용하면 클래스 기반의 컨트롤러를 만들 수 있게 도와준다.
 
@@ -169,7 +169,7 @@ export class App {
 }
 ```
 
-### env.ts로 환경 변수를 관리
+## env.ts로 환경 변수를 관리
 
 응용프로그램은 여러 가지 환경 설정이 필요하다. 개발 환경에서 사용한 데이터베이스를 운영 환경에서 그대로 사용할 수 없듯이 환경에 대한 분리가 필요하다. 테스트를 진행할 때는 테스트에 맞는 환경 설정이 필요하다.
 
@@ -241,7 +241,7 @@ export async function createDatabaseConnection() {
 
 `config/.env.환경`의 파일들만 관리하면 여러 환경에 따른 환경 변수들을 관리할 수 있고 직접 환경 변수들을 수정하다가 잘못 적용되는 실수를 줄일 수 있다.
 
-### 마치며
+## 마치며
 
 Routing-Controller와 TypeDI를 사용하거나, 환경 변수를 관리하는 방법 이외에도 사이드 프로젝트를 진행하면서 Docker를 사용하기도 했고 단위 테스트와 E2E 테스트를 작성하기도 하였고 Github Action과 Github Template들 그리고 codecov와 같은 third party를 사용해보았다. 이와 관련된 내용들은 조금 더 공부하고 정리해서 블로그에 작성하려고 한다.
 

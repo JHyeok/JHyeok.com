@@ -36,7 +36,7 @@ dotnet publish --output:bin/framework_dependent
 Windows환경에서는 IIS를 서버로 사용하는 것이 처리량에서와 보안에서 더 좋은 것 같다.
 
 ---
-### Reference
+## Reference
 
 https://natemcmaster.com/blog/2018/08/29/netcore-primitives-2/
 

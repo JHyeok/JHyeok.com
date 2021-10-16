@@ -9,7 +9,7 @@ description: Node.js 개발 환경에서 사용하는 gts와 husky에 대해서 
 
 Node.js 개발 환경에서는 eslint와 prettier가 널리 사용되고 있지만 gts를 알게 되어서 gts에 대해서 소개하고 husky에 대해 소개하려고 한다.
 
-### gts란?
+## gts란?
 
 gts(Google TypeScript Style)는 Google에서 만든 타입스크립트 스타일 가이드이며 포맷터(formatter), 린터(linter), 자동 코드 수정(automatic code fixer)의 구성을 도와준다.
 
@@ -30,7 +30,7 @@ clean: 출력 파일을 제거합니다.
 compile: 타입스크립트 컴파일러를 사용하여 소스 코드를 컴파일합니다.
 ```
 
-### eslint + prettier + gts
+## eslint + prettier + gts
 
 대부분의 프로젝트들이 eslint와 prettier를 사용하고 있을 것이다. 필자는 위의 방식으로 사용하는 것을 추천하지 않는데 기존의 eslint와 prettier 환경에서 gts를 사용하는 방법이 있다.
 
@@ -67,7 +67,7 @@ module.exports = {
 
 eslint, prettier를 사용하면서 Google TypeScript 스타일을 사용할 수 있다.
 
-### Git hooks
+## Git hooks
 
 eslint, prettier를 직접 설정해서 사용하거나 gts를 사용하거나 프로젝트의 코드 스타일을 강제하는 도구는 여러 가지가 있다. 하지만 이 도구를 사용하는 개발자들이 실수로 적용을 하지 못한 채 Git에 올리는 경우도 있다.
 
@@ -81,7 +81,7 @@ Mac 환경에서는 `ll`, Windows 환경에서는 `ls`를 하면 `.sample` 확�
 
 ![git-hooks](./git-hooks.png)
 
-### husky란?
+## husky란?
 
 husky는 Node.js 개발 환경에서 Git hook을 사용하기 편리하게 만들어주는 도구이다.
 
@@ -117,7 +117,7 @@ git add .husky/pre-commit
 
 이제 커밋을 하면 자동으로 프로젝트에서 format과 lint 스크립트를 실행해서 코드 스타일을 강제하도록 한다.
 
-### 마치며
+## 마치며
 
 평소에 eslint와 prettier를 사용하지만 Github에 올라온 오픈 소스에서 gts를 사용하는 것을 보고 관심을 가지게 되었다. eslint에서도 gts를 사용할 수 있으니 괜찮은 것 같다.
 
@@ -126,7 +126,7 @@ git add .husky/pre-commit
 husky는 이번에 v7의 버전이 나오면서 기존에 v4를 사용하고 있던 환경에서 마이그레이션을 하게 되면서 정리를 해보았다.
 
 ---
-### Reference
+## Reference
 
 https://github.com/google/gts
 

@@ -224,7 +224,7 @@ namespace Sample.Language
 
 위 코드들에서 자주보이는 `LocalizedString`의 경우 ASP.NET Core에서 지원하는 클래스이며 리소스에서 원하는 문자열을 찾아서 문자열을 반환하는 역활을 한다.
 
-### 지역화 구성
+## 지역화 구성
 
 ```csharp
 services.AddMvc()
@@ -244,7 +244,7 @@ services.AddTransient<IHtmlLocalizer, SampleHtmlLocalizer>();
 
 `Startup.cs`의 `ConfigureServices`에서 서비스를 위처럼 추가한다.
 
-### 지역화 미들웨어
+## 지역화 미들웨어
 
 ```csharp
 var supportedCultures = new[]
@@ -263,7 +263,7 @@ app.UseRequestLocalization(new RequestLocalizationOptions
 
 `Startup.cs`의 `Configure`에서 요청 파이프라인 구성은 위처럼 추가한다.
 
-### DataAnnotations 지역화
+## DataAnnotations 지역화
 
 **DataAnnotations 지역화**를 사용하기 위해서는
 Model이나 ViewModel에서 사용하는 방법이다.
@@ -287,7 +287,7 @@ public AccountController(IStringLocalizer localizer)
 ModelState.AddModelError(string.Empty, _localizer["사용자 ID 혹은 비밀번호가 올바르지 않습니다."]);
 ```
 
-### View에서의 지역화
+## View에서의 지역화
 
 View에서는 아래처럼 사용하도록 한다.
 
@@ -296,7 +296,7 @@ View에서는 아래처럼 사용하도록 한다.
 <p>@htmlLocalizer["안녕"]</p>
 ```
 
-### 사용자가 언어권을 선택할 수 있도록 구현하기
+## 사용자가 언어권을 선택할 수 있도록 구현하기
 
 이제 언어를 변경하는 리스트를 만들 때에는 아래와 같이 만들면 된다.
 
@@ -356,11 +356,11 @@ public IActionResult SetLanguage(string culture, string returnUrl)
 }
 ```
 
-### 마치며
+## 마치며
 
 간단한 예제 코드를 이용해서 ASP.NET Core의 다국어 번역에 대해서 알아보았다. ASP.NET MVC에서보다 더 쉽게 다국어를 적용할 수 있고, 그 외에 유효성 검사에 대한 다국어도 쉽게 적용할 수 있어서 좋았던 것 같다.
 
 ---
-### Reference
+## Reference
 
 https://docs.microsoft.com/ko-kr/aspnet/core/fundamentals/localization?view=aspnetcore-2.2

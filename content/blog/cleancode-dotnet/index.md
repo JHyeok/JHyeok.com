@@ -133,6 +133,6 @@ public async Task<JsonResult> SendArticleMail(int articleId)
 몇 개월 전부터 클린 코드에 관심을 갖고 읽었지만 코드를 작성할 때마다 클린 코드를 생각했지만 시간이 지나서 보면 클린 코드에 맞지 않는 코드를 작성할 때가 많았던 것 같습니다. 시간이 지나면 코드를 한번씩 읽어보면서 리팩토링 하는 습관을 가져야 할 것 같습니다.
 
 ---
-### Reference
+## Reference
 
 https://github.com/thangchung/clean-code-dotnet
