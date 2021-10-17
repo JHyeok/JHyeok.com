@@ -110,11 +110,7 @@ NLog.Config이 잘못되면 NLog가 쌓이지 않을 수 있다.\
 `target name="Slack"`을 지워줬으면 `rules`에서도 Slack에 해당되는 `rules`을 지워주어야 한다.
 그 이후 잘 쌓이게 되었다.
 
----
-## Reference
-
-https://github.com/NLog
-
-https://www.nuget.org/packages/NLog.Web.AspNetCore/4.8.3
-
+### Reference
+https://github.com/NLog  
+https://www.nuget.org/packages/NLog.Web.AspNetCore/4.8.3  
 https://github.com/NLog/NLog/wiki/Configuration-file#log-levels

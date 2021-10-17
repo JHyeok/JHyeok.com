@@ -78,9 +78,6 @@ export default {
 
 무한 스크롤링에서 가장 중요한 것은 어떠한 환경에서도 작동이 되어야 한다는 것이다. 크롬의 90% 줌 상태에서도 오류 없이 작동을 해야 하고 최적화가 잘 되어 있어야 하는데 [vue-infinite-loading](https://github.com//PeachScript/vue-infinite-loading)는 최적화도 잘 되어 있었으며 Vue.js, Nuxt.js에서 사용하기 좋았다. 
 
----
-## Reference
-
-https://github.com//PeachScript/vue-infinite-loading
-
+### Reference
+https://github.com//PeachScript/vue-infinite-loading  
 https://peachscript.github.io/vue-infinite-loading/guide/

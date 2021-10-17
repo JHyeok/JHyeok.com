@@ -134,10 +134,6 @@ https://myspace.slack.com/services/new/jenkins-ci
 
 여러 명의 개발자들이 Push 해놓은 내용들을 지속적으로 업데이트해서 결과물을 보여주는데 그 과정에서 수동으로 빌드를 안 한다는 게 정말 큰 장점으로 다가왔다.
 
----
-## Reference
-
-http://matthewyukiuchino.com/how-to-use-jenkins-to-deploy-c-web-applications-to-iis/
-
+### Reference
+http://matthewyukiuchino.com/how-to-use-jenkins-to-deploy-c-web-applications-to-iis/  
 https://medium.com/appgambit/integrating-jenkins-with-slack-notifications-4f14d1ce9c7a
-

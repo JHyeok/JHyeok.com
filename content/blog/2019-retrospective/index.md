@@ -130,7 +130,3 @@ Nuxt.js로 개발을 한 것도 닷넷으로 개발을 할 수 있었지만 선�
 ![slamdunk-effort](./slamdunk-effort.png)
 
 > 2020년은 2019년보다 더 열심히!
-
-
-
-

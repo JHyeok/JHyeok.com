@@ -151,9 +151,6 @@ connect() failed (111: Connection refused) while connecting to upstream, client:
 
 AWS Elastic Beanstalk를 사용해보니 기존에는 배포를 위해서 EC2를 만들고 Nginx를 설정하는 등의 자잘한 작업들을 AWS Elastic Beanstalk에서 알아서 관리해주고 사용자는 필요한 옵션만 건드릴 수 있도록 해서 간편했다. 구성 메뉴에서 카테고리 별로 옵션을 수정할 수 있어서 자잘한 설정도 가능하고 모니터링 메뉴에서 모니터링도 가능해서 좋았다.
 
----
-## Reference
-
-https://www.trytape.com/2019/10/28/using-yarn-on-elastic-beanstalk/
-
+### Reference
+https://www.trytape.com/2019/10/28/using-yarn-on-elastic-beanstalk/  
 https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/applications-sourcebundle.html

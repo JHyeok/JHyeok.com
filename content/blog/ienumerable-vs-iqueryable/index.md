@@ -50,10 +50,6 @@ var notcieArticles = articles.Where(a => a.IsNotice);
 
 codeproject에서 찾은 차이점을 잘 정리한 표이다. 적절한 사용용도에 사용하는 것이 중요하다.
 
----
-## Reference
-
-https://stackoverflow.com/questions/2876616/returning-ienumerablet-vs-iqueryablet
-
+### Reference
+https://stackoverflow.com/questions/2876616/returning-ienumerablet-vs-iqueryablet  
 https://www.codeproject.com/Articles/732425/IEnumerable-Vs-IQueryable
-

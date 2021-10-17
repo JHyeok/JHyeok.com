@@ -50,7 +50,5 @@ body {
 
 위의 코드처럼 link방식으로 수정을 하면 프로덕션 모드로 실행을 해도 웹폰트가 적용된다.
 
----
-## Reference
-
+### Reference
 https://github.com/innks/NanumSquareRound

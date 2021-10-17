@@ -70,11 +70,7 @@ Lightsail의 인스턴스를 중지한 이후에 스냅샷을 만들어서 종�
 
 ![ec2-valheim](./ec2-valheim.png)
 
----
-## Reference
-
-https://www.reddit.com/r/valheim/comments/lbl2h0/valheim_faq/
-
-https://aws.amazon.com/ko/lightsail/faq/
-
+### Reference
+https://www.reddit.com/r/valheim/comments/lbl2h0/valheim_faq/  
+https://aws.amazon.com/ko/lightsail/faq/  
 https://aws.amazon.com/ko/ec2/pricing/on-demand/
