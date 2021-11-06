@@ -5,7 +5,11 @@ date: "2021-11-06T11:16:00.000Z"
 description: yarn upgrade를 사용하고 package.json 파일과 yarn.lock 파일을 동기화 방법을 설명합니다.
 ---
 
-Gatsby를 기반으로 만들어진 이 블로그는 Yarn으로 프로젝트의 의존성을 관리하고 있다. 하지만 `yarn upgrade`로 블로그의 의존성을 관리할 때 `package.json` 파일이 동기화되지 않는 것을 확인했다. 이 문제와 관련해서 Yarn Github 저장소에서 2개의 Issue를 찾을 수 있었다.
+Gatsby를 기반으로 만들어진 이 블로그는 Yarn으로 프로젝트의 의존성을 관리하고 있다. 하지만 `yarn upgrade`로 블로그의 의존성을 관리할 때 `package.json` 파일이 동기화되지 않는 것을 확인했다. 
+
+## 문제 살펴보기
+
+이 문제와 관련해서 Yarn Github 저장소에서 2개의 Issue를 찾을 수 있었다.
 
 - [`yarn upgrade` does not update package.json](https://github.com/yarnpkg/yarn/issues/2042)
 - [Yarn Upgrade Doesn't Update Package.json](https://github.com/yarnpkg/yarn/issues/3266)
@@ -34,6 +38,8 @@ $ yarn upgrade
 
 다시 `yarn install`로 `package.json` 파일과 `yarn.lock` 파일의 버전을 맞추어보려고 했지만 이미 업데이트가 되었다는 안내만 나온다.
 
+## syncyarnlock 사용
+
 이런 경우 [syncyarnlock](https://www.npmjs.com/package/syncyarnlock)를 사용해서 해결할 수 있다.
 
 ```bash
@@ -54,6 +60,14 @@ $ yarn install
 ![yarn-fin-1](./yarn-fin-1.png)
 
 ![yarn-fin-2](./yarn-fin-2.png)
+
+## --latest 사용
+
+```bash
+$ yarn upgrade --latest
+```
+
+최신 안정 버전이 더 이상 현재 범위와 일치하지 않을 때 실행하면 `package.json` 파일이 업데이트된다. 단점으로는 `package.json`에 지정된 버전의 범위를 무시하기 때문에 의도치 않게 Major 업데이트가 될 수 있다.
 
 ### Reference
 https://github.com/yarnpkg/yarn/issues/2042  
