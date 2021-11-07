@@ -40,6 +40,7 @@
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^3.1.0",
     "eslint": "^8.2.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
