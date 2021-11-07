@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import kebabCase from 'lodash/kebabCase'
-import { Helmet } from 'react-helmet'
-import { Link, graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby';
+import kebabCase from 'lodash/kebabCase';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const TagsPage = ({
   data: {
@@ -27,7 +27,7 @@ const TagsPage = ({
       </ul>
     </div>
   </div>
-)
+);
 
 TagsPage.propTypes = {
   data: PropTypes.shape({
@@ -45,9 +45,9 @@ TagsPage.propTypes = {
       }),
     }),
   }),
-}
+};
 
-export default TagsPage
+export default TagsPage;
 
 export const pageQuery = graphql`
   query {
@@ -63,4 +63,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

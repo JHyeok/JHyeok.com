@@ -1,19 +1,20 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
-import Bio from '../components/bio'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Tags from '../components/tags'
-import TagList from '../components/tag-list'
-import { rhythm } from '../utils/typography'
-import { formatReadingTime } from '../utils/helper'
+import { Link, graphql } from 'gatsby';
+import React from 'react';
+
+import Bio from '../components/bio';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import TagList from '../components/tag-list';
+import Tags from '../components/tags';
+import { formatReadingTime } from '../utils/helper';
+import { rhythm } from '../utils/typography';
 
 class BlogIndex extends React.Component {
   render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const allTags = data.alltags.group
-    const posts = data.allposts.edges
+    const { data } = this.props;
+    const siteTitle = data.site.siteMetadata.title;
+    const allTags = data.alltags.group;
+    const posts = data.allposts.edges;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -36,7 +37,7 @@ class BlogIndex extends React.Component {
         <Bio />
         <TagList items={allTags} />
         {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
+          const title = node.frontmatter.title || node.fields.slug;
           return (
             <div key={node.fields.slug}>
               <h2
@@ -65,14 +66,14 @@ class BlogIndex extends React.Component {
                 }}
               />
             </div>
-          )
+          );
         })}
       </Layout>
-    )
+    );
   }
 }
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
@@ -107,4 +108,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

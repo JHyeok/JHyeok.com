@@ -1,19 +1,21 @@
-import React from 'react'
-import { Link, graphql } from 'gatsby'
-import Bio from '../components/bio'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import { Utterances } from '../components/utterances'
-import Tags from '../components/tags'
-import { rhythm, scale } from '../utils/typography'
-import { formatReadingTime } from '../utils/helper'
-const utterances = 'JHyeok/JHyeok.com'
+import { Link, graphql } from 'gatsby';
+import React from 'react';
+
+import Bio from '../components/bio';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Tags from '../components/tags';
+import { Utterances } from '../components/utterances';
+import { formatReadingTime } from '../utils/helper';
+import { rhythm, scale } from '../utils/typography';
+
+const utterances = 'JHyeok/JHyeok.com';
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
+    const post = this.props.data.markdownRemark;
+    const siteTitle = this.props.data.site.siteMetadata.title;
+    const { previous, next } = this.props.pageContext;
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -100,11 +102,11 @@ class BlogPostTemplate extends React.Component {
         </ul>
         {!!utterances && <Utterances repo={utterances} />}
       </Layout>
-    )
+    );
   }
 }
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -129,4 +131,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

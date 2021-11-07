@@ -1,12 +1,12 @@
-import React from 'react'
-import { capitalize } from '../utils/string'
-import { Link } from 'gatsby'
-import kebabCase from 'lodash/kebabCase'
+import { Link } from 'gatsby';
+import kebabCase from 'lodash/kebabCase';
+import React from 'react';
 
-import './tags.css'
+import { capitalize } from '../utils/string';
+import './tags.css';
 
 function cssSafe(str) {
-  return encodeURIComponent(str.toLowerCase()).replace(/%[0-9A-F]{2}/gi, '')
+  return encodeURIComponent(str.toLowerCase()).replace(/%[0-9A-F]{2}/gi, '');
 }
 
 const Tags = ({ items }) => {
@@ -22,7 +22,7 @@ const Tags = ({ items }) => {
         </span>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default Tags
+export default Tags;
