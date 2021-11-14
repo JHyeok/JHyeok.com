@@ -5,10 +5,8 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 import { StaticQuery, graphql } from 'gatsby';
-import Image from 'gatsby-image';
+import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
-
-import { rhythm } from '../utils/typography';
 
 function Bio() {
   return (
@@ -17,24 +15,16 @@ function Bio() {
       render={(data) => {
         const { author, social } = data.site.siteMetadata;
         return (
-          <div
-            style={{
-              display: `flex`,
-              marginBottom: rhythm(2.5),
-            }}
-          >
-            <Image
-              fixed={data.avatar.childImageSharp.fixed}
+          <div className="bio">
+            <StaticImage
+              className="bio-avatar"
+              layout="fixed"
+              formats={['auto', 'webp', 'avif']}
+              src="../../content/assets/github-profile.jpg"
               alt={author}
-              style={{
-                marginRight: rhythm(1 / 2),
-                marginBottom: 0,
-                minWidth: 56,
-                minHeight: 56,
-              }}
-              imgStyle={{
-                borderRadius: `50%`,
-              }}
+              width={56}
+              height={56}
+              quality={95}
             />
             <p>
               Written by <strong>{author}</strong>
@@ -50,13 +40,6 @@ function Bio() {
 
 const bioQuery = graphql`
   query BioQuery {
-    avatar: file(absolutePath: { regex: "/github-profile.jpg/" }) {
-      childImageSharp {
-        fixed(width: 50, height: 50) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
     site {
       siteMetadata {
         author
