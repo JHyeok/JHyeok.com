@@ -61,14 +61,14 @@ async updateUser(
   id: number,
   requestDto: UserUpdateRequestDto,
 ): Promise<User> {
-  const userToUpdate = await this.userRepository.findOne({
+  const user = await this.userRepository.findOne({
     where: {
       id: id,
     },
   });
 
-  if (!userToUpdate) {
-    throw new BadRequestException(Message.NOT_FOUND_USER_ITEM);
+  if (_.isEmpty(user) === true) {
+    throw new BadRequestException(Message.NOT_FOUND_USER);
   }
 
   const { firstName, lastName, isActive } = requestDto;
@@ -79,14 +79,14 @@ async updateUser(
 }
 ```
 
-Jest와 faker를 사용해서 위의 `User` 정보를 수정하는 서비스의 단위 테스트를 작성해보자.
+Jest와 faker를 사용해서 유저를 수정하는 서비스의 단위 테스트를 작성해보자.
 
-`UserService`의 `updateUser` 메서드를 테스트하려고 하는데, 이 메서드에서는 두 가지를 테스트해야 한다. 유저 정보가 존재할 때는 성공적으로 수정하고 유저 정보가 존재하지 않을 경우에는 실패하는 로직에 대해서 검증이 필요하다.
+`UserService`의 `updateUser` 메서드를 테스트하려고 하는데, 이 메서드에서는 두 가지를 테스트해야 한다. 유저 id에 해당하는 유저가 있으면 성공적으로 수정하고 해당하는 유저가 없을 경우에는 실패하는 로직에 대해서 검증이 필요하다.
 
 ```typescript{12,13,14,19,20}
 describe('UserService', () => {
-  describe('유저 정보 수정', () => {
-    it('존재하지 않는 유저 정보를 수정할 경우 NotFoundError가 반환된다', async () => {
+  describe('updateUser', () => {
+    it('생성되지 않은 유저의 id가 주어진다면 유저를 찾을 수 없다는 예외를 던진다', async () => {
       const userId = faker.datatype.number();
 
       const updateUserDto: UpdateUserDto = {
@@ -116,12 +116,12 @@ describe('UserService', () => {
 })
 ```
 
-위의 단위 테스트 코드에서는 존재하지 않는 유저의 정보를 수정할 때는 `findOne` 메서드가 `null`의 결괏값을 반환할 거라고 모킹 해준다. `updateUser` 메서드는 가짜로 `null`의 값이 반환되는 줄 알고 `null` 일 때 `NotFoundError`가 발생하는 로직을 실행하게 된다. `expect(e).toBeInstanceOf(NotFoundException)`는 이 오류 메시지 객체가 `NotFoundException` 클래스의 인스턴스인지 확인하는 작업이며, `.toBe`로 값을 비교해서 올바르게 오류 메시지가 나왔는지 검증할 수 있다.
+위의 단위 테스트 코드에서는 생성되지 않은 유저를 수정할 때는 `findOne` 메서드가 `null`의 결괏값을 반환할 거라고 모킹 해준다. `updateUser` 메서드는 가짜로 `null`의 값이 반환되는 줄 알고 `null` 일 때 `NotFoundError`가 발생하는 로직을 실행하게 된다. `expect(e).toBeInstanceOf(NotFoundException)`는 이 오류 메시지 객체가 `NotFoundException` 클래스의 인스턴스인지 확인하는 작업이며, `.toBe`로 값을 비교해서 올바르게 오류 메시지가 나왔는지 검증할 수 있다.
 
 ```typescript{24,25,26,28,29,30}
 describe('UserService', () => {
-  describe('유저 정보 수정', () => {
-    it('유저 정보가 수정된다', async () => {
+  describe('updateUser', () => {
+    it('생성된 유저의 id가 주어진다면 해당 id의 유저를 수정하고 수정된 유저를 반환한다', async () => {
       const userId = faker.datatype.number();
 
       const updateUserDto: UpdateUserDto = {
@@ -164,9 +164,9 @@ describe('UserService', () => {
 })
 ```
 
-`updateUser` 메서드에서 유저 정보를 찾아서 유저 정보를 정상적으로 수정했다는 로직의 테스트이다. 미리 정의해놓은 `existingUser`를 반환할 거라고 모킹 해주고 이 반환된 값을 수정해서 저장하면 `savedUser`를 반환할 것이라고 모킹 한다. 그리고 오류가 없이 정상적으로 처리된 내용을 `result` 변수의 값에 담고 Jest의 `expect`로 검증한다. 먼저, `.toHaveBeenCalledWith`는 모의 함수가 특정 인수로 호출되었는지 확인하는 데 사용할 수 있고, `.toEqual`로 개체의 모든 속성을 재귀적으로 비교한다.
+`updateUser` 메서드에서 id에 해당하는 유저를 찾아서 유저를 수정했다는 로직의 테스트이다. 미리 정의해놓은 `existingUser`를 반환할 거라고 모킹 해주고 이 반환된 값을 수정해서 저장하면 `savedUser`를 반환할 것이라고 모킹 한다. 그리고 오류가 없이 정상적으로 처리된 내용을 `result` 변수의 값에 담고 Jest의 `expect`로 검증한다. 먼저, `.toHaveBeenCalledWith`는 모의 함수가 특정 인수로 호출되었는지 확인하는 데 사용할 수 있고, `.toEqual`로 개체의 모든 속성을 재귀적으로 비교한다.
 
-`UserService`의 `User` 정보를 수정하는 코드의 일부분을 살펴보았다. 전체 코드를 확인하려면 [여기](https://github.com/JHyeok/nestjs-api-example/blob/master/src/api/user/user.service.spec.ts)에서 확인할 수 있다.
+`UserService`의 유저를 수정하는 코드의 일부분을 살펴보았다. 전체 코드를 확인하려면 [여기](https://github.com/JHyeok/nestjs-api-example/blob/master/src/api/user/user.service.spec.ts)에서 확인할 수 있다.
 
 ![nestjs-unit-test](./nestjs-unit-test.png)
 
