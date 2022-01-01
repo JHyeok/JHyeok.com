@@ -210,6 +210,13 @@ h2 a:hover {
    -webkit-overflow-scrolling: touch;
    overflow: auto;
  }
+
+ .gatsby-resp-image-figcaption {
+   text-align: center;
+   color: rgba(117, 117, 117, 1);
+   font-size: 13px;
+   font-weight: 400;
+ }
  
  @media (max-width: 672px) {
    .gatsby-highlight {
