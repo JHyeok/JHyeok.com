@@ -11,7 +11,7 @@ Gatsby를 기반으로 만들어진 이 블로그는 Yarn으로 프로젝트의 
 
 이 문제와 관련해서 Yarn Github 저장소에서 2개의 Issue를 찾을 수 있었다.
 
-- [`yarn upgrade` does not update package.json](https://github.com/yarnpkg/yarn/issues/2042)
+- [yarn upgrade does not update package.json](https://github.com/yarnpkg/yarn/issues/2042)
 - [Yarn Upgrade Doesn't Update Package.json](https://github.com/yarnpkg/yarn/issues/3266)
  
 Issue에서는 `yarn upgrade`로 전체 패키지를 업데이트하면 `packge.json`파일이 업데이트되지 않는다는 내용이었다. 적은 수의 패키지를 업데이트해야 하는 경우 패키지의 이름과 버전을 지정해서 하면 되지만 만약 10개 이상의 패키지를 업데이트해야 한다면 어려움이 있었다. NPM에서는 `npm update`를 하면 `package.json` 파일과 `package-lock.json` 파일이 동기화가 되고 있는데 Yarn에서는 왜 안되는지에 대한 내용도 있었다. 다행히 모든 패키지를 업데이트하고 `package.json`과 `yarn.lock`파일을 동기화하는 방법을 위의 Issue에서 찾을 수 있었다.
