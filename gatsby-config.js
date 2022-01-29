@@ -38,7 +38,7 @@ module.exports = {
       resolve: 'gatsby-plugin-sharp',
       options: {
         stripMetadata: true,
-        defaultQuality: 85
+        defaultQuality: 85,
       },
     },
     'gatsby-transformer-sharp',
@@ -61,8 +61,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-external-links`,
             options: {
-              target: "_blank"
-            }
+              target: '_blank',
+            },
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
@@ -94,15 +94,15 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.nodes.map(node => {
+              return allMarkdownRemark.nodes.map((node) => {
                 return Object.assign({}, node.frontmatter, {
                   description: node.excerpt,
                   date: node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ "content:encoded": node.html }],
-                })
-              })
+                  custom_elements: [{ 'content:encoded': node.html }],
+                });
+              });
             },
             query: `
               {
@@ -123,7 +123,7 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml",
+            output: '/rss.xml',
             title: "JHyeok Blog's RSS Feed",
           },
         ],
@@ -149,6 +149,6 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
-    }
+    },
   ],
-}
+};
