@@ -3,21 +3,24 @@ import Wordpress2016 from 'typography-theme-wordpress-2016';
 
 import './global.css';
 
-Wordpress2016.overrideThemeStyles = () => ({
+Wordpress2016.overrideThemeStyles = ({ rhythm }) => ({
   a: {
-    color: `#43853d`,
+    color: '#43853d',
   },
   'a.gatsby-resp-image-link': {
-    boxShadow: `none`,
+    boxShadow: 'none',
   },
-  'p code': {
-    fontSize: '0.95rem',
+  hr: {
+    background: 'var(--hr)',
   },
   'h1 code, h2 code, h3 code, h4 code, h5 code, h6 code': {
     fontSize: 'inherit',
   },
+  'p code': {
+    fontSize: '1rem',
+  },
   'li code': {
-    fontSize: '0.95rem',
+    fontSize: '1rem',
   },
   blockquote: {
     color: 'inherit',
@@ -26,6 +29,12 @@ Wordpress2016.overrideThemeStyles = () => ({
   },
   'blockquote.translation': {
     fontSize: '1em',
+  },
+  'ol,ul': {
+    marginLeft: rhythm(1.25),
+  },
+  'li>ol,li>ul': {
+    marginLeft: rhythm(1.25),
   },
 });
 
