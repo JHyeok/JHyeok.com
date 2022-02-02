@@ -68,7 +68,7 @@ props: {
 ```
 
 ### Reference
-https://beomy.tistory.com/56  
-https://stackoverflow.com/questions/53659450/props-should-at-least-define-their-types  
-https://vuejs.org/v2/guide/components-props.html#Prop-Types  
-https://stackoverflow.com/questions/53659719/vue-default-value-for-prop-function
+- https://beomy.tistory.com/56
+- https://stackoverflow.com/questions/53659450/props-should-at-least-define-their-types
+- https://vuejs.org/v2/guide/components-props.html#Prop-Types
+- https://stackoverflow.com/questions/53659719/vue-default-value-for-prop-function

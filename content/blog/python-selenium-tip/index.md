@@ -124,6 +124,6 @@ Windwos 환경에서 Selenium을 사용해서 만든 크롤러를 운영하였�
 Selenium으로 프로그래밍을 해서 결과물을 만드는 것은 쉽지만 이 만들어진 프로그램이 완성도 있게 무중단으로 계속해서 운영하기 위해서는 여러가지를 고민하고 여러 시나리오에 대응하는 자세로 프로그래밍을 해야 한다.
 
 ### Reference
-https://sites.google.com/a/chromium.org/chromedriver/downloads/version-selection  
-https://docs.sentry.io/platforms/python/  
-https://www.fullstackpython.com/blog/build-first-slack-bot-python.html
+- https://sites.google.com/a/chromium.org/chromedriver/downloads/version-selection
+- https://docs.sentry.io/platforms/python/
+- https://www.fullstackpython.com/blog/build-first-slack-bot-python.html

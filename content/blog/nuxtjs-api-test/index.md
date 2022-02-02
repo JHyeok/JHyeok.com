@@ -276,9 +276,9 @@ Express.js API 테스트를 주니어 개발자가 사수도 없이 구글링으
 혹시 기존의 프로젝트는 너무 커서 테스트 케이스를 다 작성하기 어렵다면, 작은 부분부터 차근차근하는 것이 좋을 것 같다. 모든 부분에 대해서 테스트 케이스를 작성하는 것은 먼 미래의 일이다. 작은 부분부터 차근차근하는 것이 중요한 것 같다.
 
 ### Reference
-https://jestjs.io/docs/en/expect  
-https://jestjs.io/docs/en/cli  
-https://zellwk.com/blog/endpoint-testing/  
-https://dev.to/nedsoft/testing-nodejs-express-api-with-jest-and-supertest-1km6  
-https://blog.campvanilla.com/jest-expressjs-and-the-eaddrinuse-error-bac39356c33a  
-https://libsora.so/posts/escape-from-jest-jest-is-slow/
+- https://jestjs.io/docs/en/expect
+- https://jestjs.io/docs/en/cli
+- https://zellwk.com/blog/endpoint-testing/
+- https://dev.to/nedsoft/testing-nodejs-express-api-with-jest-and-supertest-1km6
+- https://blog.campvanilla.com/jest-expressjs-and-the-eaddrinuse-error-bac39356c33a
+- https://libsora.so/posts/escape-from-jest-jest-is-slow/

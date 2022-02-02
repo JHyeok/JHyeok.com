@@ -211,5 +211,5 @@ Swagger를 사용하지 않고 Wiki와 같이 API 문서를 따로 관리한다�
 더 많은 `@nestjs/swagger`의 데코레이터들은 [여기](https://docs.nestjs.com/openapi/decorators)에서 확인할 수 있다. 공식문서의 `OPENAPI` 단락에서 더 많은 정보를 얻을 수 있다.
 
 ### Reference
-https://docs.nestjs.com/openapi/introduction  
-https://docs.nestjs.com/openapi/decorators
+- https://docs.nestjs.com/openapi/introduction
+- https://docs.nestjs.com/openapi/decorators

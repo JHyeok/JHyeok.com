@@ -126,6 +126,6 @@ git add .husky/pre-commit
 husky는 이번에 v7의 버전이 나오면서 기존에 v4를 사용하고 있던 환경에서 마이그레이션을 하게 되면서 정리를 해보았다.
 
 ### Reference
-https://github.com/google/gts  
-https://github.com/typicode/husky  
-http://meonggae.blogspot.com/2017/03/git-git-hooks.html
+- https://github.com/google/gts
+- https://github.com/typicode/husky
+- http://meonggae.blogspot.com/2017/03/git-git-hooks.html

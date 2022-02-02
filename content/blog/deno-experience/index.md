@@ -194,9 +194,9 @@ deno run --allow-net --allow-write --allow-read --allow-plugin app.ts
 Deno를 짧게 사용한 것인데도 Node.js와 비교해서 정말로 단순하다고 생각했다.
 
 ### Reference
-https://developers.episource.com/blog/intro-to-deno/  
-https://www.devpools.kr/2018/06/21/deno/  
-https://ko.wikinew.wiki/wiki/Deno_(software)  
-https://evrone.com/ryan-dahl-interview  
-https://github.com/denoland/deno/issues/5027  
-https://deno.land/manual
+- https://developers.episource.com/blog/intro-to-deno/
+- https://www.devpools.kr/2018/06/21/deno/
+- https://ko.wikinew.wiki/wiki/Deno_(software)
+- https://evrone.com/ryan-dahl-interview
+- https://github.com/denoland/deno/issues/5027
+- https://deno.land/manual

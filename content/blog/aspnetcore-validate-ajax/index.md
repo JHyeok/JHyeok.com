@@ -116,5 +116,5 @@ select.input-validation-error {
 보통 필자처럼 `ajax`의 경우 직접 가공을 해서 화면에 일일이 뿌려주는 경우가 많은데 위의 방법을 이용하면 우아한(?) 방법으로 유효성 검사를 처리할 수 있을 것이다.
 
 ### Reference
-https://stackoverflow.com/questions/7287412/jquery-validate-asp-net-mvc-modelstate-errors-async-post  
-https://stackoverflow.com/questions/2830431/red-border-around-textbox-when-validation-fails
+- https://stackoverflow.com/questions/7287412/jquery-validate-asp-net-mvc-modelstate-errors-async-post
+- https://stackoverflow.com/questions/2830431/red-border-around-textbox-when-validation-fails

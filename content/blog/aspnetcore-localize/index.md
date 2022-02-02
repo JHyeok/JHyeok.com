@@ -361,4 +361,4 @@ public IActionResult SetLanguage(string culture, string returnUrl)
 간단한 예제 코드를 이용해서 ASP.NET Core의 다국어 번역에 대해서 알아보았다. ASP.NET MVC에서보다 더 쉽게 다국어를 적용할 수 있고, 그 외에 유효성 검사에 대한 다국어도 쉽게 적용할 수 있어서 좋았던 것 같다.
 
 ### Reference
-https://docs.microsoft.com/ko-kr/aspnet/core/fundamentals/localization?view=aspnetcore-2.2
+- https://docs.microsoft.com/ko-kr/aspnet/core/fundamentals/localization?view=aspnetcore-2.2

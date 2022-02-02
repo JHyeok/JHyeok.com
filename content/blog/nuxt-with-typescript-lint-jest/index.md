@@ -222,7 +222,7 @@ Done in 4.60s.
 Nuxt.js 2.9 버전 이후로 TypeScript를 적용하는 방법이 기존과는 조금 달라졌다. 기존 한국어 자료를 바탕으로 진행을 하다가 진행이 막혀서 직접 공식 가이드를 보고 적용을 하면서 방법이 많이 달라진 것을 느끼고 TypeScript로 Nuxt 개발하기를 작성했다.
 
 ### Reference
-https://typescript.nuxtjs.org/guide/  
-https://medium.com/@Al_un/nuxt-vuex-jest-tested-powered-by-typescript-70441600ef39  
-https://ideveloper2.tistory.com/140  
-https://joshua1988.github.io/vue-camp/nuxt/intro.html#nuxt-%ED%8A%B9%EC%A7%95
+- https://typescript.nuxtjs.org/guide/
+- https://medium.com/@Al_un/nuxt-vuex-jest-tested-powered-by-typescript-70441600ef39
+- https://ideveloper2.tistory.com/140
+- https://joshua1988.github.io/vue-camp/nuxt/intro.html#nuxt-%ED%8A%B9%EC%A7%95

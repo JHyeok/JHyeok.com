@@ -111,6 +111,6 @@ NLog.Config이 잘못되면 NLog가 쌓이지 않을 수 있다.\
 그 이후 잘 쌓이게 되었다.
 
 ### Reference
-https://github.com/NLog  
-https://www.nuget.org/packages/NLog.Web.AspNetCore/4.8.3  
-https://github.com/NLog/NLog/wiki/Configuration-file#log-levels
+- https://github.com/NLog
+- https://www.nuget.org/packages/NLog.Web.AspNetCore/4.8.3
+- https://github.com/NLog/NLog/wiki/Configuration-file#log-levels

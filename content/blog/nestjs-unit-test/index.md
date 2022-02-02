@@ -177,7 +177,7 @@ E2E 테스트는 환경에 의존하는 테스트이지만, 단위 테스트는 
 > 이 글을 작성한 이후에 classicist, mockist에 대해서 알게 되었습니다. 진짜 객체를 사용해서 단위 테스트를 작성한 경험이 있고 지금 회사에서는 테스트 대역을 사용해서 단위 테스트를 작성하고 있지만 어떤 방식이 좋은 건지는 잘 모르겠습니다. 저와 비슷한 고민을 하고 있으시다면 이규원님이 작성하신 [정말로 테스트 대역이 필요한가](https://gyuwon.github.io/blog/2020/05/10/do-you-really-need-test-doubles.html)를 한 번 읽어보시기를 추천드립니다.
 
 ### Reference
-https://docs.nestjs.com/fundamentals/testing  
-https://softwareengineering.stackexchange.com/questions/358491/testing-in-memory-db-vs-mocking  
-https://blog.logrocket.com/unit-testing-nestjs-applications-with-jest/  
-https://jestjs.io/docs/en/expect
+- https://docs.nestjs.com/fundamentals/testing
+- https://softwareengineering.stackexchange.com/questions/358491/testing-in-memory-db-vs-mocking
+- https://blog.logrocket.com/unit-testing-nestjs-applications-with-jest/
+- https://jestjs.io/docs/en/expect

@@ -207,8 +207,8 @@ systemctl start nginx
 ![nuxtjs-deploy](./nuxtjs-deploy.png)
 
 ### Reference
-https://www.npmjs.com/package/pm2  
-https://massivcode.com/5  
-https://nansystem.com/nuxt-dotenv-module-pitfall/  
-https://valuefactory.tistory.com/165  
-https://lowendbox.com/blog/how-to-set-up-a-node-js-application-for-production-on-a-centos-7-vps/
+- https://www.npmjs.com/package/pm2
+- https://massivcode.com/5
+- https://nansystem.com/nuxt-dotenv-module-pitfall/
+- https://valuefactory.tistory.com/165
+- https://lowendbox.com/blog/how-to-set-up-a-node-js-application-for-production-on-a-centos-7-vps/

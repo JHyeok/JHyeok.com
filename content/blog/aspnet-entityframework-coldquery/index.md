@@ -37,6 +37,6 @@ Entity Framework의 내부 데이터 구조를 메모리에 구축되었던 것�
 상당히 많은 시간이 초기 상태에 비해서 줄었다는 것을 확인할 수 있다. 하지만 배포시에 `Zero Down Time`은 아니다. `Zero Down Time`을 구현하려면 Blue Green 배포 방식이나 Azure에서 지원해주는 Azure 배포 슬롯을 이용하는 방법이 있다.
 
 ### Reference
-https://codeday.me/ko/qa/20190502/439020.html  
-https://docs.microsoft.com/ko-kr/ef/ef6/fundamentals/performance/perf-whitepaper  
-https://galleryserverpro.com/eliminate-startup-delay-in-your-galleries-using-application-initialization/
+- https://codeday.me/ko/qa/20190502/439020.html
+- https://docs.microsoft.com/ko-kr/ef/ef6/fundamentals/performance/perf-whitepaper
+- https://galleryserverpro.com/eliminate-startup-delay-in-your-galleries-using-application-initialization/

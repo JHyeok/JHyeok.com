@@ -135,7 +135,7 @@ Visual Studio Code를 이용하지 않는다고 하더라도 방법은 다르지
 이 글에서는 가상 환경을 만드는데 venv, black과 Pylint를 사용하였지만 각자 원하는 환경을 이용해서 본인에 맞는 또는 팀에 맞는 개발환경을 구축하면 될 것 같다.
 
 ### Reference
-https://suwoni-codelab.com/python%20%EA%B8%B0%EB%B3%B8/2018/03/21/Python-Basic-Virtual-Environment/  
-https://velog.io/@city7310/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%BD%94%EB%93%9C-%ED%8F%AC%EB%A7%A4%ED%84%B0-%EC%9D%B4%EC%95%BC%EA%B8%B0-5wjxdei9iv  
-https://code.visualstudio.com/docs/python/editing  
-https://code.visualstudio.com/docs/python/linting
+- https://suwoni-codelab.com/python%20%EA%B8%B0%EB%B3%B8/2018/03/21/Python-Basic-Virtual-Environment/
+- https://velog.io/@city7310/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%BD%94%EB%93%9C-%ED%8F%AC%EB%A7%A4%ED%84%B0-%EC%9D%B4%EC%95%BC%EA%B8%B0-5wjxdei9iv
+- https://code.visualstudio.com/docs/python/editing
+- https://code.visualstudio.com/docs/python/linting

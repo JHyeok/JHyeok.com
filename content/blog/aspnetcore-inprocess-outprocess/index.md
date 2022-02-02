@@ -36,6 +36,6 @@ dotnet publish --output:bin/framework_dependent
 Windows환경에서는 IIS를 서버로 사용하는 것이 처리량에서와 보안에서 더 좋은 것 같다.
 
 ### Reference
-https://natemcmaster.com/blog/2018/08/29/netcore-primitives-2/  
-https://appdevmusings.com/host-your-asp-net-core-2-2-web-app-with-iis-in-process-and-out-of-process-hosting-model-and-deploy-to-docker-windows-containers  
-https://codewala.net/2019/02/05/hosting-asp-net-core-applications-on-iis-in-process-hosting/
+- https://natemcmaster.com/blog/2018/08/29/netcore-primitives-2/
+- https://appdevmusings.com/host-your-asp-net-core-2-2-web-app-with-iis-in-process-and-out-of-process-hosting-model-and-deploy-to-docker-windows-containers
+- https://codewala.net/2019/02/05/hosting-asp-net-core-applications-on-iis-in-process-hosting/

@@ -63,4 +63,4 @@ await _db.SaveChangesAsync();
 개인적으로 성능이 중요한 부분이라면 원시 쿼리를 이용하는 것이 좋은 것 같다.
 
 ### Reference
-[Performing Bulk Updates in Entity Framework 6.1+ Part 1](https://www.seguetech.com/performing-bulk-updatesentity-framework-6-1/)
+- [Performing Bulk Updates in Entity Framework 6.1+ Part 1](https://www.seguetech.com/performing-bulk-updatesentity-framework-6-1/)

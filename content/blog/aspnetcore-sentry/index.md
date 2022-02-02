@@ -56,6 +56,6 @@ Issuse목록에서 오류들을 확인할 수 있다.
 .NET Core가 오픈소스화 되면서 좋은 방향으로 발전하고 있다.
 
 ### Reference
-https://medium.com/@aevitas/logging-to-sentry-in-asp-net-core-8c84c5c592db  
-https://github.com/getsentry/sentry-dotnet  
-https://github.com/NLog/NLog/wiki/Configuration-file#log-levels
+- https://medium.com/@aevitas/logging-to-sentry-in-asp-net-core-8c84c5c592db
+- https://github.com/getsentry/sentry-dotnet
+- https://github.com/NLog/NLog/wiki/Configuration-file#log-levels

@@ -204,7 +204,7 @@ i Time: 5586ms
 TypeScript 환경에서 Nuxt를 개발하는 환경을 구성해보았다. 다음 글에서는 코드 스타일을 검사하는 Lint와 테스트 라이브러리인 Jest를 TypeScript 환경에서 사용하는 방법에 대해 설명할 것이다.
 
 ### Reference
-https://typescript.nuxtjs.org/guide/  
-https://medium.com/@Al_un/nuxt-vuex-jest-tested-powered-by-typescript-70441600ef39  
-https://ideveloper2.tistory.com/140  
-https://joshua1988.github.io/vue-camp/nuxt/intro.html#nuxt-%ED%8A%B9%EC%A7%95
+- https://typescript.nuxtjs.org/guide/
+- https://medium.com/@Al_un/nuxt-vuex-jest-tested-powered-by-typescript-70441600ef39
+- https://ideveloper2.tistory.com/140
+- https://joshua1988.github.io/vue-camp/nuxt/intro.html#nuxt-%ED%8A%B9%EC%A7%95

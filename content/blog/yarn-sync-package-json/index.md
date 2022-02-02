@@ -70,5 +70,5 @@ $ yarn upgrade --latest
 최신 안정 버전이 더 이상 현재 범위와 일치하지 않을 때 실행하면 `package.json` 파일이 업데이트된다. 단점으로는 `package.json`에 지정된 버전의 범위를 무시하기 때문에 의도치 않게 Major 업데이트가 될 수 있다.
 
 ### Reference
-https://github.com/yarnpkg/yarn/issues/2042  
-https://github.com/yarnpkg/yarn/issues/3266
+- https://github.com/yarnpkg/yarn/issues/2042
+- https://github.com/yarnpkg/yarn/issues/3266
