@@ -27,7 +27,7 @@ class BlogPostTemplate extends React.Component {
         <p
           style={{
             ...scale(-1 / 5),
-            display: `block`,
+            display: 'block',
             marginBottom: rhythm(1),
             marginTop: rhythm(-0.8),
           }}
@@ -55,19 +55,20 @@ class BlogPostTemplate extends React.Component {
         <hr
           style={{
             marginBottom: rhythm(1),
+            marginTop: rhythm(1),
           }}
         />
         <h3
           style={{
-            fontFamily: `Montserrat, sans-serif`,
+            fontFamily: 'Montserrat, sans-serif',
             marginTop: 0,
           }}
         >
           <Link
             style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `#43853d`,
+              boxShadow: 'none',
+              textDecoration: 'none',
+              color: '#43853d',
             }}
             to={`/`}
           >
@@ -78,12 +79,15 @@ class BlogPostTemplate extends React.Component {
 
         <ul
           style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+            listStyle: 'none',
             padding: 0,
             marginTop: rhythm(1.5),
+            marginLeft: 0,
+            marginRight: 0,
+            fontSize: '12px',
           }}
         >
           <li>

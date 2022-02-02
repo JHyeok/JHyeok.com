@@ -6,11 +6,13 @@ export default function PageNav({ prevPage, nextPage, isFirst, isLast }) {
     <nav>
       <ul
         style={{
-          display: `flex`,
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'space-between',
+          listStyle: 'none',
           padding: 0,
+          marginTop: 0,
+          marginRight: 0,
           marginLeft: 0,
         }}
       >
