@@ -31,7 +31,7 @@ describe('UserService', () => {
 }
 ```
 
-기존에 Express에서는 [sinon](https://www.npmjs.com/package/sinon)과 같은 패키지를 사용해서 테스트하려는 `Service`를 모킹(mocking)해서 사용하였으며 테스트 프레임워크를 직접 설치해서 사용하였지만 NestJS에서는 특정 도구를 강제하지는 않지만 [Jest](https://www.npmjs.com/package/jest)를 기본 테스트 프레임워크로 제공해주며 테스팅 패키지도 제공하기 때문에 개발자가 다른 도구를 찾는데 소모하는 리소스를 줄일 수 있다.
+NestJS에서는 특정 도구를 강제하지는 않지만 [Jest](https://www.npmjs.com/package/jest)를 기본 테스트 프레임워크로 제공해주며 테스팅 패키지도 제공하기 때문에 개발자가 다른 도구를 찾는데 소모하는 리소스를 줄일 수 있다.
 
 NestJS에서 제공하는 `@nestjs/testing` 패키지를 사용하면 테스트에 사용되는 종속성만 선언해서 모듈을 만들고 해당 모듈로 `UserService`, `UserRepository`를 가져올 수 있다. 따로 단위 테스트를 작성하기 위해 추가로 설치한 패키지는 [faker](https://www.npmjs.com/package/Faker)라는 가짜 데이터를 만들어주는 것밖에 없다. 이 가짜 데이터도 직접 개발자가 임의로 만들어서 넣는다면 추가로 설치할 수고로움 없이 NestJS에서 단위 테스트를 작성할 수 있다.
 
@@ -43,7 +43,7 @@ const userRepositorySaveSpy = jest
   .mockResolvedValue(savedUser);
 ```
 
-[Jest](https://www.npmjs.com/package/jest)에서는 모킹(mocking) 함수들을 제공하고 있다. 모킹은 단위 테스트를 작성할 때, 해당 코드가 의존하는 부분을 가짜(mcok)로 대체하는 기법이다. 일반적으로는 테스트하려는 코드가 의존하는 부분을 직접 생성하기가 너무 부담스러울 때 모킹이 사용된다. 위 코드에서는 `spyOn`으로 `userRepository`의 `save` 함수 호출을 모의하고 이 모의된 함수는 `mockResolvedValue`의 결괏값을 반환하도록 하고 있다.
+[Jest](https://www.npmjs.com/package/jest)에서는 모킹(mocking) 함수들을 제공하고 있다. 모킹은 단위 테스트를 작성할 때, 해당 코드가 의존하는 부분을 가짜(mcok)로 대체하는 기법이다. 일반적으로는 테스트하려는 코드가 의존하는 부분을 직접 생성하기가 너무 부담스러울 때 모킹이 사용된다. `jest.spyOn`은 `jest.fn`과 유사한 모의 함수를 만들지만 함수 호출을 추적할 수 있다는 점에서 다르다. 위 코드에서는 `spyOn`으로 `userRepository`의 `save` 함수 호출을 모의하고 이 모의된 함수는 `mockResolvedValue`를 사용해서 `savedUser`를 반환하도록 정의하고 있다.
 
 ```typescript{1}
 import * as faker from 'faker';
@@ -175,6 +175,8 @@ describe('UserService', () => {
 E2E 테스트는 환경에 의존하는 테스트이지만, 단위 테스트는 실행 중인 환경에 의존하면 안 되고, 빠르게 실행되어야 한다. E2E 테스트에서는 보통 테스트 데이터베이스를 사용하고, 테스트의 신뢰성이 높지만 속도가 느리다는 단점이 있다.
 
 > 이 글을 작성한 이후에 classicist, mockist에 대해서 알게 되었습니다. 이 두 가지에 대해서 어떤 것이 좋은지 고민을 하고 있으시다면 이규원님이 작성하신 [정말로 테스트 대역이 필요한가](https://gyuwon.github.io/blog/2020/05/10/do-you-really-need-test-doubles.html)를 한 번 읽어보시기를 추천합니다.
+
+> 개인적으로 faker로 가짜 데이터를 만드는 방법은 사용하지 않는 것을 추천합니다.
 
 ### Reference
 - https://docs.nestjs.com/fundamentals/testing
