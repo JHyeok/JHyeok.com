@@ -20,7 +20,7 @@ function Bio() {
               className="bio-avatar"
               layout="fixed"
               formats={['auto', 'webp', 'avif']}
-              src="../../content/assets/github-profile.jpg"
+              src="../../content/assets/github-profile.png"
               alt={author}
               width={56}
               height={56}
