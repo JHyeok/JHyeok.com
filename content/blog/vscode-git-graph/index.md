@@ -9,19 +9,17 @@ description: Visual Studio Code에서 유용한 Git 확장 프로그램을 소�
 
 ## VS Code Git 생각 정리
 
-개인적으로 IDE에 내장된 Git 기능을 사용하는 것을 선호한다. 보통 Git을 사용할 때 Sourcetree나 GitKraken 등의 다른 GUI 도구를 사용하지 않고 IDE에 내장되어 있는 Git 기능을 사용한다.
+개인적으로 Git을 사용할 때 [Sourcetree](https://www.sourcetreeapp.com/), [GitKraken](https://www.gitkraken.com/), [Fork](https://git-fork.com/) 등의 다른 GUI 도구를 사용하지 않고 IDE에 내장되어 있는 Git 기능을 사용하는 것을 선호한다. 처음으로 회사에서 Git을 배울 때 Visual Studio를 사용하여 Git을 배워서 그런 것 같다.
 
-VS Code를 개인적으로 사용하면서 항상 아쉽다고 느껴지는 점이 기본으로 내장되어 있는 Git 기능이다. 익숙함의 차이일 수 있지만 VS Code를 사용할 때는 커밋 히스토리를 `git log`를 사용해서 봤다. VS Code를 개인적으로 사용하면서 Git은 명령어로만 작업했다.
+VS Code를 사용할 때는 커밋 히스토리를 터미널에서 명령어를 사용해서 확인했다. 브랜치를 만들거나, 원격 리포지토리에 커밋이나 푸시 등의 작업들도 터미널을 이용했다.
 
-회사에서 WebStorm이나 VS를 사용할 때는 내장되어 있는 Git 기능을 사용한다. 하지만 VS Code를 사용할 때는 Git 명령어를 사용했는데 지금 생각해보면 VS Code가 기본적으로 제공하는 Git 기능이 직관적이지 않았다고 생각한다.
+WebStorm이나 Visual Studio를 사용할 때는 내장되어 있는 Git 기능을 사용한다. 하지만 VS Code를 사용할 때는 터미널을 사용해서 작업을 했는데 그 이유로는 VS Code가 기본적으로 제공하는 Git 기능이 부족하고 직관적이지 않았다고 생각한다. 아마도 VS Code는 에디터의 성향이 강하고 사용자가 어떤 플러그인으로 어떻게 사용하느냐에 따라서 달라지기 때문인 것 같다.
 
-아마도 VS Code는 에디터의 성향이 강하고 사용자가 어떤 플러그인으로 어떻게 사용하느냐에 따라서 달라지기 때문인 것 같다.
-
-VS Code를 사용하면서 다른 GUI 도구를 사용하는 것을 싫어해서 구글링을 해보니 이미 능력자분이 만들어 놓은 확장 프로그램을 찾을 수 있었다.
+VS Code를 사용하면서 아쉽다고 느껴지는 점이 기본으로 내장되어 있는 Git 기능이다. 다른 GUI 도구를 사용해서 Git 작업을 하는 것을 싫어해서 구글링을 해보니 이미 능력자분이 만들어 놓은 확장 프로그램을 찾을 수 있었다.
 
 ## Git Graph
 
-[Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)는 VS Code에서 GUI 기반의 다른 Git 도구들과 유사한 경험을 제공한다. VS Code의 마켓플레이스에서 `git graph`라고 검색해서 설치할 수 있다.
+[Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)는 VS Code에서 GUI 기반의 다른 Git 도구들과 유사한 경험을 제공한다. VS Code의 마켓플레이스에서 `git graph`를 검색해서 설치할 수 있다.
 
 ![enter-git-graph-1](./enter-git-graph-1.png)
 
