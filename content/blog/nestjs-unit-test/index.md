@@ -54,6 +54,8 @@ const lastName = faker.lorem.sentence();
 
 ## NestJS에서 단위 테스트 작성
 
+유저를 수정하는 메서드의 단위 테스트를 작성할 것이다.
+
 ```typescript
 async updateUser(
   id: number,
@@ -76,8 +78,6 @@ async updateUser(
   return this.userRepository.save(user);
 }
 ```
-
-Jest와 faker를 사용해서 유저를 수정하는 서비스의 단위 테스트를 작성해보자.
 
 `UserService`의 `updateUser` 메서드를 테스트하려고 하는데, 이 메서드에서는 두 가지를 테스트해야 한다. 유저 id에 해당하는 유저가 있으면 성공적으로 수정하고 해당하는 유저가 없을 경우에는 실패하는 로직에 대해서 검증이 필요하다.
 
