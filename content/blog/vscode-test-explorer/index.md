@@ -11,7 +11,7 @@ WebStorm에서는 테스트 코드를 작성하고 특정 테스트 케이스만
 
 ![webstorm-test](./webstorm-test.png)
 
-하지만 VS Code에서는 아무런 설정 없이는 특정 테스트 케이스만 실행을 하거나 디버그를 할 수 없어서 Extensions의 도움을 받아야 한다.
+하지만 VS Code에서는 아무런 설정 없이는 특정 테스트 케이스만 실행을 하거나 디버그를 할 수 없어서 Extension의 도움을 받아야 한다.
 
 다른 방법으로 아래와 같이 launch.json을 구성해서 특정 파일의 테스트 코드를 실행하거나 디버깅을 할 수 있긴 했지만 사용성도 좋지 않았고 불편했다.
 
@@ -60,7 +60,7 @@ WebStorm에서는 테스트 코드를 작성하고 특정 테스트 케이스만
 
 ### Test Explorer UI
 
-[Test Explorer UI](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer)라는 Extensions를 설치하고 본인이 사용하려는 테스트 프레임워크에 해당하는
+[Test Explorer UI](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer)라는 Extension을 설치하고 본인이 사용하려는 테스트 프레임워크에 해당하는
 테스트 어댑터를 설치하면 된다.
 
 ![install-test-explorer-ui](./install-test-explorer-ui.png)
