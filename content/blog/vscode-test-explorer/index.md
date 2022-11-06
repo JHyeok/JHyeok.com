@@ -1,11 +1,11 @@
 ---
 title: Visual Studio Code에서 테스트를 실행하거나 디버깅하기
-tags: ["Dev"]
-date: "2022-05-29T20:01:00.000Z"
+tags: ['Dev']
+date: '2022-05-29T20:01:00.000Z'
 description: Visual Studio Code에서 Test Explorer UI를 사용해서 특정 테스트 케이스를 실행하거나 전체 테스트를 실행하고 디버그도 할 수 있는 방법을 알아봅니다.
 ---
 
-### VS Code의 테스트 실행
+## VS Code의 테스트 실행
 
 WebStorm에서는 테스트 코드를 작성하고 특정 테스트 케이스만 실행을 할 수 있고, 중단점을 걸어서 디버그도 할 수 있다.
 
@@ -58,7 +58,7 @@ WebStorm에서는 테스트 코드를 작성하고 특정 테스트 케이스만
 }
 ```
 
-### Test Explorer UI
+## Test Explorer UI
 
 [Test Explorer UI](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-test-explorer)라는 Extension을 설치하고 본인이 사용하려는 테스트 프레임워크에 해당하는
 테스트 어댑터를 설치하면 된다.
@@ -83,9 +83,9 @@ Run을 누르면 테스트를 실행하고, 코드의 원하는 지점에 중단
 
 ![fail-test-explorer](./fail-test-explorer.png)
 
-### Mocah Test Explorer가 활성화가 되지 않을 때
+## Mocah Test Explorer가 활성화가 되지 않을 때
 
-Mocha를 사용하는 프로젝트에서는 Mocha Test Explorer가 활성화되지 않았다. 원인으로는 테스트 파일을 인식하지 못하는 거였는데 `.vscode/settings.json`에  mochaExplorer 설정을 추가해서 해결할 수 있다.
+Mocha를 사용하는 프로젝트에서는 Mocha Test Explorer가 활성화되지 않았다. 원인으로는 테스트 파일을 인식하지 못하는 거였는데 `.vscode/settings.json`에 mochaExplorer 설정을 추가해서 해결할 수 있다.
 
 `Command`+`p`로 settings.json을 입력해서 열면 해당 파일을 수정할 수 있다. (Windows는 `Ctrl`+`p`)
 
