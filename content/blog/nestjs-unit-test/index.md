@@ -1,11 +1,13 @@
 ---
 title: NestJS에서 단위 테스트 작성하기
-tags: ["Dev", "Node.js", "Nest.js"]
-date: "2020-11-01T18:52:19.102Z"
+tags: ['Dev', 'Node.js', 'Nest.js']
+date: '2020-11-01T18:52:19.102Z'
 description: NestJS에서 단위 테스트를 작성하는 방법에 대해서 설명합니다.
 ---
 
-이 글에서 사용하는 단위 테스트 코드는 [여기](https://github.com/JHyeok/nestjs-api-example/blob/master/test/unit/service/user.service.stub.spec.ts)에서 확인할 수 있습니다. 하지만 저장소를 Mock/Stub 처리해서 작성한 단위 테스트입니다. 저장소를 Mock/Stub 처리하지 않고 작성한 테스트 코드는 [여기](https://github.com/JHyeok/nestjs-api-example/blob/master/test/unit/service/user.service.spec.ts)에서 확인할 수 있습니다.
+이 글에서 사용하는 예제는 Jest의 Mock Function을 사용해서 Service의 단위 테스트를 작성했습니다. 예제에 사용된 코드는 [여기](https://github.com/JHyeok/nestjs-api-example/blob/master/test/unit/service/user.service.unit.spec.ts)에서 확인할 수 있습니다.
+
+Repository를 Stub/Mock 처리하지 않고 작성한 통합 테스트 코드는 [여기](https://github.com/JHyeok/nestjs-api-example/blob/master/test/integration/user.service.int.spec.ts)에서 확인할 수 있습니다.
 
 ## TestingModule
 
@@ -161,6 +163,7 @@ describe('UserService', () => {
 > 이 글을 작성한 이후에 classicist, mockist에 대해서 알게 되었습니다. 이 두 가지에 대해서 어떤 것이 좋은지 고민을 하고 있으시다면 이규원님이 작성하신 [정말로 테스트 대역이 필요한가](https://gyuwon.github.io/blog/2020/05/10/do-you-really-need-test-doubles.html)를 한 번 읽어보시기를 추천합니다.
 
 ### Reference
+
 - https://docs.nestjs.com/fundamentals/testing
 - https://softwareengineering.stackexchange.com/questions/358491/testing-in-memory-db-vs-mocking
 - https://blog.logrocket.com/unit-testing-nestjs-applications-with-jest/
