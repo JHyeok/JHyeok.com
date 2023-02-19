@@ -33,15 +33,6 @@ module.exports = {
         name: `assets`,
       },
     },
-    `gatsby-plugin-image`,
-    {
-      resolve: 'gatsby-plugin-sharp',
-      options: {
-        stripMetadata: true,
-        defaultQuality: 85,
-      },
-    },
-    'gatsby-transformer-sharp',
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -49,7 +40,16 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 1200,
+              quality: 90,
+              linkImagesToOriginal: false,
+            },
+          },
+          {
+            resolve: `gatsby-remark-images-medium-zoom`,
+            options: {
+              margin: 12,
+              scrollOffset: 0,
             },
           },
           {
@@ -141,14 +141,16 @@ module.exports = {
         icon: `content/assets/gatsby-icon.png`,
       },
     },
-    `gatsby-plugin-netlify`,
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    `gatsby-plugin-netlify`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
   ],
 };
