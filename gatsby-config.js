@@ -39,7 +39,7 @@ module.exports = {
         stripMetadata: true,
         defaults: {
           quality: 90,
-        }
+        },
       },
     },
     'gatsby-transformer-sharp',

@@ -62,7 +62,7 @@
     "develop": "gatsby develop",
     "dev": "gatsby develop",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
-    "format": "prettier --write *.js src/**/*.{js,jsx}",
+    "format": "prettier --write *.js 'src/**/*.{js,jsx}'",
     "start": "yarn develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
