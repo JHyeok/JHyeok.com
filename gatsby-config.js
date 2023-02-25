@@ -34,6 +34,17 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        stripMetadata: true,
+        defaults: {
+          quality: 90,
+        }
+      },
+    },
+    'gatsby-transformer-sharp',
+    `gatsby-plugin-image`,
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -147,8 +158,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     `gatsby-plugin-netlify`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
