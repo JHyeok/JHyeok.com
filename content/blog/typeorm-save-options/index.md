@@ -79,7 +79,9 @@ async createUser(requestDto: UserCreateRequestDto): Promise<User> {
 
 ![typeorm-save-transaction](./typeorm-save-transaction.png)
 
-Sequelize에서는 default로 transaction을 사용하지 않았기 때문에 TypeORM의 `save` 메서드에서도 트랜잭션을 사용하지 않도록 할 수 있다.
+TypeORM의 `save` 메서드를 실행하고 로그를 살펴보면 트랜잭션을 사용하고 있다.
+
+Sequelize에서는 default로 트랜잭션을 사용하지 않았기 때문에 TypeORM의 `save` 메서드에서도 트랜잭션을 사용하지 않도록 할 수 있다.
 
 TypeORM의 SaveOptions을 사용하면 된다.
 
@@ -110,7 +112,7 @@ async createUser(requestDto: UserCreateRequestDto): Promise<User> {
 reload가 `true`, `false`에 따라서 반환되는 객체가 다르다.
 
 ```json
-// reload true인 경우 (default)
+// reload가 true인 경우 (default)
 {
   "firstName": "김",
   "lastName": "재혁",
@@ -122,7 +124,7 @@ reload가 `true`, `false`에 따라서 반환되는 객체가 다르다.
 reload 옵션이 `true`인 경우에는 엔티티가 저장되고 SELECT를 했기 때문에 id를 가져올 수 있는 반면에 reload 옵션이 `false`인 경우에는 SELECT를 하지 않으면 id를 가져올 수 없다.
 
 ```json
-// reload false인 경우
+// reload가 false인 경우
 {
   "firstName": "김",
   "lastName": "재혁",
@@ -215,7 +217,7 @@ INSERT 쿼리만 사용한다.
 
 ### 마치며
 
-TypeORM의 `insert` 메서드는 SaveOptions을 사용해서 여러 목적으로 사용할 수 있다.
+TypeORM의 `save` 메서드는 SaveOptions을 사용해서 여러 목적으로 사용할 수 있다.
 
 ### Reference
 
