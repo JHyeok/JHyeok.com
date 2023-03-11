@@ -164,26 +164,24 @@ module.exports = {
       options: {
         // 모든 페이지를 사전 캐시
         precachePages: [`/`],
-        precacheConfig: [
-          // 특정 HTML, JavaScript 및 CSS 파일을 미리 캐시합니다.
-          `/index.html`,
-          `/static/**/*.{js,css}`,
-        ],
-        runtimeCaching: [
-          // 이미지, API 응답 및 기타 동적 콘텐츠 캐시
-          {
-            urlPattern: /^https?:.*\/(wp-content|wp-json).*/,
-            handler: `CacheFirst`,
-          },
-          {
-            urlPattern: /^https?:.*\.(png|jpg|jpeg|webp|gif|svg|ico|woff|woff2|ttf|otf)$/,
-            handler: `CacheFirst`,
-          },
-          {
-            urlPattern: /^https?:\/\/fonts\.googleapis\.com\/css/,
-            handler: `StaleWhileRevalidate`,
-          },
-        ],
+        workboxConfig: {
+          runtimeCaching: [
+            // 이미지, API 응답 및 기타 동적 콘텐츠 캐시
+            {
+              urlPattern: /^https?:.*\/(wp-content|wp-json).*/,
+              handler: `CacheFirst`,
+            },
+            {
+              urlPattern:
+                /^https?:.*\.(png|jpg|jpeg|webp|gif|svg|ico|woff|woff2|ttf|otf)$/,
+              handler: `CacheFirst`,
+            },
+            {
+              urlPattern: /^https?:\/\/fonts\.googleapis\.com\/css/,
+              handler: `StaleWhileRevalidate`,
+            },
+          ],
+        },
       },
     },
   ],
