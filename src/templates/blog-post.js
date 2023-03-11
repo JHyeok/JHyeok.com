@@ -2,23 +2,23 @@ import { Link, graphql } from 'gatsby';
 import React from 'react';
 
 import Bio from '../components/bio';
+import { Giscus } from '../components/giscus';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Tags from '../components/tags';
-import { Utterances } from '../components/utterances';
 import { formatReadingTime } from '../utils/helper';
 import { rhythm, scale } from '../utils/typography';
-
-const utterances = 'JHyeok/JHyeok.com';
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
-    const siteTitle = this.props.data.site.siteMetadata.title;
+    const metaData = this.props.data.site.siteMetadata;
+    const { title, comment } = metaData;
+    const { giscus } = comment;
     const { previous, next } = this.props.pageContext;
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout location={this.props.location} title={title}>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -72,7 +72,7 @@ class BlogPostTemplate extends React.Component {
             }}
             to={`/`}
           >
-            {siteTitle}
+            {title}
           </Link>
         </h3>
         <Bio />
@@ -105,7 +105,7 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
-        {!!utterances && <Utterances repo={utterances} />}
+        {!!giscus && <Giscus repo={giscus} />}
       </Layout>
     );
   }
@@ -120,7 +120,7 @@ export const pageQuery = graphql`
         title
         author
         comment {
-          utterances
+          giscus
         }
       }
     }

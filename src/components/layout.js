@@ -7,6 +7,22 @@ import sun from '../../content/assets/sun.png';
 import { rhythm, scale } from '../utils/typography';
 import Toggle from './toggle';
 
+function changeGiscusTheme(theme) {
+  const giscusTheme = theme === 'dark' ? 'dark_dimmed' : 'light_high_contrast';
+  const iframe = document.querySelector('iframe.giscus-frame');
+  if (!iframe) return;
+  iframe.contentWindow.postMessage(
+    {
+      giscus: {
+        setConfig: {
+          theme: giscusTheme,
+        },
+      },
+    },
+    'https://giscus.app'
+  );
+}
+
 class Layout extends React.Component {
   constructor(props) {
     super(props);
@@ -14,12 +30,15 @@ class Layout extends React.Component {
       theme: null,
     };
   }
+
   componentDidMount() {
     this.setState({ theme: window.__theme });
     window.__onThemeChange = () => {
       this.setState({ theme: window.__theme });
+      changeGiscusTheme(window.__theme);
     };
   }
+
   renderHeader() {
     const { location, title } = this.props;
     const rootPath = `${__PATH_PREFIX__}/`;
@@ -70,6 +89,7 @@ class Layout extends React.Component {
       );
     }
   }
+
   render() {
     const { children } = this.props;
 
@@ -113,6 +133,7 @@ class Layout extends React.Component {
                   checked: (
                     <img
                       src={moon}
+                      alt="moon"
                       width="16"
                       height="16"
                       role="presentation"
@@ -122,6 +143,7 @@ class Layout extends React.Component {
                   unchecked: (
                     <img
                       src={sun}
+                      alt="sun"
                       width="16"
                       height="16"
                       role="presentation"
