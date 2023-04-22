@@ -5,7 +5,7 @@ date: '2020-11-01T18:52:19.102Z'
 description: NestJS에서 단위 테스트를 작성하는 방법에 대해서 설명합니다.
 ---
 
-이 글에서 사용하는 예제는 Jest의 Mock Function을 사용해서 Service의 단위 테스트를 작성했습니다. 예제에 사용된 코드는 [여기](https://github.com/JHyeok/nestjs-api-example/blob/master/test/unit/service/user.service.unit.spec.ts)에서 확인할 수 있습니다.
+이 글에서 사용하는 예제는 Jest의 Mock Function을 사용해서 Service의 단위 테스트를 작성했습니다. 예제에 사용된 코드는 [여기](https://github.com/JHyeok/nestjs-api-example/blob/master/test/unit/service/user.service.unit.spec.ts)에서 확인할 수 있습니다.
 
 Repository를 Stub/Mock 처리하지 않고 작성한 통합 테스트 코드는 [여기](https://github.com/JHyeok/nestjs-api-example/blob/master/test/integration/user.service.int.spec.ts)에서 확인할 수 있습니다.
 
@@ -38,12 +38,14 @@ NestJS에서 제공하는 `@nestjs/testing` 패키지를 사용하면 테스트�
 ## Jest Mocking
 
 ```typescript
-const userRepositorySaveSpy = jest
+jest
   .spyOn(userRepository, 'save')
   .mockResolvedValue(savedUser);
 ```
 
-[Jest](https://www.npmjs.com/package/jest)에서는 모킹(mocking) 함수들을 제공하고 있다. Mock은 단위 테스트를 작성할 때, 해당 코드가 의존하는 부분을 가짜(mcok)로 대체하는 기법이다. 일반적으로는 테스트하려는 코드가 의존하는 부분을 직접 생성하기가 너무 부담스러울 때 Mock이 사용된다. `jest.spyOn`은 `jest.fn`과 유사한 모의 함수를 만들지만 함수 호출을 추적할 수 있다는 점에서 다르다. 위 코드에서는 `spyOn`으로 `userRepository`의 `save` 함수 호출을 모의하고 이 모의된 함수는 `mockResolvedValue`를 사용해서 `savedUser`를 반환하도록 정의하고 있다.
+[Jest](https://www.npmjs.com/package/jest)에서는 모킹(mocking) 함수들을 제공하고 있다. Mock은 단위 테스트를 작성할 때, 해당 코드가 의존하는 부분을 가짜(mcok)로 대체하는 기법이다. 일반적으로는 테스트하려는 코드가 의존하는 부분을 직접 생성하기가 너무 부담스러울 때 Mock이 사용된다.
+
+`jest.spyOn`은 `jest.fn`과 유사한 모의 함수를 만들지만 함수 호출을 추적할 수 있다는 점에서 다르다. 위 코드에서는 `spyOn`으로 `userRepository`의 `save` 함수 호출을 모의하고 이 모의된 함수는 `mockResolvedValue`를 사용해서 `savedUser`를 반환하도록 정의하고 있다.
 
 ```typescript{1}
 import * as faker from 'faker';
@@ -59,18 +61,15 @@ const lastName = faker.lorem.sentence();
 유저를 수정하는 메서드의 단위 테스트를 작성할 것이다.
 
 ```typescript
-async updateUser(
+// 해당 글 작성을 위해 Repository에 있는 코드와 조금 다릅니다.
+async update(
   id: number,
   requestDto: UserUpdateRequestDto,
 ): Promise<User> {
-  const user = await this.userRepository.findOne({
-    where: {
-      id: id,
-    },
-  });
+  const user = await this.userRepository.findOneByUserId(userId);
 
-  if (_.isEmpty(user) === true) {
-    throw new NotFoundException(Message.NOT_FOUND_USER);
+  if (isEmpty(user) === true) {
+    throw new NotFoundException(UserMessage.NOT_FOUND_USER);
   }
 
   const { firstName, lastName, isActive } = requestDto;
@@ -81,76 +80,58 @@ async updateUser(
 }
 ```
 
-`UserService`의 `updateUser` 메서드를 테스트하려고 하는데, 이 메서드에서는 두 가지를 테스트해야 한다. 유저 id에 해당하는 유저가 있으면 성공적으로 수정하고 해당하는 유저가 없을 경우에는 실패하는 로직에 대해서 검증이 필요하다.
+`UserService`의 `update` 메서드를 테스트하려고 하는데, 이 메서드에서는 두 가지를 테스트해야 한다. 유저 id에 해당하는 유저가 있으면 성공적으로 수정하고 해당하는 유저가 없을 경우에는 실패하는 로직에 대해서 검증이 필요하다.
 
-```typescript{10,12,13,14,16,17,18}
+```typescript{6,8,9,10,12,13,14}
 describe('UserService', () => {
-  describe('updateUser', () => {
+  describe('update', () => {
     it('생성되지 않은 유저의 id가 주어진다면 유저를 찾을 수 없다는 예외를 던진다', async () => {
       const userId = 1;
-      const requestDto: UserUpdateRequestDto = {
-        firstName: '길동',
-        lastName: '김',
-        isActive: false,
-      };
-      jest.spyOn(userRepository, 'findOne').mockResolvedValue(undefined);
-
+      const requestDto = UserUpdateRequestDto.of('길동', '김', false);
+      jest.spyOn(userRepository, 'findOneByUserId').mockResolvedValue(null);
+      
       const result = async () => {
-        await userService.updateUser(userId, requestDto);
+        await userService.update(userId, requestDto);
       };
-
+      
       await expect(result).rejects.toThrowError(
-        new NotFoundException('유저 정보를 찾을 수 없습니다.'),
+        new NotFoundException(UserMessage.NOT_FOUND_USER),
       );
     });
   });
 })
 ```
 
-위의 단위 테스트 코드에서는 생성되지 않은 유저를 수정할 때는 `findOne` 메서드가 `null`의 결괏값을 반환할 거라고 Stub 한다. `updateUser` 메서드는 가짜로 `null`의 값이 반환되는 줄 알고 유저가 `null` 일 때 `NotFoundException`의 예외를 던진다. Jest에서는 `rejects`와 `toThrowError`를 사용해서 이 코드가 NotFoundException을 던지는지 검증할 수 있다. [should](https://www.npmjs.com/package/should)에서 제공하는 `rejectedWith`와 비슷하다.
+위의 단위 테스트 코드에서는 생성되지 않은 유저를 수정할 때는 `findOneByUserId` 메서드가 `null`의 결괏값을 반환할 거라고 Stub 한다.
 
-```typescript{20,21,22,23,24,25}
+`update` 메서드는 `null`의 값이 반환되는 줄 알고 유저가 `null` 일 때 `NotFoundException`의 예외를 던진다.
+
+Jest에서는 `rejects`와 `toThrowError`를 사용해서 이 코드가 NotFoundException을 던지는지 검증할 수 있다. [should](https://www.npmjs.com/package/should)에서 제공하는 `rejectedWith`와 비슷하다.
+
+```typescript{9,10,11,12}
 describe('UserService', () => {
-  describe('updateUser', () => {
+  describe('update', () => {
     it('생성된 유저의 id가 주어진다면 해당 id의 유저를 수정하고 수정된 유저를 반환한다', async () => {
       const userId = 1;
-      const requestDto: UserUpdateRequestDto = {
-        firstName: '길동',
-        lastName: '김',
-        isActive: false,
-      };
-      const existingUser = User.of({
-        id: userId,
-        firstName: '재혁',
-        lastName: '김',
-        isActive: true,
-      });
-      const savedUser = User.of({
-        id: userId,
-        ...requestDto,
-      });
-      const userRepositoryFindOneSpy = jest
-        .spyOn(userRepository, 'findOne')
+      const lastName = '김';
+      const requestDto = UserUpdateRequestDto.of('길동', lastName, false);
+      const existingUser = User.of('재혁', lastName, true);
+      const savedUser = User.of('길동', lastName, false);
+      jest
+        .spyOn(userRepository, 'findOneByUserId')
         .mockResolvedValue(existingUser);
-      const userRepositorySaveSpy = jest
-        .spyOn(userRepository, 'save')
-        .mockResolvedValue(savedUser);
+      jest.spyOn(userRepository, 'save').mockResolvedValue(savedUser);
 
-      const result = await userService.updateUser(userId, requestDto);
+      const result = await userService.update(userId, requestDto);
 
-      expect(userRepositoryFindOneSpy).toHaveBeenCalledWith({
-        where: {
-          id: userId,
-        },
-      });
-      expect(userRepositorySaveSpy).toHaveBeenCalledWith(savedUser);
-      expect(result).toEqual(savedUser);
+      expect(result).toBe(savedUser);
     });
-  });
 })
 ```
 
-`updateUser` 메서드에서 id에 해당하는 유저를 찾아서 유저를 수정했다는 로직의 테스트이다. `findOne` 메서드는 미리 정의해놓은 `existingUser`를 반환할 거라고 Stub 하고 이 반환된 값을 수정해서 저장하면 `savedUser`를 반환할 것이라고 Stub 한다. 그리고 오류가 없이 정상적으로 처리된 내용을 `result` 변수의 값에 담고 Jest의 `expect`로 검증한다. 먼저, `.toHaveBeenCalledWith`는 모의 함수가 특정 인수로 호출되었는지 확인하는 데 사용할 수 있고, `.toEqual`로 개체의 모든 속성을 재귀적으로 비교한다.
+`update` 메서드에서 id에 해당하는 유저를 찾아서 유저를 수정했다는 로직의 테스트이다.
+
+`findOneByUserId` 메서드는 미리 정의해놓은 `existingUser`를 반환할 거라고 Stub 하고, `save` 메서드는 반환된 값을 수정해서 저장하면 `savedUser`를 반환할 것이라고 Stub 한다. 그리고 오류가 없이 정상적으로 처리된 내용을 Jest의 `expect`로 검증한다.
 
 `UserService`의 유저를 수정하는 코드의 일부분을 살펴보았다. 전체 코드를 확인하려면 [여기](https://github.com/JHyeok/nestjs-api-example/blob/master/test/unit/service/user.service.stub.spec.ts)에서 확인할 수 있다.
 
@@ -158,7 +139,9 @@ describe('UserService', () => {
 
 ## 마치며
 
-회사에서는 [Mocha](https://mochajs.org/)와 [sinon.js](https://sinonjs.org/)를 사용해서 테스트 코드를 작성했다. 이번에는 Jest와 Jest에서 제공하는 Mock Functions을 사용해서 테스트 코드를 작성해보았는데 개인적으로 Jest에서 Stub을 하기 위해서 `spyOn`을 사용하는 방식이 번거롭다고 느껴졌다. 하지만 Jest는 Test Runner와 Assertion Library와 같은 기타 도구들이 기본적으로 제공되는 것이 장점이라고 느껴졌다.
+회사에서는 [Mocha](https://mochajs.org/)와 [sinon.js](https://sinonjs.org/)를 사용해서 테스트 코드를 작성했다. 이번에는 Jest와 Jest에서 제공하는 Mock Functions을 사용해서 테스트 코드를 작성해 보았는데 개인적으로 Jest에서 Stub을 하기 위해서 `spyOn`을 사용하는 방식이 번거롭다고 느껴졌다.
+
+하지만 Jest는 Test Runner와 Assertion Library와 같은 기타 도구들이 기본적으로 제공되는 것이 장점이라고 느껴졌다.
 
 > 이 글을 작성한 이후에 classicist, mockist에 대해서 알게 되었습니다. 이 두 가지에 대해서 어떤 것이 좋은지 고민을 하고 있으시다면 이규원님이 작성하신 [정말로 테스트 대역이 필요한가](https://gyuwon.github.io/blog/2020/05/10/do-you-really-need-test-doubles.html)를 한 번 읽어보시기를 추천합니다.
 
