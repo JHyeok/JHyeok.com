@@ -29,7 +29,7 @@ function Bio() {
             <p>
               Written by <strong>{author}</strong>
               <br></br>
-              <a href={`https://github.com/${social.github}`}>Github</a>
+              <a href={`https://github.com/${social.github}`}>GitHub</a>
             </p>
           </div>
         );
