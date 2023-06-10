@@ -31,6 +31,14 @@ NestJS(fastify)를 사용하는 경우 `swagger-ui-express` 대신 `fastify-swag
 npm install --save @nestjs/swagger fastify-swagger
 ```
 
+> NestJS 버전 9 이상
+
+[NestJS 공식 문서 - 마이그레이션 가이드](https://docs.nestjs.com/migration-guide#nestjsswagger-package)를 참고하시면 NestJS v9 부터는 `@nest/swagger` 패키지를 사용할 때 `swagger-ui-express` 및 `fastify-swagger` 패키지는 더 이상 필요하지 않다고 한다.
+
+```
+npm install --save @nestjs/swagger
+```
+
 ## NestJS에서 Swagger 사용하기
 
 `main.ts`에서 `SwaggerModule`를 사용해서 초기화한다.
