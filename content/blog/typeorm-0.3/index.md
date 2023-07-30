@@ -7,7 +7,7 @@ description: TypeORM의 버전이 0.2에서 0.3으로 올라가면서 단위 테
 
 이 글에서는 TypeORM의 Patch 버전을 생략합니다.
 
-코드는 [Github](https://github.com/JHyeok/nestjs-api-example/blob/master/test/unit/service/user.service.spec.ts)에 있습니다.
+코드는 [Github](https://github.com/JHyeok/nestjs-api-example/blob/master/test/unit/service/user.service.unit.spec.ts)에 있습니다.
 
 ## TypeORM 0.3에서의 변화
 
