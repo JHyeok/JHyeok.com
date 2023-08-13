@@ -41,7 +41,7 @@ describe('UserService', () => {
   let userRepository: UserRepository;
 
   beforeAll(async () => {
-    const module: TestingModule = await Test.createTestingModule({
+    const module = await Test.createTestingModule({
       imports: [UserModule, getTestMysqlModule()],
       providers: [UserService, UserRepository],
     }).compile();
@@ -79,7 +79,7 @@ describe('UserService', () => {
   let userRepository: UserRepository;
 
   beforeAll(async () => {
-    const module: TestingModule = await Test.createTestingModule({
+    const module = await Test.createTestingModule({
       imports: [UserModule, getTestMysqlModule()],
       providers: [UserService, UserRepository],
     }).compile();
