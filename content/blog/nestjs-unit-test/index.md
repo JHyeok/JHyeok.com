@@ -14,14 +14,14 @@ Repository를 Stub/Mock 처리하지 않고 작성한 통합 테스트 코드는
 NestJS는 내장된 종속성 주입을 사용해서 쉽게 테스트 코드를 작성할 수 있도록 도와준다. 종속성 주입은 일반적으로 클래스가 아닌 인터페이스를 기반으로 하지만, TypeScript에서 인터페이스는 런타임이 아닌 컴파일 시간에만 사용할 수 있으므로 나중에 신뢰할 수가 없기 때문에 NestJS에서는 클래스 기반 주입을 사용하는 것이 일반적이다.
 
 ```typescript{1}
-import { Test, TestingModule } from '@nestjs/testing';
+import { Test } from '@nestjs/testing';
 
 describe('UserService', () => {
   let userService: UserService;
   let userRepository: UserRepository;
 
   beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
+    const module = await Test.createTestingModule({
       providers: [UserService, UserRepository],
     }).compile();
 
@@ -114,9 +114,10 @@ describe('UserService', () => {
     it('생성된 유저의 id가 주어진다면 해당 id의 유저를 수정하고 수정된 유저를 반환한다', async () => {
       const userId = 1;
       const lastName = '김';
-      const requestDto = UserUpdateRequestDto.of('길동', lastName, false);
+      const firstName = '길동';
+      const requestDto = UserUpdateRequestDto.of(firstName, lastName, false);
       const existingUser = User.of('재혁', lastName, true);
-      const savedUser = User.of('길동', lastName, false);
+      const savedUser = User.of(firstName, lastName, false);
       jest
         .spyOn(userRepository, 'findOneByUserId')
         .mockResolvedValue(existingUser);
@@ -124,7 +125,8 @@ describe('UserService', () => {
 
       const result = await userService.update(userId, requestDto);
 
-      expect(result).toBe(savedUser);
+      expect(result.firstName).toBe(firstName);
+      expect(result.lastName).toBe(lastName);
     });
 })
 ```
