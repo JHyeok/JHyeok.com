@@ -9,7 +9,7 @@ description: TypeORM의 SaveOptions에 대해서 알아봅니다.
 
 아래의 테스트에 사용된 Sequelize의 버전은 6.28.0(@nestjs/sequelize v9.0.0), TypeORM의 버전은 0.3.10(@nestjs/typeorm v9.0.1)입니다.
 
-### Sequelize의 create(), save()
+## Sequelize의 create(), save()
 
 Sequelize에서는 인스턴스를 데이터베이스에 실제로 저장하는데 주로 사용하는 메서드는 `create` 메서드와 `save` 메서드가 있다.
 
@@ -65,7 +65,7 @@ Sequelize에서 이 두 개의 코드는 쿼리도 같고 결과도 동일하다
 }
 ```
 
-### TypeORM의 save()
+## TypeORM의 save()
 
 TypeORM도 마찬가지로 데이터를 저장하는데 `save` 메서드와 `insert` 메서드를 사용할 수 있다.
 
@@ -134,7 +134,7 @@ reload 옵션이 `true`인 경우에는 엔티티가 저장되고 SELECT를 했�
 
 기본적으로 reload 옵션은 활성화되어 있다.
 
-### TypeORM의 insert()
+## TypeORM의 insert()
 
 이제 TypeORM의 `save` 메서드 대신에 `insert` 메서드를 사용해서 차이점을 알아보자. 아래에서 다루는 내용과 별개로 `save` 메서드는 엔티티를 변경해서 변경 사항을 저장하는데도 사용할 수 있다.
 
@@ -176,7 +176,7 @@ async createUser(requestDto: UserCreateRequestDto): Promise<InsertResult> {
 }
 ```
 
-### TypeORM의 Query Builder
+## TypeORM의 Query Builder
 
 SELECT 쿼리를 사용하지 않으려면 `save` 메서드에서 reload를 `false`로 전달해서 사용하는 방법 말고도 `createQueryBuilder`를 사용해서 해결할 수 있다.
 
@@ -215,7 +215,7 @@ INSERT 쿼리만 사용한다.
 }
 ```
 
-### 마치며
+## 마치며
 
 TypeORM의 `save` 메서드는 SaveOptions을 사용해서 여러 목적으로 사용할 수 있다.
 

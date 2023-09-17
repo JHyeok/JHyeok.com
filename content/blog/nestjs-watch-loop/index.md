@@ -5,7 +5,7 @@ date: '2023-07-01T16:40:00.000Z'
 description: NestJS의 개발 환경에서 Watch 모드(`--watch`)를 사용할 때, 파일을 변경하지 않았음에도 불구하고 watch 모드에서 끝없이 컴파일이 반복되는 문제에 대한 해결 방법을 설명합니다.
 ---
 
-### NestJS 무한 컴파일 문제
+## NestJS 무한 컴파일 문제
 
 로컬에서 NestJS를 Watch 모드(`--watch`)로 실행 중에 간헐적으로 애플리케이션이 강제로 종료되는 문제를 발견했다.
 
@@ -23,7 +23,7 @@ Watch 모드는 파일이 변경되었을 때 자동으로 컴파일을 실행�
 
 처음에는 맥북이 문제인지 의심하여 재시동도 했지만 문제가 해결되지는 않았다.
 
-### NestJS GitHub 이슈에서 찾아보기
+## NestJS GitHub 이슈에서 찾아보기
 
 처음 겪어보는 황당한 문제였기 때문에 [NestJS GitHub](https://github.com/nestjs)에서 검색을 해보니 관련 결과들이 몇 개 나왔다.
 
@@ -47,7 +47,7 @@ NestJS의 멤버의 코멘트에서는 TypeScript v4.9에서 발생하는 문제
 
 다른 이슈들의 코멘트들을 확인해 보고 실험을 해본 내용을 공유하려고 한다.
 
-### 해결
+## 해결
 
 위 문제는 아래의 두 가지 방법으로 해결할 수 있었다.
 
@@ -79,7 +79,7 @@ NestJS의 멤버의 코멘트에서는 TypeScript v4.9에서 발생하는 문제
 
 NestJS의 멤버가 남겼던 코멘트대로 TypeScript의 문제였고 TypeScript의 watchOptions을 설정하거나 TypeScript의 버전을 올리면서 문제가 해결된 것이었다.
 
-### 마치며
+## 마치며
 
 만약 위와 같은 문제를 겪고 있다면 TypeScript의 문제이기 때문에 TypeScript의 버전을 올리거나 버전을 올리기 힘들다면 `tsconfig.json`에서 `watchOptions`을 설정해서 해결할 수 있다.
 

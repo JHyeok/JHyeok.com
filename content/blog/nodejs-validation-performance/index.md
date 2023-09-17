@@ -15,7 +15,7 @@ description: Joi는 다른 라이브러리들에 비해서 굉장히 느린 편�
 
 하지만 위의 의견은 저의 개인적인 추측이었고 성능 테스트를 통해서 검증이 필요했습니다. 유효성 검사 이외에도 class-transformer로 직렬화를 했을 때, Lodash를 사용할 때 성능에 영향이 있는지 평소에 예측으로만 생각했던 부분들도 같이 확인했습니다.
 
-### 테스트 환경
+## 테스트 환경
 
 k6으로 성능 테스트를 진행했으며 사용한 테스트 옵션은 다음과 같다.
 
@@ -43,7 +43,7 @@ class-transformer v0.5.1
 Joi v17.6.0
 ```
 
-### native vs Lodash
+## native vs Lodash
 
 JavaScript에서 인기 있는 라이브러리 중 하나인 Lodash의 성능에 대한 내용들은 쉽게 찾아볼 수 있다.
 
@@ -89,7 +89,7 @@ async findById(userId: number): Promise<UserResponseDto> {
 
 테스트 케이스마다 결과가 조금씩 다르지만 성능에 유의미한 차이를 보이지 않는다.
 
-### object literal vs class-transformer
+## object literal vs class-transformer
 
 이번에는 TypeORM의 결과를 그대로 반환하는 경우와 class-transformer를 사용해서 직렬화를 해서 반환하거나, 객체 리터럴(object literal)로 반환하는 경우를 테스트한다.
 
@@ -136,7 +136,7 @@ async findById(userId: number): Promise<{
 
 테스트 케이스마다 결과가 조금씩 다르지만 성능에 유의미한 차이를 보이지 않는다.
 
-### non-validation vs Joi
+## non-validation vs Joi
 
 데이터를 입력하는 경우에는 k6을 한 번 실행하고 결과를 확인한 후에 MongoDB에서 테스트 컬렉션을 깨끗하게 비우고 이어서 테스트를 진행했다.
 
@@ -182,7 +182,7 @@ const exec = async (body: TodoCreateDto): Promise<Boolean> => {
 
 테스트 케이스마다 결과가 조금씩 다른데 개인적인 예상으로는 테스트를 진행할 때 DB에 데이터를 입력하기 때문에 이 과정이 테스트 결과에 더 많은 영향을 끼치는 것 같다.
 
-### 마치며
+## 마치며
 
 테스트를 진행하면서 대부분의 케이스들이 어떤 경우에는 A가 빠르거나 또 어떤 경우에는 B가 빠르고 해서 우열을 가리기 힘들었다. 그리고 해당 글에서는 초당 처리속도와 평균 응답속도만 비교를 하는 것처럼 보이지만 테스트를 진행할 때는 p90, max 등 여러 Metrics을 비교했다.
 
