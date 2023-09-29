@@ -30,6 +30,7 @@ function Bio() {
               Written by <strong>{author}</strong>
               <br></br>
               <a href={`https://github.com/${social.github}`}>GitHub</a>
+              <a href={`https://medium.com/${social.medium}`}>Medium</a>
             </p>
           </div>
         );
@@ -45,6 +46,7 @@ const bioQuery = graphql`
         author
         social {
           github
+          medium
         }
       }
     }

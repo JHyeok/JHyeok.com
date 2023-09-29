@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://jhyeok.com`,
     social: {
       github: `JHyeok`,
+      medium: `@dev.jhyeok`,
     },
     comment: {
       giscus: `JHyeok/JHyeok.com`,
