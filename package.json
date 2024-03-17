@@ -7,7 +7,7 @@
   "bugs": {
     "url": "https://github.com/JHyeok/JHyeok.com/issues"
   },
-  "packageManager": "yarn@1.22.21",
+  "packageManager": "yarn@1.22.22",
   "dependencies": {
     "gatsby": "^5.13.3",
     "gatsby-plugin-feed": "^5.13.1",
