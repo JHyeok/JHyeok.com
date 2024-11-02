@@ -46,8 +46,8 @@ describe('UserService', () => {
       providers: [UserService, UserRepository],
     }).compile();
 
-    sut = module.get<UserService>(UserService);
-    userRepository = module.get<UserRepository>(UserRepository);
+    sut = module.get(UserService);
+    userRepository = module.get(UserRepository);
   });
 
   // ... 생략
@@ -84,9 +84,9 @@ describe('UserService', () => {
       providers: [UserService, UserRepository],
     }).compile();
 
-    sut = module.get<UserService>(UserService);
-    dataSource = module.get<DataSource>(DataSource); /* 추가된 코드 */
-    userRepository = module.get<UserRepository>(UserRepository);
+    sut = module.get(UserService);
+    dataSource = module.get(DataSource); /* 추가된 코드 */
+    userRepository = module.get(UserRepository);
   });
 
   // ... 생략
