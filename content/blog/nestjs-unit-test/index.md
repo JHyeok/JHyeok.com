@@ -25,8 +25,8 @@ describe('UserService', () => {
       providers: [UserService, UserRepository],
     }).compile();
 
-    userService = module.get<UserService>(UserService);
-    userRepository = module.get<UserRepository>(UserRepository);
+    userService = module.get(UserService);
+    userRepository = module.get(UserRepository);
   });
 }
 ```
@@ -68,8 +68,8 @@ async update(
 ): Promise<User> {
   const user = await this.userRepository.findOneByUserId(userId);
 
-  if (isEmpty(user) === true) {
-    throw new NotFoundException(UserMessage.NOT_FOUND_USER);
+  if (!user) {
+    throw new NotFoundException(UserMessage.USER_NOT_FOUND);
   }
 
   const { firstName, lastName, isActive } = requestDto;
@@ -95,7 +95,7 @@ describe('UserService', () => {
       };
       
       await expect(result).rejects.toThrowError(
-        new NotFoundException(UserMessage.NOT_FOUND_USER),
+        new NotFoundException(UserMessage.USER_NOT_FOUND),
       );
     });
   });
