@@ -92,51 +92,65 @@ module.exports = {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
+      {
+        site {
+          siteMetadata {
+            title
+            description
+            siteUrl
+            site_url: siteUrl
+          }
+        }
+      }
+    `,
+        feeds: [
           {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.nodes.map((node) => ({
+                title: String(node.frontmatter.title),
+                description: String(node.excerpt),
+                date: node.frontmatter.date,
+                url: site.siteMetadata.siteUrl + node.fields.slug,
+                guid: site.siteMetadata.siteUrl + node.fields.slug,
+              }));
+            },
+            query: `
+          {
+            allMarkdownRemark(
+              sort: { frontmatter: { date: DESC } },
+            ) {
+              nodes {
+                excerpt
+                fields { 
+                  slug 
+                }
+                frontmatter {
+                  title
+                  date
+                }
               }
             }
           }
         `,
-        feeds: [
-          {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.nodes.map((node) => {
-                return Object.assign({}, node.frontmatter, {
-                  description: node.excerpt,
-                  date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ 'content:encoded': node.html }],
-                });
-              });
-            },
-            query: `
-              {
-                allMarkdownRemark(
-                  sort: { frontmatter: { date: DESC } },
-                ) {
-                  nodes {
-                    excerpt
-                    html
-                    fields { 
-                      slug 
-                    }
-                    frontmatter {
-                      title
-                      date
-                    }
-                  }
-                }
-              }
-            `,
             output: '/rss.xml',
-            title: "JHyeok Blog's RSS Feed",
+            title: 'JHyeok Blog\'s RSS Feed',
+            match: '^/blog/',
+            custom_namespaces: {
+              atom: 'http://www.w3.org/2005/Atom',
+            },
+            custom_elements: [
+              { 'language': 'ko' },
+              { 'ttl': '60' },
+              {
+                'atom:link': {
+                  _attr: {
+                    href: 'https://jhyeok.com/rss.xml',
+                    rel: 'self',
+                    type: 'application/rss+xml',
+                  },
+                },
+              },
+            ],
           },
         ],
       },
