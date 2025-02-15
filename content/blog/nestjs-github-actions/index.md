@@ -1,9 +1,10 @@
 ---
 title: GitHub Actions로 NestJS 빌드 및 테스트 자동화하기
 tags: ['Dev', 'Node.js', 'Nest.js', 'Deploy']
-date: '2025-02-09T16:28:00.000Z'
+date: '2025-02-15T09:40:00.000Z'
 description: NestJS 개발 환경에서 GitHub Actions를 활용하여 빌드와 테스트를 자동화하는 방법을 알아보겠습니다. 또한, 의존성 설치 시간을 단축하기 위해 캐시를 활용하고, 실제 DB(MySQL)를 띄워 테스트하는 방법도 소개합니다.
 ---
+
 NestJS 개발 환경에서 GitHub Actions를 활용하여 빌드와 테스트를 자동화하는 방법을 알아보겠습니다.
 또한, 의존성 설치 시간을 단축하기 위해 캐시를 활용하고, 실제 DB(MySQL)를 띄워 테스트하는 방법도 소개합니다.
 
@@ -208,6 +209,9 @@ jobs:
       # Jest, Mocha 또는 기타 테스트 프레임워크를 사용하여 유닛 테스트를 수행합니다.
       - name: Unit Test
         run: npm run test
+
+      # 실제 프로젝트에 사용하신다면 테스트 리포트나 커버리지 결과를 업로드하는 작업을 추가할 수 있습니다.
+      # 또는 슬랙 알림으로 발송하거나, 배포 워크플로우에서도 배포가 완료되고 슬랙 알림을 발송하거나 할 수 있습니다.
 ```
 
 DB 테스트의 경우, GitHub Actions Runner에서 Docker Compose를 사용하여 MySQL 컨테이너를 실행한 후, 해당 MySQL을 사용하여 애플리케이션의 테스트를 수행한다.
