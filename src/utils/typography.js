@@ -31,7 +31,7 @@ Wordpress2016.overrideThemeStyles = ({ rhythm }) => ({
     fontSize: '1em',
   },
   'ol,ul': {
-    marginLeft: rhythm(1.25),
+    marginLeft: rhythm(0.5),
   },
   'li>ol,li>ul': {
     marginLeft: rhythm(1.25),
