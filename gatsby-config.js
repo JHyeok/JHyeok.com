@@ -107,8 +107,8 @@ module.exports = {
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.nodes.map((node) => ({
-                title: String(node.frontmatter.title),
-                description: String(node.excerpt),
+                title: node.frontmatter.title,
+                description: node.frontmatter.description,
                 date: node.frontmatter.date,
                 url: site.siteMetadata.siteUrl + node.fields.slug,
                 guid: site.siteMetadata.siteUrl + node.fields.slug,
@@ -120,12 +120,12 @@ module.exports = {
               sort: { frontmatter: { date: DESC } },
             ) {
               nodes {
-                excerpt
                 fields { 
                   slug 
                 }
                 frontmatter {
                   title
+                  description
                   date
                 }
               }
