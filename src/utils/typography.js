@@ -33,6 +33,9 @@ Wordpress2016.overrideThemeStyles = ({ rhythm }) => ({
   'ol,ul': {
     marginLeft: rhythm(0.5),
   },
+  'ul>li': {
+    marginLeft: rhythm(1.25),
+  },
   'li>ol,li>ul': {
     marginLeft: rhythm(1.25),
   },
