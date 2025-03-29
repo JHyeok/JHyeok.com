@@ -5,9 +5,9 @@ date: '2020-11-01T18:52:19.102Z'
 description: NestJS에서 단위 테스트를 작성하는 방법에 대해서 설명합니다.
 ---
 
-이 글에서 사용하는 예제는 Jest의 Mock Function을 사용해서 Service의 단위 테스트를 작성했습니다. 예제에 사용된 코드는 [여기](https://github.com/JHyeok/nestjs-api-example/blob/master/test/unit/service/user.service.unit.spec.ts)에서 확인할 수 있습니다.
+이 글에서는 Jest의 Mock Function을 사용해서 Service의 단위 테스트를 작성하는 방법을 설명합니다.
 
-Repository를 Stub/Mock 처리하지 않고 작성한 통합 테스트 코드는 [여기](https://github.com/JHyeok/nestjs-api-example/blob/master/test/integration/user.service.int.spec.ts)에서 확인할 수 있습니다.
+예제에 사용된 테스트 코드를 포함해, Repository를 Stub/Mock 처리하지 않고 작성한 테스트 코드나 [jest-mock-extended](https://www.npmjs.com/package/jest-mock-extended)를 사용한 테스트 코드는 [GitHub](https://github.com/JHyeok/nestjs-api-example/tree/master/test/user/service)에서 확인할 수 있습니다.
 
 ## TestingModule
 
@@ -135,7 +135,7 @@ describe('UserService', () => {
 
 `findOneByUserId` 메서드는 미리 정의해놓은 `existingUser`를 반환할 거라고 Stub 하고, `save` 메서드는 반환된 값을 수정해서 저장하면 `savedUser`를 반환할 것이라고 Stub 한다. 그리고 오류가 없이 정상적으로 처리된 내용을 Jest의 `expect`로 검증한다.
 
-`UserService`의 유저를 수정하는 코드의 일부분을 살펴보았다. 전체 코드를 확인하려면 [여기](https://github.com/JHyeok/nestjs-api-example/blob/master/test/unit/service/user.service.stub.spec.ts)에서 확인할 수 있다.
+`UserService`의 유저를 수정하는 코드의 일부분을 살펴보았다. 전체 코드는 [GitHub](https://github.com/JHyeok/nestjs-api-example/tree/master/test/user/service)에서 확인할 수 있다.
 
 ![nestjs-unit-test](./nestjs-unit-test.png)
 
