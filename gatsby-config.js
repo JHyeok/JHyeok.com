@@ -133,14 +133,14 @@ module.exports = {
           }
         `,
             output: '/rss.xml',
-            title: 'JHyeok Blog\'s RSS Feed',
+            title: "JHyeok Blog's RSS Feed",
             match: '^/blog/',
             custom_namespaces: {
               atom: 'http://www.w3.org/2005/Atom',
             },
             custom_elements: [
-              { 'language': 'ko' },
-              { 'ttl': '60' },
+              { language: 'ko' },
+              { ttl: '60' },
               {
                 'atom:link': {
                   _attr: {
