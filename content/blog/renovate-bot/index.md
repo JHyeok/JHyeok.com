@@ -1,6 +1,5 @@
 ---
 title: Renovate로 의존성 관리 자동화하기
-tags: ['Dev', 'Node.js']
 date: '2024-03-24T19:57:00.000Z'
 description: Renovate를 설치해서 의존성 관리를 자동화하는 방법을 설명합니다.
 ---

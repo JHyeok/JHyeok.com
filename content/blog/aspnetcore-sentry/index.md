@@ -1,6 +1,5 @@
 ---
 title: ASP.NET Core에서 오류를 실시간으로 모니터링
-tags: ["Dev", ".Net Core"]
 date: "2019-08-11T10:21:20.284Z"
 description: ASP.NET Core MVC 시리즈
 ---

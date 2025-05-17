@@ -1,6 +1,5 @@
 ---
 title: WebStorm에서 JSDoc을 사용할 때 type, returns 태그를 자동으로 추가하기
-tags: ["Dev"]
 date: "2021-10-09T11:03:23.000Z"
 description: WebStorm에서 JSDoc을 사용할 때 적용하면 좋은 옵션에 대한 설명입니다.
 ---

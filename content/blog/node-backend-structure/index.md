@@ -1,6 +1,5 @@
 ---
 title: Node.js 계층 구조 설계 및 환경 변수 관리
-tags: ["Dev", "Node.js"]
 date: "2020-05-27T11:02:44.214Z"
 description: Node.js에서 프로젝트를 진행하는데 routing-controllers, TypeDI, TypeORM을 사용한 명확한 계층 구조를 만들고 env 파일들을 활용해서 환경 변수들을 관리하고 사용해봅니다.
 ---

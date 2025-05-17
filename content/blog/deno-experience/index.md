@@ -1,6 +1,5 @@
 ---
 title: 어서와~ Deno는 처음이지?
-tags: ["Dev"]
 date: "2021-06-27T18:32:11.643Z"
 description: 지극히 주관적인 Deno 사용 경험을 공유합니다.
 ---

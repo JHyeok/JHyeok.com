@@ -1,6 +1,5 @@
 ---
 title: Jenkins와 MSBuild를 이용한 ASP.NET MVC CI/CD
-tags: ["Dev", ".Net", "Deploy"]
 date: "2019-06-25T22:00:10.284Z"
 description: ASP.NET MVC에서 Jenkins를 이용해서 CI/CD를 구축합니다.
 ---

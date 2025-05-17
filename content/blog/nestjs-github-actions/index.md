@@ -1,6 +1,5 @@
 ---
 title: GitHub Actions로 NestJS 빌드 및 테스트 자동화하기
-tags: ['Dev', 'Node.js', 'Nest.js', 'Deploy']
 date: '2025-02-15T09:40:00.000Z'
 description: NestJS 개발 환경에서 GitHub Actions를 활용하여 빌드와 테스트를 자동화하는 방법을 알아보겠습니다. 또한, 의존성 설치 시간을 단축하기 위해 캐시를 활용하고, 실제 DB(MySQL)를 띄워 테스트하는 방법도 소개합니다.
 ---

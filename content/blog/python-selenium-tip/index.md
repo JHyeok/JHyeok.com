@@ -1,6 +1,5 @@
 ---
 title: Python에서 Selenium으로 크롤러를 만들 때 팁
-tags: ["Dev", "Python"]
 date: "2020-02-24T21:22:15.162Z"
 description: Python으로 Selenium을 이용한 웹 크롤러를 만들 때, Sentry, Slack을 적용하고 윈도우 스케줄러로 무중단으로 실행하는 방법을 공유합니다.
 ---

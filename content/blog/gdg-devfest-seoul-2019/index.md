@@ -1,6 +1,5 @@
 ---
 title: GDG DevFest Seoul 2019
-tags: ['세미나']
 date: '2019-11-04T21:37:10.284Z'
 description: GDG DevFest Seoul 2019에 참여해서 발표자분들의 발표를 듣고 정리한 내용입니다.
 ---

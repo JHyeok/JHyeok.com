@@ -1,6 +1,5 @@
 ---
 title: husky와 lint-staged로 ESLint와 Prettier 자동화하기
-tags: ['Dev', 'Node.js', 'Nest.js']
 date: '2025-03-03T21:40:00.000Z'
 description: husky와 lint-staged를 활용해 Git 커밋 시 변경된 파일만 ESLint와 Prettier를 자동 실행하는 방법을 소개합니다.
 ---

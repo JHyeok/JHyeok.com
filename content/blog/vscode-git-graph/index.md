@@ -1,6 +1,5 @@
 ---
 title: Visual Studio Code에서 Git Graph 사용하기
-tags: ["Dev"]
 date: "2022-01-31T15:57:11.000Z"
 description: Visual Studio Code에서 유용한 Git 확장 프로그램을 소개합니다.
 ---

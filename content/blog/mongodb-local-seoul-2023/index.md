@@ -1,6 +1,5 @@
 ---
 title: MongoDB.local Seoul 2023
-tags: ['세미나']
 date: '2023-09-17T12:36:00.000Z'
 description: MongoDB.local Seoul 2023에 참여해서 발표자분들의 발표를 듣고 정리한 내용입니다.
 ---

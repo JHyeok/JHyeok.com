@@ -1,6 +1,5 @@
 ---
 title: yarn upgrade 사용할 때 package.json 파일 동기화 하기
-tags: ["Dev", "Node.js"]
 date: "2021-11-06T11:16:00.000Z"
 description: yarn upgrade를 사용하고 package.json 파일과 yarn.lock 파일을 동기화 방법을 설명합니다.
 ---

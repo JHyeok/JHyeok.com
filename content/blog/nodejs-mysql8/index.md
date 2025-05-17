@@ -1,6 +1,5 @@
 ---
 title: Node.js에서 MySQL 8 버전에 연결할 때 발생하는 오류 해결하기
-tags: ['Dev', 'Node.js']
 date: '2024-03-31T18:52:00.000Z'
 description: Node.js에서 MySQL 8 버전에 연결할 때 발생하는 오류를 해결합니다.
 ---

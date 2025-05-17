@@ -1,6 +1,5 @@
 ---
 title: MongoDB Day Seoul 2022
-tags: ['세미나']
 date: '2022-10-30T17:30:00.000Z'
 description: MongoDB Day Seoul 2022에 참여해서 발표자분들의 발표를 듣고 정리한 내용입니다.
 ---

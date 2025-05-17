@@ -1,6 +1,5 @@
 ---
 title: IEnumerable vs IQueryable
-tags: ["Dev", "C#"]
 date: "2019-06-08T11:11:03.284Z"
 description: IEnumerable과 IQueryable의 차이를 설명합니다.
 ---

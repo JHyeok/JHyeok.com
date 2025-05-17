@@ -1,6 +1,5 @@
 ---
 title: KCD 2020
-tags: ['세미나']
 date: '2020-11-08T12:36:30.153Z'
 description: Korea Community Day 2020에 온라인으로 참여해서 발표자분들의 발표를 듣고 정리한 내용입니다.
 ---

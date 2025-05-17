@@ -1,6 +1,5 @@
 ---
 title: 취미 생활에 서버가 필요할 때
-tags: ["AWS"]
 date: "2021-02-27T14:46:05.215Z"
 description: Amazon Lightsail, Amazon EC2를 비교하고 선택했던 경험을 공유합니다.
 ---

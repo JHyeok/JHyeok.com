@@ -1,6 +1,5 @@
 ---
 title: gts와 husky
-tags: ["Dev", "Node.js"]
 date: "2021-08-08T19:00:48.628Z"
 description: Node.js 개발 환경에서 사용하는 gts와 husky에 대해서 알아봅니다.
 ---

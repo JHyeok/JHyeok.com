@@ -1,6 +1,5 @@
 ---
 title: TypeScript로 Nuxt 개발하기 - 1
-tags: ["Dev", "Nuxt.js"]
 date: "2020-01-15T21:22:14.304Z"
 description: TypeScript 환경에서 Nuxt.js를 개발해봅니다. 
 ---

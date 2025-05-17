@@ -1,6 +1,5 @@
 ---
 title: Visual Studio Code에서 테스트를 실행하거나 디버깅하기
-tags: ['Dev']
 date: '2022-05-29T20:01:00.000Z'
 description: Visual Studio Code에서 Test Explorer UI를 사용해서 특정 테스트 케이스를 실행하거나 전체 테스트를 실행하고 디버그도 할 수 있는 방법을 알아봅니다.
 ---

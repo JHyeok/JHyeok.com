@@ -1,6 +1,5 @@
 ---
 title: TypeScript로 Nuxt 개발하기 - 2
-tags: ["Dev", "Nuxt.js"]
 date: "2020-01-16T00:11:44.352Z"
 description: Nuxt에서 코드 스타일을 검사하는 ESLint와 코드를 예쁘게 해주는 Prettier, 테스트 라이브러리인 Jest를 TypeScript 환경에서 사용해봅니다.
 ---
