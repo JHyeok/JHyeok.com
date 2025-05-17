@@ -5,7 +5,6 @@ import Bio from '../components/bio';
 import { Giscus } from '../components/giscus';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import Tags from '../components/tags';
 import { formatReadingTime } from '../utils/helper';
 import { rhythm, scale } from '../utils/typography';
 
@@ -48,9 +47,7 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
             marginTop: rhythm(-0.8),
           }}
-        >
-          <Tags items={post.frontmatter.tags} />
-        </div>
+        ></div>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
@@ -132,7 +129,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        tags
       }
     }
   }
