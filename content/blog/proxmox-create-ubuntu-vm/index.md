@@ -1,7 +1,7 @@
 ---
 title: Proxmox에서 VM을 생성하고 Ubuntu 설치하기
 tags: ['Proxmox', 'HomeServer', 'SelfHosted']
-date: '2025-07-09T19:20:00.000Z'
+date: '2025-07-09T19:30:00.000Z'
 description: Proxmox에서 VM을 생성하고 Ubuntu 24.04 LTS를 설치하는 과정을 정리했습니다. 디스크와 메모리 점검, OpenSSH 설치 방법도 정리했습니다.
 ---
 
@@ -24,7 +24,7 @@ Proxmox 왼쪽 메뉴에서 local 저장소를 클릭한 다음, 우측에 있�
 
 ![proxmox-create-vm-ubuntu-2.png](proxmox-create-vm-ubuntu-2.png)
 
-상단에 있는 Download from URL 버튼을 누르고, 복사해둔 ISO 파일 링크를 붙여넣습니다.
+상단에 있는 Download from URL 버튼을 누르고, 복사한 ISO 파일 링크를 붙여 넣습니다.
 
 이후 Query URL 버튼을 눌러 링크를 확인한 뒤, Download 버튼을 클릭하면 ISO 파일 다운로드가 시작됩니다.
 
@@ -58,7 +58,7 @@ Proxmox 우측 상단에 Create VM 버튼을 누릅니다.
 
 ![proxmox-create-vm-ubuntu-8.png](proxmox-create-vm-ubuntu-8.png)
 
-`CPU` 탭에서는 VM에 할당할 코어 수를 설정합니다. 저는 `Cores`에 `1`을 입력해, 1코어만 할당했습니다.
+`CPU` 탭에서는 VM에 할당할 코어 수를 설정합니다. 저는 `Cores`에 `1`을 입력해, 1개 코어만 할당했습니다.
 
 ![proxmox-create-vm-ubuntu-9.png](proxmox-create-vm-ubuntu-9.png)
 
