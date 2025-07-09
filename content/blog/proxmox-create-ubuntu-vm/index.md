@@ -2,7 +2,7 @@
 title: Proxmox에서 VM을 생성하고 Ubuntu 설치하기
 tags: ['Proxmox', 'HomeServer', 'SelfHosted']
 date: '2025-07-09T19:20:00.000Z'
-description: Proxmox에서 VM을 생성하고 Ubuntu를 설치하는 과정을 단계별로 소개합니다.
+description: Proxmox에서 VM을 생성하고 Ubuntu 24.04 LTS를 설치하는 과정을 정리했습니다. 디스크와 메모리 점검, OpenSSH 설치 방법도 정리했습니다.
 ---
 
 이 글은 Proxmox VE 8.4.1 버전을 기준으로 작성되었습니다.
