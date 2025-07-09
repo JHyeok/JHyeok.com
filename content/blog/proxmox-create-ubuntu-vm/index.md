@@ -50,7 +50,7 @@ Proxmox 우측 상단에 Create VM 버튼을 누릅니다.
 
 ![proxmox-create-vm-ubuntu-6.png](proxmox-create-vm-ubuntu-6.png)
 
-`Systeam` 탭에서는 기본값을 사용합니다.
+`System` 탭에서는 기본값을 사용합니다.
 
 ![proxmox-create-vm-ubuntu-7.png](proxmox-create-vm-ubuntu-7.png)
 
