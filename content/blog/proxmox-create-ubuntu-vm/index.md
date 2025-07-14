@@ -41,7 +41,7 @@ Proxmox 우측 상단에 Create VM 버튼을 누릅니다.
 `General` 탭에서는 생성할 VM의 이름을 입력합니다.
 아래 이미지에서는 예시로 `Blocky`라는 이름을 사용했지만, 본인의 목적에 맞게 자유롭게 설정하시면 됩니다.
 
-또한, Advanced 항목을 펼쳐서 Start at boot 옵션을 활성화해 주세요. 이 옵션은 Proxmox 부팅 시 VM이 자동으로 시작되도록 설정합니다.
+또한, Advanced 항목을 펼쳐서 `Start at boot`를 체크해 주세요. 이 옵션은 Proxmox 부팅 시 VM이 자동으로 시작되도록 설정합니다.
 
 ![proxmox-create-vm-ubuntu-5.png](proxmox-create-vm-ubuntu-5.png)
 
@@ -50,9 +50,11 @@ Proxmox 우측 상단에 Create VM 버튼을 누릅니다.
 
 ![proxmox-create-vm-ubuntu-6.png](proxmox-create-vm-ubuntu-6.png)
 
-`System` 탭에서는 기본값을 사용합니다.
+`System` 탭에서는 `Qemu Agent`를 체크합니다.
 
-![proxmox-create-vm-ubuntu-7.png](proxmox-create-vm-ubuntu-7.png)
+QEMU Guest Agent는 Proxmox가 가상 머신의 IP, 상태, 시간 등을 확인하고 일부 작업을 제어할 수 있게 해주는 도구입니다.
+
+![proxmox-create-vm-ubuntu-7.png](proxmox-create-vm-ubuntu-7-fix.png)
 
 `Disks` 탭에서는 `Cache`를 `Write back`으로 선택합니다. 저는 디스크 용량이 많이 필요하지 않기 때문에 10GiB로 설정했습니다.
 
