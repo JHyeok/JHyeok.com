@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://jhyeok.com/sitemap.xml
+Sitemap: https://jhyeok.com/sitemap-index.xml
