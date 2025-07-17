@@ -133,7 +133,7 @@ module.exports = {
           }
         `,
             output: '/rss.xml',
-            title: "JHyeok Blog's RSS Feed",
+            title: 'JHyeok Blog\'s RSS Feed',
             match: '^/blog/',
             custom_namespaces: {
               atom: 'http://www.w3.org/2005/Atom',
@@ -173,7 +173,7 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    `gatsby-plugin-netlify`,
+    `gatsby-plugin-cloudflare-pages`,
     {
       resolve: `gatsby-plugin-offline`,
       options: {

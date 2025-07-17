@@ -5,10 +5,10 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
 
   createRedirect({
-    fromPath: 'https://jhyeok.netlify.com/*',
+    fromPath: 'https://jhyeok-blog.pages.dev/*',
     toPath: 'https://jhyeok.com/:splat',
-    statusCode: 301,
-  });
+    statusCode: 301
+  })
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`);
   return graphql(
