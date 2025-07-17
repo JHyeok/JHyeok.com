@@ -1,6 +1,5 @@
 ---
-title: Proxmox에서 VM을 생성하고 Ubuntu 설치하기
-tags: ['Proxmox', 'HomeServer', 'SelfHosted']
+title: 홈서버 1. Proxmox에서 VM을 생성하고 Ubuntu 설치하기
 date: '2025-07-09T19:30:00.000Z'
 description: Proxmox에서 VM으로 우분투 24.04 LTS를 설치하는 과정을 정리했습니다. 디스크와 메모리 점검, OpenSSH 설치 방법도 정리했습니다.
 ---
