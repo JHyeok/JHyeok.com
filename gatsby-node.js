@@ -7,8 +7,8 @@ exports.createPages = ({ graphql, actions }) => {
   createRedirect({
     fromPath: 'https://jhyeok-blog.pages.dev/*',
     toPath: 'https://jhyeok.com/:splat',
-    statusCode: 301
-  })
+    statusCode: 301,
+  });
 
   const blogPost = path.resolve(`./src/templates/blog-post.js`);
   return graphql(

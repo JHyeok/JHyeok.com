@@ -83,9 +83,18 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: `UA-140417715-1`,
+        trackingIds: ['G-N5XY9PBXWM'],
+        gtagConfig: {
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: true,
+          respectDNT: true,
+          delayOnRouteUpdate: 1000,
+        },
       },
     },
     {
@@ -133,7 +142,7 @@ module.exports = {
           }
         `,
             output: '/rss.xml',
-            title: 'JHyeok Blog\'s RSS Feed',
+            title: "JHyeok Blog's RSS Feed",
             match: '^/blog/',
             custom_namespaces: {
               atom: 'http://www.w3.org/2005/Atom',
