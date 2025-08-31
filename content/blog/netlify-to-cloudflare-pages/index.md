@@ -1,5 +1,5 @@
 ---
-title: Netlify에서 Cloudflare Pages로 마이그레이션하고 성능을 8배 끌어올린 후기
+title: Netlify에서 Cloudflare Pages로 마이그레이션하고 성능을 8배 개선한 후기
 date: '2025-08-30T11:17:00.000Z'
 description: Netlify에서 Cloudflare Pages로 Gatsby 기반 블로그를 무중단으로 이전하고 성능을 최대 8배까지 향상시킨 마이그레이션 경험을 공유합니다.
 ---
