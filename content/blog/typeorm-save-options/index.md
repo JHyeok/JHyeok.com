@@ -12,16 +12,20 @@ description: TypeORM의 SaveOptions에 대해서 알아봅니다.
 
 Sequelize에서는 인스턴스를 데이터베이스에 실제로 저장하는데 주로 사용하는 메서드는 `create` 메서드와 `save` 메서드가 있다.
 
-```ts{9}
+```ts{9,10,11,12,13}
 @Injectable()
 export class UserRepository {
   constructor(
     @InjectModel(User)
     private readonly user: typeof User,
   ) {}
-
+  
   async create(): Promise<User> {
-    const userRecord = this.user.build({ firstName: 'test', lastName: 'test', isActive: true }) // (1)
+    const userRecord = this.user.build({ // (1)
+      firstName: 'test',
+      lastName: 'test',
+      isActive: true,
+    })
     return await userRecord.save();
   }
 }
@@ -89,8 +93,13 @@ TypeORM의 SaveOptions을 사용하면 된다.
 transaction을 `false`로 전달하면 된다.
 
 ```ts
-async createUser(requestDto: UserCreateRequestDto): Promise<User> {
-  return await this.userRepository.save(requestDto.toEntity(), { transaction: false });
+async createUser(
+  requestDto: UserCreateRequestDto,
+): Promise<User> {
+  return await this.userRepository.save(
+    requestDto.toEntity(),
+    { transaction: false },
+  );
 }
 ```
 
@@ -101,8 +110,13 @@ async createUser(requestDto: UserCreateRequestDto): Promise<User> {
 하지만 CREATE 쿼리만 있는 것이 아니라 SELECT 쿼리도 있는데 SaveOptions의 reload를 사용해서 CREATE 쿼리만 사용하도록 할 수 있다.
 
 ```ts
-async createUser(requestDto: UserCreateRequestDto): Promise<User> {
-  return await this.userRepository.save(requestDto.toEntity(), { transaction: false, reload: false });
+async createUser(
+  requestDto: UserCreateRequestDto,
+): Promise<User> {
+  return await this.userRepository.save(
+    requestDto.toEntity(),
+    { transaction: false, reload: false },
+  );
 }
 ```
 
